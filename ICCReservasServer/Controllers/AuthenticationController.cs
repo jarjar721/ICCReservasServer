@@ -50,7 +50,7 @@ namespace ICCReservasServer.Controllers
                 }
                 else
                 {
-                    return BadRequest( new { message = "No existe un usuario registrado con ese email." });
+                    return BadRequest( new { code = "UserNotFound", message = "No existe un usuario registrado con ese email." });
                 }
             }
             catch (Exception ex)
@@ -74,18 +74,28 @@ namespace ICCReservasServer.Controllers
                     {
                         new Claim("UserID", user.Id.ToString())
                     }),
-                    Expires = DateTime.UtcNow.AddMinutes(5),
+                    Expires = DateTime.UtcNow.AddDays(1),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.JWT_Secret)), SecurityAlgorithms.HmacSha256Signature)
                 };
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                 var token = tokenHandler.WriteToken(securityToken);
 
-                return Ok(token);
+                var responseUser = new { 
+                    userID = user.Id,
+                    firstName = user.FirstName,
+                    middleName = user.MiddleName,
+                    lastName = user.LastName,
+                    secondLastName = user.SecondLastName,
+                    email = user.Email,
+                    userName = user.UserName
+                };
+
+                return Ok(new { token = token, user = responseUser });
             }
             else
             {
-                return BadRequest(new { message = "Email o contraseña incorrectas." });
+                return BadRequest(new { code = "IncorrectCredentials", message = "Email o contraseña incorrectas." });
             }
 
         }

@@ -1,5 +1,6 @@
 ﻿using ICCReservasServer.DTOs;
 using ICCReservasServer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,16 +30,19 @@ namespace ICCReservasServer.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<UsuariosController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET api/<UsuariosController>/User/5
+        [HttpGet()]
+        [Authorize]
+        [Route("User/{id}")]
+        public async Task<object> GetUserDetails()
         {
-            return "value";
+            string userID = User.Claims.First(claim => claim.Type == "UserID").Value;
+            return await _userManager.FindByIdAsync(userID);
         }
 
-        // POST api/UsuariosController/AddUsuario
+        // POST api/Usuarios/AddUsuario
         [HttpPost]
-        [Route("AddUsuario")] // POST --> api/AuthenticationController/Register
+        [Route("AddUsuario")] // POST --> api/Usuarios/Register
         public async Task<object> UserRegistration(AddUserDTO userDTO)
         {
             var applicationUser = new ApplicationUser()
@@ -50,8 +54,6 @@ namespace ICCReservasServer.Controllers
                 Email = userDTO.Email,
                 UserName = userDTO.Email.Split('@')[0]
             };
-
-            System.Console.WriteLine(applicationUser);
 
             try
             {
