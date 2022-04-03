@@ -30,14 +30,25 @@ namespace ICCReservasServer.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<UsuariosController>/User/5
+        // GET api/<UsuariosController>/User/string-id-goes-here
         [HttpGet()]
         [Authorize]
-        [Route("User/{id}")]
-        public async Task<object> GetUserDetails()
+        [Route("User/{userID}")]
+        public async Task<object> GetUserDetails([FromRoute] string userID)
         {
-            string userID = User.Claims.First(claim => claim.Type == "UserID").Value;
-            return await _userManager.FindByIdAsync(userID);
+            var user = await _userManager.FindByIdAsync(userID);
+            var responseUser = new
+            {
+                userID = user.Id,
+                firstName = user.FirstName,
+                middleName = user.MiddleName,
+                lastName = user.LastName,
+                secondLastName = user.SecondLastName,
+                email = user.Email,
+                userName = user.UserName
+            };
+
+            return Ok(new { user = responseUser });
         }
 
         // POST api/Usuarios/AddUsuario

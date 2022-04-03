@@ -37,10 +37,10 @@ builder.Services.Configure<IdentityOptions>(options =>
 builder.Services.AddCors();
 
 //JWT Authentication
-var JWT_Secret = builder.Configuration.GetSection("ApplicationSettings:JWT_Secret").ToString();
-var Client_URL = builder.Configuration.GetSection("ApplicationSettings:Cliet_URL").ToString();
+var JWT_Secret = builder.Configuration.GetSection("ApplicationSettings:JWT_Secret").Value;
+var Client_URL = builder.Configuration.GetSection("ApplicationSettings:Client_URL").Value;
 
-var key = Encoding.UTF8.GetBytes(JWT_Secret); //HAY QUE PASAR ESTO AL CONFIGURATION FILE. EXPUESTO
+var key = Encoding.UTF8.GetBytes(JWT_Secret);
 
 builder.Services.AddAuthentication(options =>
     {
@@ -55,7 +55,7 @@ builder.Services.AddAuthentication(options =>
         options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
-           IssuerSigningKey = new SymmetricSecurityKey(key),
+            IssuerSigningKey = new SymmetricSecurityKey(key), // AQUI VA key
             ValidateIssuer = false,
             ValidateAudience = false,
             ClockSkew = TimeSpan.Zero
@@ -82,7 +82,7 @@ app.UseAuthorization();
 
 app.UseCors(builder =>
     {
-        builder.WithOrigins(Client_URL)
+        builder.WithOrigins(Client_URL) // ALL ORIGINS --> "*"
         .AllowAnyHeader()
         .AllowAnyMethod();
     }
