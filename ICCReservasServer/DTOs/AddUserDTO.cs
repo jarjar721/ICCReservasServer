@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ICCReservasServer.DTOs
 {
+    [NotMapped]
     public class AddUserDTO
     {
         [Required(ErrorMessage = "FirstName is required.")]

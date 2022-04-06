@@ -1,5 +1,8 @@
-﻿namespace ICCReservasServer.DTOs
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ICCReservasServer.DTOs
 {
+    [NotMapped]
     public class ApplicationSettings
     {
         public string JWT_Secret { get; set; }
