@@ -7,32 +7,30 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ICCReservasServer.Data;
-using Microsoft.AspNetCore.Authorization;
-using ICCReservasServer.DTOs;
 using ICCReservasServer.Models;
 
 namespace ICCReservasServer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class InstalacionesController : Controller
+    public class HorariosController : Controller
     {
         private readonly ApplicationDataContext _context;
 
-        public InstalacionesController(ApplicationDataContext context)
+        public HorariosController(ApplicationDataContext context)
         {
             _context = context;
         }
 
-        // GET: Instalaciones
+        // GET: Horarios
         [HttpGet]
         //[Authorize]
-        public async Task<IActionResult> GetAllInstalaciones()
+        public async Task<IActionResult> Index()
         {
-            return Ok(await _context.Instalaciones.ToListAsync());
+            return Ok(await _context.Horarios.ToListAsync());
         }
 
-        // GET: Instalaciones/Details/5
+        // GET: Horarios/Details/5
         [HttpGet]
         //[Authorize]
         [Route("Details/{id}")]
@@ -43,57 +41,55 @@ namespace ICCReservasServer.Controllers
                 return NotFound();
             }
 
-            var instalacion = await _context.Instalaciones
+            var horarios = await _context.Horarios
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (instalacion == null)
+            if (horarios == null)
             {
                 return NotFound();
             }
 
-            return Ok(instalacion);
+            return Ok(horarios);
         }
 
-        // POST: Instalaciones/Create
+        // POST: Horarios/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Route("Create")]
         //[Authorize]
+        [Route("Create")]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Codigo,Nombre,Tipo,Descripcion,Capacidad,Edificio,Piso,Status")] Instalaciones instalacion)
+        public async Task<IActionResult> Create([Bind("ID,Numero,HoraInicio,HoraFin,Nivel")] Horarios horarios)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(instalacion);
+                _context.Add(horarios);
                 var result = await _context.SaveChangesAsync();
                 return Ok(result);
             }
             else
-            {
-                return BadRequest(new { code = "InstalacionNotCreated", message = "Error: no se pudo crear la instalación." });
-            }
+                return BadRequest(new { code = "HorarioNotCreated", message = "Error: no se pudo crear el horario." });
         }
 
-        // PUT: Instalaciones/Edit/5
+        // PUT: Horarios/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPut]
         [Route("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Codigo,Nombre,Tipo,Descripcion,Capacidad,Edificio,Piso,Status")] Instalaciones instalacion)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Numero,HoraInicio,HoraFin,Nivel")] Horarios horarios)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(instalacion);
+                    _context.Update(horarios);
                     var result = await _context.SaveChangesAsync();
                     return Ok(result);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!InstalacionesExists(id))
+                    if (!HorariosExists(horarios.ID))
                     {
                         return NotFound();
                     }
@@ -105,24 +101,25 @@ namespace ICCReservasServer.Controllers
             }
             else
                 return BadRequest(new { code = "InvalidModelState", message = "Error: ModelState inválido." });
+
         }
-        
-        // DELETE: Instalaciones/Delete/5
+
+        // DELETE: Horarios/Delete/5
         [HttpDelete]
+        //[Authorize]
         [Route("Delete/{id}")]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var instalacion = await _context.Instalaciones.FindAsync(id);
-            _context.Instalaciones.Remove(instalacion);
+            var horarios = await _context.Horarios.FindAsync(id);
+            _context.Horarios.Remove(horarios);
             var result = await _context.SaveChangesAsync();
             return Ok(result);
         }
-        
 
-        private bool InstalacionesExists(int id)
+        private bool HorariosExists(int id)
         {
-            return _context.Instalaciones.Any(e => e.ID == id);
+            return _context.Horarios.Any(e => e.ID == id);
         }
     }
 }

@@ -41,14 +41,14 @@ namespace ICCReservasServer.Controllers
                 return NotFound();
             }
 
-            var dispositivos = await _context.Dispositivos
+            var dispositivo = await _context.Dispositivos
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (dispositivos == null)
+            if (dispositivo == null)
             {
                 return NotFound();
             }
 
-            return Ok(dispositivos);
+            return Ok(dispositivo);
         }
 
         // POST: Dispositivos/Create
@@ -58,11 +58,11 @@ namespace ICCReservasServer.Controllers
         //[Authorize]
         [Route("Create")]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Nombre,Tipo,Descripcion,Marca,Modelo,Serial,Status")] Dispositivos dispositivos)
+        public async Task<IActionResult> Create([Bind("ID,Nombre,Tipo,Descripcion,Marca,Modelo,Serial,Status")] Dispositivos dispositivo)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(dispositivos);
+                _context.Add(dispositivo);
                 var result = await _context.SaveChangesAsync();
                 return Ok(result);
             }
@@ -77,13 +77,13 @@ namespace ICCReservasServer.Controllers
         [Route("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Nombre,Tipo,Descripcion,Marca,Modelo,Serial,Status")] Dispositivos dispositivos)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Nombre,Tipo,Descripcion,Marca,Modelo,Serial,Status")] Dispositivos dispositivo)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(dispositivos);
+                    _context.Update(dispositivo);
                     var result = await _context.SaveChangesAsync();
                     return Ok(result);
                 }
@@ -105,12 +105,13 @@ namespace ICCReservasServer.Controllers
 
         // DELETE: Dispositivos/Delete/5
         [HttpDelete]
+        //[Authorize]
         [Route("Delete/{id}")]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var dispositivos = await _context.Dispositivos.FindAsync(id);
-            _context.Dispositivos.Remove(dispositivos);
+            var dispositivo = await _context.Dispositivos.FindAsync(id);
+            _context.Dispositivos.Remove(dispositivo);
             var result = await _context.SaveChangesAsync();
             return Ok(result);
         }

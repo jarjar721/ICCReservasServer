@@ -23,4 +23,6 @@ public class ApplicationDataContext : IdentityDbContext<ApplicationUser>
     public DbSet<ICCReservasServer.Models.Instalaciones> Instalaciones { get; set; }
 
     public DbSet<ICCReservasServer.Models.Dispositivos> Dispositivos { get; set; }
+
+    public DbSet<ICCReservasServer.Models.Horarios> Horarios { get; set; }
 }
