@@ -7,17 +7,25 @@ namespace ICCReservasServer.Models
         [Required]
         [Key]
         public int ID { get; set; }
+
         [Required]
         public string Codigo { get; set; }
+
         [Required]
         public string Nombre { get; set; }
+
         [Required]
         public string Grado { get; set; }
+
+        [Required]
+        public string Nivel { get; set; }
+
         [Required]
         public string Descripcion { get; set; }
+
         [Required]
         public int Status { get; set; }
 
-        public List<Clases> Clases { get; set; }
+        //public List<Clases> Clases { get; set; }
     }
 }

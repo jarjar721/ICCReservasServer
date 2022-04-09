@@ -13,24 +13,24 @@ namespace ICCReservasServer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HorariosController : Controller
+    public class MateriasController : Controller
     {
         private readonly ApplicationDataContext _context;
 
-        public HorariosController(ApplicationDataContext context)
+        public MateriasController(ApplicationDataContext context)
         {
             _context = context;
         }
 
-        // GET: Horarios
+        // GET: Materias
         [HttpGet]
         //[Authorize]
         public async Task<IActionResult> Index()
         {
-            return Ok(await _context.Horarios.ToListAsync());
+            return Ok(await _context.Materias.ToListAsync());
         }
 
-        // GET: Horarios/Details/5
+        // GET: Materias/Details/5
         [HttpGet]
         //[Authorize]
         [Route("Details/{id}")]
@@ -41,55 +41,55 @@ namespace ICCReservasServer.Controllers
                 return NotFound();
             }
 
-            var horarios = await _context.Horarios
+            var materias = await _context.Materias
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (horarios == null)
+            if (materias == null)
             {
                 return NotFound();
             }
 
-            return Ok(horarios);
+            return Ok(materias);
         }
 
-        // POST: Horarios/Create
+        // POST: Materias/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         //[Authorize]
         [Route("Create")]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Numero,HoraInicio,HoraFin,Nivel,TipoHora")] Horarios horarios)
+        public async Task<IActionResult> Create([Bind("ID,Codigo,Nombre,Grado,Nivel,Descripcion,Status")] Materias materias)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(horarios);
+                _context.Add(materias);
                 var result = await _context.SaveChangesAsync();
                 return Ok(result);
             }
             else
-                return BadRequest(new { code = "HorarioNotCreated", message = "Error: no se pudo crear el horario." });
+                return BadRequest(new { code = "MateriaNotCreated", message = "Error: no se pudo crear la materia." });
         }
 
-        // PUT: Horarios/Edit/5
+        // PUT: Materias/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPut]
         [Route("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Numero,HoraInicio,HoraFin,Nivel,TipoHora")] Horarios horarios)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Codigo,Nombre,Grado,Nivel,Descripcion,Status")] Materias materias)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(horarios);
+                    _context.Update(materias);
                     var result = await _context.SaveChangesAsync();
                     return Ok(result);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!HorariosExists(horarios.ID))
+                    if (!MateriasExists(materias.ID))
                     {
                         return NotFound();
                     }
@@ -101,25 +101,24 @@ namespace ICCReservasServer.Controllers
             }
             else
                 return BadRequest(new { code = "InvalidModelState", message = "Error: ModelState inválido." });
-
         }
 
-        // DELETE: Horarios/Delete/5
+        // DELETE: Materias/Delete/5
         [HttpDelete]
         //[Authorize]
         [Route("Delete/{id}")]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var horarios = await _context.Horarios.FindAsync(id);
-            _context.Horarios.Remove(horarios);
+            var materias = await _context.Materias.FindAsync(id);
+            _context.Materias.Remove(materias);
             var result = await _context.SaveChangesAsync();
             return Ok(result);
         }
 
-        private bool HorariosExists(int id)
+        private bool MateriasExists(int id)
         {
-            return _context.Horarios.Any(e => e.ID == id);
+            return _context.Materias.Any(e => e.ID == id);
         }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using ICCReservasServer.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ICCReservasServer.Migrations
 {
     [DbContext(typeof(ApplicationDataContext))]
-    partial class ApplicationDataContextModelSnapshot : ModelSnapshot
+    [Migration("20220409222607_AddedTipoHora")]
+    partial class AddedTipoHora
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -261,10 +263,6 @@ namespace ICCReservasServer.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Grado")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Nivel")
                         .IsRequired()
                         .HasColumnType("text");
 
