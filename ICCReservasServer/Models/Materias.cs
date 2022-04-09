@@ -15,6 +15,8 @@ namespace ICCReservasServer.Models
         public string Grado { get; set; }
         [Required]
         public string Descripcion { get; set; }
+        [Required]
+        public int Status { get; set; }
 
         public List<Clases> Clases { get; set; }
     }

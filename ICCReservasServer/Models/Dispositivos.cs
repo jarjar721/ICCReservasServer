@@ -20,8 +20,8 @@ namespace ICCReservasServer.Models
         [Required]
         public string Serial { get; set; }
         [Required]
-        public string Status { get; set; }
+        public int Status { get; set; }
 
-        public List<ReservaDispositivo> ReservaDispositivo { get; set; }
+        //public List<ReservaDispositivo> ReservaDispositivo { get; set; }
     }
 }
