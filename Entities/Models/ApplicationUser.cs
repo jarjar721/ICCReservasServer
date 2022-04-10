@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace ICCReservasServer.Models;
+namespace Entities.Models;
 
 // Add profile data for application users by adding properties to the ApplicationUser class
 public class ApplicationUser : IdentityUser
@@ -17,6 +17,6 @@ public class ApplicationUser : IdentityUser
     public string LastName { get; set; }
     public string? SecondLastName { get; set; }
 
-    public List<Clases> Clases { get; set; }
+    //public List<Clases> Clases { get; set; }
 }
 

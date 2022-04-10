@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ICCReservasServer.Models
+namespace Entities.Models
 {
     public class Horarios
     {
@@ -20,8 +20,8 @@ namespace ICCReservasServer.Models
         [Required]
         public string Nivel { get; set; }
 
-        [Required]
-        public string TipoHora { get; set; }
+        //[Required]
+        //public string TipoHora { get; set; }
 
         //public List<Clases> Clases { get; set; }
     }

@@ -1,9 +1,10 @@
-﻿using ICCReservasServer.Models;
+﻿using Entities.Configurations;
+using Entities.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace ICCReservasServer.Data;
+namespace Entities.Data;
 
 public class ApplicationDataContext : IdentityDbContext<ApplicationUser>
 {
@@ -19,6 +20,12 @@ public class ApplicationDataContext : IdentityDbContext<ApplicationUser>
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
 
+        builder.ApplyConfiguration(new InstalacionesConfiguration());
+        builder.ApplyConfiguration(new StatusConfiguration());
+        builder.ApplyConfiguration(new HorariosConfiguration());
+        builder.ApplyConfiguration(new MateriasConfiguration());
+        builder.ApplyConfiguration(new DispositivosConfiguration());
+
     }
 
     public DbSet<Instalaciones> Instalaciones { get; set; }
@@ -29,5 +36,5 @@ public class ApplicationDataContext : IdentityDbContext<ApplicationUser>
 
     public DbSet<Materias> Materias { get; set; }
 
-    public DbSet<ICCReservasServer.Models.Clases> Clases { get; set; }
+    public DbSet<Clases> Clases { get; set; }
 }

@@ -3,6 +3,7 @@ using System;
 using Entities.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ICCReservasServer.Migrations
 {
     [DbContext(typeof(ApplicationDataContext))]
-    partial class ApplicationDataContextModelSnapshot : ModelSnapshot
+    [Migration("20220410185753_MateriasConfigurationHS")]
+    partial class MateriasConfigurationHS
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -149,6 +151,10 @@ namespace ICCReservasServer.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Serial")
                         .IsRequired()
                         .HasColumnType("text");
@@ -162,139 +168,7 @@ namespace ICCReservasServer.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Dispositivos", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            Descripcion = "TEST DEVICE",
-                            Marca = "DELL",
-                            Modelo = "X1",
-                            Serial = "345VEG",
-                            Status = 1,
-                            Tipo = "Laptop"
-                        },
-                        new
-                        {
-                            ID = 2,
-                            Descripcion = "TEST DEVICE",
-                            Marca = "ACER",
-                            Modelo = "T3",
-                            Serial = "NFG456",
-                            Status = 1,
-                            Tipo = "Laptop"
-                        },
-                        new
-                        {
-                            ID = 3,
-                            Descripcion = "TEST DEVICE",
-                            Marca = "ASUS",
-                            Modelo = "D4",
-                            Serial = "BRI456",
-                            Status = 1,
-                            Tipo = "Laptop"
-                        },
-                        new
-                        {
-                            ID = 4,
-                            Descripcion = "TEST DEVICE",
-                            Marca = "HP",
-                            Modelo = "S6",
-                            Serial = "NWO203",
-                            Status = 1,
-                            Tipo = "Laptop"
-                        },
-                        new
-                        {
-                            ID = 5,
-                            Descripcion = "TEST DEVICE",
-                            Marca = "EPSON",
-                            Modelo = "VXA",
-                            Serial = "298CCV",
-                            Status = 1,
-                            Tipo = "Proyector"
-                        },
-                        new
-                        {
-                            ID = 6,
-                            Descripcion = "TEST DEVICE",
-                            Marca = "EPSON",
-                            Modelo = "A4E",
-                            Serial = "HNY4RT",
-                            Status = 1,
-                            Tipo = "Proyector"
-                        },
-                        new
-                        {
-                            ID = 7,
-                            Descripcion = "TEST DEVICE",
-                            Marca = "HP",
-                            Modelo = "WER2",
-                            Serial = "3F5H6J",
-                            Status = 1,
-                            Tipo = "Proyector"
-                        },
-                        new
-                        {
-                            ID = 8,
-                            Descripcion = "TEST DEVICE",
-                            Marca = "SAMSUNG",
-                            Modelo = "S3",
-                            Serial = "0K7B6F",
-                            Status = 1,
-                            Tipo = "Tablet"
-                        },
-                        new
-                        {
-                            ID = 9,
-                            Descripcion = "TEST DEVICE",
-                            Marca = "SAMSUNG",
-                            Modelo = "S2",
-                            Serial = "1K2J3H",
-                            Status = 1,
-                            Tipo = "Tablet"
-                        },
-                        new
-                        {
-                            ID = 10,
-                            Descripcion = "TEST DEVICE",
-                            Marca = "HUAWEI",
-                            Modelo = "TRX3",
-                            Serial = "4J8FC7",
-                            Status = 1,
-                            Tipo = "Tablet"
-                        },
-                        new
-                        {
-                            ID = 11,
-                            Descripcion = "TEST DEVICE",
-                            Marca = "HUAWEI",
-                            Modelo = "34RF",
-                            Serial = "2MN3B4",
-                            Status = 1,
-                            Tipo = "Tablet"
-                        },
-                        new
-                        {
-                            ID = 12,
-                            Descripcion = "TEST DEVICE",
-                            Marca = "KINGSTON",
-                            Modelo = "CVT4",
-                            Serial = "PLO094",
-                            Status = 1,
-                            Tipo = "Cable"
-                        },
-                        new
-                        {
-                            ID = 13,
-                            Descripcion = "TEST DEVICE",
-                            Marca = "KINGSTON",
-                            Modelo = "GTR3",
-                            Serial = "CYD837",
-                            Status = 1,
-                            Tipo = "Cable"
-                        });
+                    b.ToTable("Dispositivos");
                 });
 
             modelBuilder.Entity("Entities.Models.Horarios", b =>

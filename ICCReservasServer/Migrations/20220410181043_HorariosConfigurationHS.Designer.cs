@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ICCReservasServer.Migrations
 {
     [DbContext(typeof(ApplicationDataContext))]
-    [Migration("20220409223237_AddedNivelMateria")]
-    partial class AddedNivelMateria
+    [Migration("20220410181043_HorariosConfigurationHS")]
+    partial class HorariosConfigurationHS
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,7 @@ namespace ICCReservasServer.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ICCReservasServer.Models.ApplicationUser", b =>
+            modelBuilder.Entity("Entities.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text");
@@ -102,7 +102,7 @@ namespace ICCReservasServer.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("ICCReservasServer.Models.Clases", b =>
+            modelBuilder.Entity("Entities.Models.Clases", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -131,7 +131,7 @@ namespace ICCReservasServer.Migrations
                     b.ToTable("Clases");
                 });
 
-            modelBuilder.Entity("ICCReservasServer.Models.Dispositivos", b =>
+            modelBuilder.Entity("Entities.Models.Dispositivos", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -171,7 +171,7 @@ namespace ICCReservasServer.Migrations
                     b.ToTable("Dispositivos");
                 });
 
-            modelBuilder.Entity("ICCReservasServer.Models.Horarios", b =>
+            modelBuilder.Entity("Entities.Models.Horarios", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -194,16 +194,70 @@ namespace ICCReservasServer.Migrations
                     b.Property<int>("Numero")
                         .HasColumnType("integer");
 
-                    b.Property<string>("TipoHora")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.HasKey("ID");
 
-                    b.ToTable("Horarios");
+                    b.ToTable("Horarios", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            HoraFin = "08:15:00",
+                            HoraInicio = "07:30:00",
+                            Nivel = "HS",
+                            Numero = 1
+                        },
+                        new
+                        {
+                            ID = 2,
+                            HoraFin = "09:00:00",
+                            HoraInicio = "08:15:00",
+                            Nivel = "HS",
+                            Numero = 2
+                        },
+                        new
+                        {
+                            ID = 3,
+                            HoraFin = "10:30:00",
+                            HoraInicio = "09:45:00",
+                            Nivel = "HS",
+                            Numero = 3
+                        },
+                        new
+                        {
+                            ID = 4,
+                            HoraFin = "11:15:00",
+                            HoraInicio = "10:30:00",
+                            Nivel = "HS",
+                            Numero = 4
+                        },
+                        new
+                        {
+                            ID = 5,
+                            HoraFin = "12:00:00",
+                            HoraInicio = "11:15:00",
+                            Nivel = "HS",
+                            Numero = 5
+                        },
+                        new
+                        {
+                            ID = 6,
+                            HoraFin = "13:15:00",
+                            HoraInicio = "12:30:00",
+                            Nivel = "HS",
+                            Numero = 6
+                        },
+                        new
+                        {
+                            ID = 7,
+                            HoraFin = "14:00:00",
+                            HoraInicio = "13:15:00",
+                            Nivel = "HS",
+                            Numero = 7
+                        });
                 });
 
-            modelBuilder.Entity("ICCReservasServer.Models.Instalaciones", b =>
+            modelBuilder.Entity("Entities.Models.Instalaciones", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -243,10 +297,192 @@ namespace ICCReservasServer.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Instalaciones");
+                    b.ToTable("Instalaciones", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Capacidad = 0,
+                            Codigo = "HS-S-1",
+                            Descripcion = "Deposito 1 en el sotano.",
+                            Edificio = "HS",
+                            Nombre = "Deposito 1",
+                            Piso = "S",
+                            Status = 0,
+                            Tipo = "Deposito"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Capacidad = 15,
+                            Codigo = "HS-S-2",
+                            Descripcion = "Salón de Ciencias de la Tierra",
+                            Edificio = "HS",
+                            Nombre = "Ciencias de la Tierra",
+                            Piso = "S",
+                            Status = 1,
+                            Tipo = "Aula"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Capacidad = 15,
+                            Codigo = "HS-S-3",
+                            Descripcion = "Salón de Dibujo Técnico",
+                            Edificio = "HS",
+                            Nombre = "Dibujo Técnico",
+                            Piso = "S",
+                            Status = 1,
+                            Tipo = "Aula"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Capacidad = 0,
+                            Codigo = "HS-S-4",
+                            Descripcion = "Deposito 2 en el sotano.",
+                            Edificio = "HS",
+                            Nombre = "Deposito 2",
+                            Piso = "S",
+                            Status = 0,
+                            Tipo = "Deposito"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            Capacidad = 20,
+                            Codigo = "HS-S-5",
+                            Descripcion = "Laboratorio de Biología (Salón 2)",
+                            Edificio = "HS",
+                            Nombre = "Laboratorio de Biología (Salón 2)",
+                            Piso = "S",
+                            Status = 1,
+                            Tipo = "Laboratorio"
+                        },
+                        new
+                        {
+                            ID = 6,
+                            Capacidad = 20,
+                            Codigo = "HS-S-6",
+                            Descripcion = "Laboratorio de Física (Salón 2)",
+                            Edificio = "HS",
+                            Nombre = "Laboratorio de Física",
+                            Piso = "S",
+                            Status = 1,
+                            Tipo = "Laboratorio"
+                        },
+                        new
+                        {
+                            ID = 7,
+                            Capacidad = 20,
+                            Codigo = "HS-S-7",
+                            Descripcion = "Laboratorio de Química (Salón 2)",
+                            Edificio = "HS",
+                            Nombre = "Laboratorio de Química",
+                            Piso = "S",
+                            Status = 1,
+                            Tipo = "Laboratorio"
+                        },
+                        new
+                        {
+                            ID = 8,
+                            Capacidad = 20,
+                            Codigo = "HS-S-8",
+                            Descripcion = "Laboratorio de Biología (Salón 1)",
+                            Edificio = "HS",
+                            Nombre = "Laboratorio de Biología (Salón 1)",
+                            Piso = "S",
+                            Status = 1,
+                            Tipo = "Laboratorio"
+                        },
+                        new
+                        {
+                            ID = 9,
+                            Capacidad = 20,
+                            Codigo = "HS-1-1",
+                            Descripcion = "Salón 2 de Humanidades/Tutoría",
+                            Edificio = "HS",
+                            Nombre = "Humanidades/Tutoría Salón 2",
+                            Piso = "1",
+                            Status = 1,
+                            Tipo = "Aula"
+                        },
+                        new
+                        {
+                            ID = 10,
+                            Capacidad = 25,
+                            Codigo = "HS-1-2",
+                            Descripcion = "Salón 1 de Humanidades/Tutoría",
+                            Edificio = "HS",
+                            Nombre = "Humanidades/Tutoría Salón 1",
+                            Piso = "1",
+                            Status = 1,
+                            Tipo = "Aula"
+                        },
+                        new
+                        {
+                            ID = 11,
+                            Capacidad = 20,
+                            Codigo = "HS-1-3",
+                            Descripcion = "Sala de estudios",
+                            Edificio = "HS",
+                            Nombre = "Study Hall",
+                            Piso = "1",
+                            Status = 1,
+                            Tipo = "Aula"
+                        },
+                        new
+                        {
+                            ID = 12,
+                            Capacidad = 25,
+                            Codigo = "HS-1-4",
+                            Descripcion = "Salón de Ciencias Sociales",
+                            Edificio = "HS",
+                            Nombre = "Ciencias Sociales",
+                            Piso = "1",
+                            Status = 1,
+                            Tipo = "Aula"
+                        },
+                        new
+                        {
+                            ID = 13,
+                            Capacidad = 25,
+                            Codigo = "HS-1-5",
+                            Descripcion = "Salón 1 de Química",
+                            Edificio = "HS",
+                            Nombre = "Química Salon 1",
+                            Piso = "1",
+                            Status = 1,
+                            Tipo = "Aula"
+                        },
+                        new
+                        {
+                            ID = 14,
+                            Capacidad = 25,
+                            Codigo = "HS-1-6",
+                            Descripcion = "Salón de Catholic Leadership Change Makers",
+                            Edificio = "HS",
+                            Nombre = "Catholic Leadership Change Makers",
+                            Piso = "1",
+                            Status = 1,
+                            Tipo = "Aula"
+                        },
+                        new
+                        {
+                            ID = 15,
+                            Capacidad = 3,
+                            Codigo = "HS-1-7",
+                            Descripcion = "Oficina Directiva 1",
+                            Edificio = "HS",
+                            Nombre = "Oficina Directiva 1",
+                            Piso = "1",
+                            Status = 1,
+                            Tipo = "Oficina"
+                        });
                 });
 
-            modelBuilder.Entity("ICCReservasServer.Models.Materias", b =>
+            modelBuilder.Entity("Entities.Models.Materias", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -282,59 +518,7 @@ namespace ICCReservasServer.Migrations
                     b.ToTable("Materias");
                 });
 
-            modelBuilder.Entity("ICCReservasServer.Models.ReservaDispositivo", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("DispositivoID")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ReservaID")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("DispositivoID");
-
-                    b.HasIndex("ReservaID");
-
-                    b.ToTable("ReservaDispositivo");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Reservas", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("ClaseID")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("DatetimeCreacion")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime>("DatetimeReservacion")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("InstalacionID")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("ClaseID");
-
-                    b.HasIndex("InstalacionID");
-
-                    b.ToTable("Reservas");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Status", b =>
+            modelBuilder.Entity("Entities.Models.Status", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -355,33 +539,30 @@ namespace ICCReservasServer.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Status");
-                });
+                    b.ToTable("Status", (string)null);
 
-            modelBuilder.Entity("ICCReservasServer.Models.StatusReserva", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<DateTime>("FechaStatus")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("ReservaID")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("StatusID")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("ReservaID");
-
-                    b.HasIndex("StatusID");
-
-                    b.ToTable("StatusReserva");
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Codigo = 1,
+                            Descripcion = "El requerimiento ha sido creado y espera ser procesado.",
+                            Tipo = "Pendiente"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Codigo = 2,
+                            Descripcion = "El requerimiento ha sido tomado y se encuentra en proceso de ser gestionado.",
+                            Tipo = "En proceso"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Codigo = 3,
+                            Descripcion = "El requerimiento ha sido procesado y completado.",
+                            Tipo = "Completado"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -520,22 +701,22 @@ namespace ICCReservasServer.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ICCReservasServer.Models.Clases", b =>
+            modelBuilder.Entity("Entities.Models.Clases", b =>
                 {
-                    b.HasOne("ICCReservasServer.Models.Horarios", "Horario")
+                    b.HasOne("Entities.Models.Horarios", "Horario")
                         .WithMany()
                         .HasForeignKey("HorarioID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ICCReservasServer.Models.Materias", "Materia")
-                        .WithMany("Clases")
+                    b.HasOne("Entities.Models.Materias", "Materia")
+                        .WithMany()
                         .HasForeignKey("MateriaID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ICCReservasServer.Models.ApplicationUser", "User")
-                        .WithMany("Clases")
+                    b.HasOne("Entities.Models.ApplicationUser", "User")
+                        .WithMany()
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -545,63 +726,6 @@ namespace ICCReservasServer.Migrations
                     b.Navigation("Materia");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.ReservaDispositivo", b =>
-                {
-                    b.HasOne("ICCReservasServer.Models.Dispositivos", "Dispositivo")
-                        .WithMany()
-                        .HasForeignKey("DispositivoID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ICCReservasServer.Models.Reservas", "Reserva")
-                        .WithMany("ReservaDispositivo")
-                        .HasForeignKey("ReservaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Dispositivo");
-
-                    b.Navigation("Reserva");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Reservas", b =>
-                {
-                    b.HasOne("ICCReservasServer.Models.Clases", "Clase")
-                        .WithMany("Reservas")
-                        .HasForeignKey("ClaseID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ICCReservasServer.Models.Instalaciones", "Instalacion")
-                        .WithMany()
-                        .HasForeignKey("InstalacionID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Clase");
-
-                    b.Navigation("Instalacion");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.StatusReserva", b =>
-                {
-                    b.HasOne("ICCReservasServer.Models.Reservas", "Reserva")
-                        .WithMany("StatusReserva")
-                        .HasForeignKey("ReservaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ICCReservasServer.Models.Status", "Status")
-                        .WithMany("StatusReserva")
-                        .HasForeignKey("StatusID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Reserva");
-
-                    b.Navigation("Status");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -615,7 +739,7 @@ namespace ICCReservasServer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("ICCReservasServer.Models.ApplicationUser", null)
+                    b.HasOne("Entities.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -624,7 +748,7 @@ namespace ICCReservasServer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("ICCReservasServer.Models.ApplicationUser", null)
+                    b.HasOne("Entities.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -639,7 +763,7 @@ namespace ICCReservasServer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ICCReservasServer.Models.ApplicationUser", null)
+                    b.HasOne("Entities.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -648,38 +772,11 @@ namespace ICCReservasServer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("ICCReservasServer.Models.ApplicationUser", null)
+                    b.HasOne("Entities.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.ApplicationUser", b =>
-                {
-                    b.Navigation("Clases");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Clases", b =>
-                {
-                    b.Navigation("Reservas");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Materias", b =>
-                {
-                    b.Navigation("Clases");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Reservas", b =>
-                {
-                    b.Navigation("ReservaDispositivo");
-
-                    b.Navigation("StatusReserva");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Status", b =>
-                {
-                    b.Navigation("StatusReserva");
                 });
 #pragma warning restore 612, 618
         }

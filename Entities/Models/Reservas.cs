@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ICCReservasServer.Models
+namespace Entities.Models
 {
     public class Reservas
     {

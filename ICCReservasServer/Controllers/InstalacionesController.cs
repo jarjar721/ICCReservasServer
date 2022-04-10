@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ICCReservasServer.Data;
+using Entities.Data;
 using Microsoft.AspNetCore.Authorization;
 using ICCReservasServer.DTOs;
-using ICCReservasServer.Models;
+using Entities.Models;
 
 namespace ICCReservasServer.Controllers
 {

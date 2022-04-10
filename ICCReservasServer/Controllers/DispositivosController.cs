@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ICCReservasServer.Data;
-using ICCReservasServer.Models;
+using Entities.Data;
+using Entities.Models;
 
 namespace ICCReservasServer.Controllers
 {
@@ -58,7 +58,7 @@ namespace ICCReservasServer.Controllers
         //[Authorize]
         [Route("Create")]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Nombre,Tipo,Descripcion,Marca,Modelo,Serial,Status")] Dispositivos dispositivo)
+        public async Task<IActionResult> Create([Bind("ID,Tipo,Descripcion,Marca,Modelo,Serial,Status")] Dispositivos dispositivo)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace ICCReservasServer.Controllers
         [Route("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Nombre,Tipo,Descripcion,Marca,Modelo,Serial,Status")] Dispositivos dispositivo)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Tipo,Descripcion,Marca,Modelo,Serial,Status")] Dispositivos dispositivo)
         {
             if (ModelState.IsValid)
             {

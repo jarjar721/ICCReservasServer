@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using ICCReservasServer.Data;
-using ICCReservasServer.Models;
+using Entities.Data;
+using Entities.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -11,7 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDataContextConnection");
 
 builder.Services.AddDbContext<ApplicationDataContext>(options =>
-    options.UseNpgsql(connectionString));
+    options.UseNpgsql(connectionString, options => options.MigrationsAssembly("ICCReservasServer")));
+
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDataContext>();
 // Add services to the container.

@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ICCReservasServer.Migrations
 {
     [DbContext(typeof(ApplicationDataContext))]
-    [Migration("20220409223237_AddedNivelMateria")]
-    partial class AddedNivelMateria
+    [Migration("20220410161153_TestMigrationSeparateProjects")]
+    partial class TestMigrationSeparateProjects
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,7 @@ namespace ICCReservasServer.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ICCReservasServer.Models.ApplicationUser", b =>
+            modelBuilder.Entity("Entities.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text");
@@ -102,7 +102,7 @@ namespace ICCReservasServer.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("ICCReservasServer.Models.Clases", b =>
+            modelBuilder.Entity("Entities.Models.Clases", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -131,7 +131,7 @@ namespace ICCReservasServer.Migrations
                     b.ToTable("Clases");
                 });
 
-            modelBuilder.Entity("ICCReservasServer.Models.Dispositivos", b =>
+            modelBuilder.Entity("Entities.Models.Dispositivos", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -171,7 +171,7 @@ namespace ICCReservasServer.Migrations
                     b.ToTable("Dispositivos");
                 });
 
-            modelBuilder.Entity("ICCReservasServer.Models.Horarios", b =>
+            modelBuilder.Entity("Entities.Models.Horarios", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -203,7 +203,7 @@ namespace ICCReservasServer.Migrations
                     b.ToTable("Horarios");
                 });
 
-            modelBuilder.Entity("ICCReservasServer.Models.Instalaciones", b =>
+            modelBuilder.Entity("Entities.Models.Instalaciones", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -246,7 +246,7 @@ namespace ICCReservasServer.Migrations
                     b.ToTable("Instalaciones");
                 });
 
-            modelBuilder.Entity("ICCReservasServer.Models.Materias", b =>
+            modelBuilder.Entity("Entities.Models.Materias", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -280,108 +280,6 @@ namespace ICCReservasServer.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Materias");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.ReservaDispositivo", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("DispositivoID")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("ReservaID")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("DispositivoID");
-
-                    b.HasIndex("ReservaID");
-
-                    b.ToTable("ReservaDispositivo");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Reservas", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("ClaseID")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("DatetimeCreacion")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime>("DatetimeReservacion")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("InstalacionID")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("ClaseID");
-
-                    b.HasIndex("InstalacionID");
-
-                    b.ToTable("Reservas");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Status", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("Codigo")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Descripcion")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Tipo")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Status");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.StatusReserva", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<DateTime>("FechaStatus")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("ReservaID")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("StatusID")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("ReservaID");
-
-                    b.HasIndex("StatusID");
-
-                    b.ToTable("StatusReserva");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -520,22 +418,22 @@ namespace ICCReservasServer.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ICCReservasServer.Models.Clases", b =>
+            modelBuilder.Entity("Entities.Models.Clases", b =>
                 {
-                    b.HasOne("ICCReservasServer.Models.Horarios", "Horario")
+                    b.HasOne("Entities.Models.Horarios", "Horario")
                         .WithMany()
                         .HasForeignKey("HorarioID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ICCReservasServer.Models.Materias", "Materia")
-                        .WithMany("Clases")
+                    b.HasOne("Entities.Models.Materias", "Materia")
+                        .WithMany()
                         .HasForeignKey("MateriaID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ICCReservasServer.Models.ApplicationUser", "User")
-                        .WithMany("Clases")
+                    b.HasOne("Entities.Models.ApplicationUser", "User")
+                        .WithMany()
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -545,63 +443,6 @@ namespace ICCReservasServer.Migrations
                     b.Navigation("Materia");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.ReservaDispositivo", b =>
-                {
-                    b.HasOne("ICCReservasServer.Models.Dispositivos", "Dispositivo")
-                        .WithMany()
-                        .HasForeignKey("DispositivoID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ICCReservasServer.Models.Reservas", "Reserva")
-                        .WithMany("ReservaDispositivo")
-                        .HasForeignKey("ReservaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Dispositivo");
-
-                    b.Navigation("Reserva");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Reservas", b =>
-                {
-                    b.HasOne("ICCReservasServer.Models.Clases", "Clase")
-                        .WithMany("Reservas")
-                        .HasForeignKey("ClaseID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ICCReservasServer.Models.Instalaciones", "Instalacion")
-                        .WithMany()
-                        .HasForeignKey("InstalacionID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Clase");
-
-                    b.Navigation("Instalacion");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.StatusReserva", b =>
-                {
-                    b.HasOne("ICCReservasServer.Models.Reservas", "Reserva")
-                        .WithMany("StatusReserva")
-                        .HasForeignKey("ReservaID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ICCReservasServer.Models.Status", "Status")
-                        .WithMany("StatusReserva")
-                        .HasForeignKey("StatusID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Reserva");
-
-                    b.Navigation("Status");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -615,7 +456,7 @@ namespace ICCReservasServer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("ICCReservasServer.Models.ApplicationUser", null)
+                    b.HasOne("Entities.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -624,7 +465,7 @@ namespace ICCReservasServer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("ICCReservasServer.Models.ApplicationUser", null)
+                    b.HasOne("Entities.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -639,7 +480,7 @@ namespace ICCReservasServer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ICCReservasServer.Models.ApplicationUser", null)
+                    b.HasOne("Entities.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -648,38 +489,11 @@ namespace ICCReservasServer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("ICCReservasServer.Models.ApplicationUser", null)
+                    b.HasOne("Entities.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.ApplicationUser", b =>
-                {
-                    b.Navigation("Clases");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Clases", b =>
-                {
-                    b.Navigation("Reservas");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Materias", b =>
-                {
-                    b.Navigation("Clases");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Reservas", b =>
-                {
-                    b.Navigation("ReservaDispositivo");
-
-                    b.Navigation("StatusReserva");
-                });
-
-            modelBuilder.Entity("ICCReservasServer.Models.Status", b =>
-                {
-                    b.Navigation("StatusReserva");
                 });
 #pragma warning restore 612, 618
         }

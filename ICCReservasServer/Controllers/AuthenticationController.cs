@@ -1,5 +1,5 @@
 ﻿using ICCReservasServer.DTOs;
-using ICCReservasServer.Models;
+using Entities.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
