@@ -25,6 +25,7 @@ public class ApplicationDataContext : IdentityDbContext<ApplicationUser>
         builder.ApplyConfiguration(new HorariosConfiguration());
         builder.ApplyConfiguration(new MateriasConfiguration());
         builder.ApplyConfiguration(new DispositivosConfiguration());
+        builder.ApplyConfiguration(new ApplicationUserConfiguration());
 
     }
 

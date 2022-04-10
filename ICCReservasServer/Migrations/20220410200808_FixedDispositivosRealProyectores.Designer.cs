@@ -3,6 +3,7 @@ using System;
 using Entities.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ICCReservasServer.Migrations
 {
     [DbContext(typeof(ApplicationDataContext))]
-    partial class ApplicationDataContextModelSnapshot : ModelSnapshot
+    [Migration("20220410200808_FixedDispositivosRealProyectores")]
+    partial class FixedDispositivosRealProyectores
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +43,11 @@ namespace ICCReservasServer.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("LastNames")
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -51,8 +57,7 @@ namespace ICCReservasServer.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("Names")
-                        .IsRequired()
+                    b.Property<string>("MiddleName")
                         .HasColumnType("text");
 
                     b.Property<string>("NormalizedEmail")
@@ -72,13 +77,11 @@ namespace ICCReservasServer.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("SecurityStamp")
+                    b.Property<string>("SecondLastName")
                         .HasColumnType("text");
 
-                    b.Property<int>("Status")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasDefaultValue(1);
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("text");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("boolean");
@@ -97,26 +100,6 @@ namespace ICCReservasServer.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "a288e6a4-2f61-4dbf-ad97-d6d21b564002",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "fd3d87cb-4915-4867-9308-1a21d86706cb",
-                            Email = "nadorno@cumbrescaracas.edu.ve",
-                            EmailConfirmed = false,
-                            LastNames = "Adorno",
-                            LockoutEnabled = false,
-                            Names = "Nayi",
-                            NormalizedEmail = "NADORNO@CUMBRESCARACAS.EDU.VE",
-                            NormalizedUserName = "NADORNO",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "47a76f0c-86cb-431e-a396-60f124c064d2",
-                            Status = 0,
-                            TwoFactorEnabled = false,
-                            UserName = "nadorno"
-                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Clases", b =>
@@ -493,150 +476,6 @@ namespace ICCReservasServer.Migrations
                             HoraInicio = "13:15:00",
                             Nivel = "HS",
                             Numero = 7
-                        },
-                        new
-                        {
-                            ID = 8,
-                            HoraFin = "09:00:00",
-                            HoraInicio = "08:15:00",
-                            Nivel = "MS",
-                            Numero = 1
-                        },
-                        new
-                        {
-                            ID = 9,
-                            HoraFin = "09:45:00",
-                            HoraInicio = "09:00:00",
-                            Nivel = "MS",
-                            Numero = 2
-                        },
-                        new
-                        {
-                            ID = 10,
-                            HoraFin = "11:15:00",
-                            HoraInicio = "10:30:00",
-                            Nivel = "MS",
-                            Numero = 3
-                        },
-                        new
-                        {
-                            ID = 11,
-                            HoraFin = "12:00:00",
-                            HoraInicio = "11:15:00",
-                            Nivel = "MS",
-                            Numero = 4
-                        },
-                        new
-                        {
-                            ID = 12,
-                            HoraFin = "12:55:00",
-                            HoraInicio = "12:10:00",
-                            Nivel = "MS",
-                            Numero = 5
-                        },
-                        new
-                        {
-                            ID = 13,
-                            HoraFin = "13:40:00",
-                            HoraInicio = "12:55:00",
-                            Nivel = "MS",
-                            Numero = 6
-                        },
-                        new
-                        {
-                            ID = 14,
-                            HoraFin = "09:40:00",
-                            HoraInicio = "08:50:00",
-                            Nivel = "UE",
-                            Numero = 1
-                        },
-                        new
-                        {
-                            ID = 15,
-                            HoraFin = "10:30:00",
-                            HoraInicio = "09:40:00",
-                            Nivel = "UE",
-                            Numero = 2
-                        },
-                        new
-                        {
-                            ID = 16,
-                            HoraFin = "12:00:00",
-                            HoraInicio = "11:15:00",
-                            Nivel = "UE",
-                            Numero = 3
-                        },
-                        new
-                        {
-                            ID = 17,
-                            HoraFin = "12:45:00",
-                            HoraInicio = "12:00:00",
-                            Nivel = "UE",
-                            Numero = 4
-                        },
-                        new
-                        {
-                            ID = 18,
-                            HoraFin = "13:50:00",
-                            HoraInicio = "13:05:00",
-                            Nivel = "UE",
-                            Numero = 5
-                        },
-                        new
-                        {
-                            ID = 19,
-                            HoraFin = "14:35:00",
-                            HoraInicio = "13:50:00",
-                            Nivel = "UE",
-                            Numero = 6
-                        },
-                        new
-                        {
-                            ID = 20,
-                            HoraFin = "09:40:00",
-                            HoraInicio = "08:50:00",
-                            Nivel = "LE",
-                            Numero = 1
-                        },
-                        new
-                        {
-                            ID = 21,
-                            HoraFin = "10:30:00",
-                            HoraInicio = "09:40:00",
-                            Nivel = "LE",
-                            Numero = 2
-                        },
-                        new
-                        {
-                            ID = 22,
-                            HoraFin = "11:15:00",
-                            HoraInicio = "10:30:00",
-                            Nivel = "LE",
-                            Numero = 3
-                        },
-                        new
-                        {
-                            ID = 23,
-                            HoraFin = "12:45:00",
-                            HoraInicio = "12:00:00",
-                            Nivel = "LE",
-                            Numero = 4
-                        },
-                        new
-                        {
-                            ID = 24,
-                            HoraFin = "13:30:00",
-                            HoraInicio = "12:45:00",
-                            Nivel = "LE",
-                            Numero = 5
-                        },
-                        new
-                        {
-                            ID = 25,
-                            HoraFin = "14:35:00",
-                            HoraInicio = "13:50:00",
-                            Nivel = "LE",
-                            Numero = 6
                         });
                 });
 

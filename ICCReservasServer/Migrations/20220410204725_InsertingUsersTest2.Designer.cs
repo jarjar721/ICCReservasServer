@@ -3,6 +3,7 @@ using System;
 using Entities.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ICCReservasServer.Migrations
 {
     [DbContext(typeof(ApplicationDataContext))]
-    partial class ApplicationDataContextModelSnapshot : ModelSnapshot
+    [Migration("20220410204725_InsertingUsersTest2")]
+    partial class InsertingUsersTest2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,11 +77,6 @@ namespace ICCReservasServer.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("text");
 
-                    b.Property<int>("Status")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasDefaultValue(1);
-
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("boolean");
 
@@ -101,19 +98,16 @@ namespace ICCReservasServer.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a288e6a4-2f61-4dbf-ad97-d6d21b564002",
+                            Id = "7ae47d34-75d1-4f75-b070-dc4acd2fe668",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fd3d87cb-4915-4867-9308-1a21d86706cb",
+                            ConcurrencyStamp = "39c3034d-0350-4d64-8bb8-3f1faf4c23a9",
                             Email = "nadorno@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Adorno",
                             LockoutEnabled = false,
                             Names = "Nayi",
-                            NormalizedEmail = "NADORNO@CUMBRESCARACAS.EDU.VE",
-                            NormalizedUserName = "NADORNO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "47a76f0c-86cb-431e-a396-60f124c064d2",
-                            Status = 0,
+                            SecurityStamp = "143b58c9-660b-44e8-9486-b89c00fc47f9",
                             TwoFactorEnabled = false,
                             UserName = "nadorno"
                         });

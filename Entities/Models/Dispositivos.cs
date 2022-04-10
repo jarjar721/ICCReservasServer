@@ -7,16 +7,28 @@ namespace Entities.Models
         [Required]
         [Key]
         public int ID { get; set; }
+
         [Required]
         public string Tipo { get; set; }
+
         [Required]
-        public string Descripcion { get; set; }
+        public string Observacion { get; set; }
+
         [Required]
         public string Marca { get; set; }
+
         [Required]
         public string Modelo { get; set; }
+
         [Required]
         public string Serial { get; set; }
+
+        [Required]
+        public string Uso { get; set; }
+
+        [Required]
+        public string Ubicacion { get; set; }
+
         [Required]
         public int Status { get; set; }
 

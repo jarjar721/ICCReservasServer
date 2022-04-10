@@ -11,11 +11,13 @@ namespace Entities.Models;
 public class ApplicationUser : IdentityUser
 {
     [Required]
-    public string FirstName { get; set; }
-    public string? MiddleName { get; set; }
+    public string Names { get; set; }
+
     [Required]
-    public string LastName { get; set; }
-    public string? SecondLastName { get; set; }
+    public string LastNames { get; set; }
+
+    [Required]
+    public int Status { get; set; }
 
     //public List<Clases> Clases { get; set; }
 }

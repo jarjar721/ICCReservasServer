@@ -85,10 +85,8 @@ namespace ICCReservasServer.Controllers
 
                 var responseUser = new { 
                     userID = user.Id,
-                    firstName = user.FirstName,
-                    middleName = user.MiddleName,
-                    lastName = user.LastName,
-                    secondLastName = user.SecondLastName,
+                    firstName = user.Names,
+                    lastName = user.LastNames,
                     email = user.Email,
                     userName = user.UserName
                 };

@@ -16,6 +16,7 @@ namespace Entities.Configurations
             builder.ToTable("Materias");
 
             builder.HasData(
+                // HS - 3ER AÑO
                 new Materias { ID = 1, Codigo = "HS-9-1", Nivel = "HS", Grado = "9", Nombre = "Química", Descripcion = "Descripción de Química", Status = 1 },
                 new Materias { ID = 2, Codigo = "HS-9-2", Nivel = "HS", Grado = "9", Nombre = "Geografía de Venezuela", Descripcion = "Descripción de Geografía de Venezuela", Status = 1 },
                 new Materias { ID = 3, Codigo = "HS-9-3", Nivel = "HS", Grado = "9", Nombre = "Oratoria", Descripcion = "Descripción de Oratoria", Status = 1 },

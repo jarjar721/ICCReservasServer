@@ -58,7 +58,7 @@ namespace ICCReservasServer.Controllers
         //[Authorize]
         [Route("Create")]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Tipo,Descripcion,Marca,Modelo,Serial,Status")] Dispositivos dispositivo)
+        public async Task<IActionResult> Create([Bind("ID,Tipo,Observacion,Marca,Modelo,Serial,Uso,Ubicacion,Status")] Dispositivos dispositivo)
         {
             if (ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace ICCReservasServer.Controllers
         [Route("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Tipo,Descripcion,Marca,Modelo,Serial,Status")] Dispositivos dispositivo)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Tipo,Observacion,Marca,Modelo,Serial,Uso,Ubicacion,Status")] Dispositivos dispositivo)
         {
             if (ModelState.IsValid)
             {

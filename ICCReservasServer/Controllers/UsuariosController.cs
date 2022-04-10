@@ -40,10 +40,8 @@ namespace ICCReservasServer.Controllers
             var responseUser = new
             {
                 userID = user.Id,
-                firstName = user.FirstName,
-                middleName = user.MiddleName,
-                lastName = user.LastName,
-                secondLastName = user.SecondLastName,
+                firstName = user.Names,
+                lastName = user.LastNames,
                 email = user.Email,
                 userName = user.UserName
             };
@@ -58,10 +56,8 @@ namespace ICCReservasServer.Controllers
         {
             var applicationUser = new ApplicationUser()
             {
-                FirstName = userDTO.FirstName,
-                MiddleName = userDTO.MiddleName,
-                LastName = userDTO.LastName,
-                SecondLastName = userDTO.SecondLastName,
+                Names = userDTO.FirstName,
+                LastNames = userDTO.LastName,
                 Email = userDTO.Email,
                 UserName = userDTO.Email.Split('@')[0]
             };
