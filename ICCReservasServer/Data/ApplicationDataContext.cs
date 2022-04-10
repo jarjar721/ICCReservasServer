@@ -18,13 +18,16 @@ public class ApplicationDataContext : IdentityDbContext<ApplicationUser>
         // Customize the ASP.NET Identity model and override the defaults if needed.
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
+
     }
 
-    public DbSet<ICCReservasServer.Models.Instalaciones> Instalaciones { get; set; }
+    public DbSet<Instalaciones> Instalaciones { get; set; }
 
-    public DbSet<ICCReservasServer.Models.Dispositivos> Dispositivos { get; set; }
+    public DbSet<Dispositivos> Dispositivos { get; set; }
 
-    public DbSet<ICCReservasServer.Models.Horarios> Horarios { get; set; }
+    public DbSet<Horarios> Horarios { get; set; }
 
-    public DbSet<ICCReservasServer.Models.Materias> Materias { get; set; }
+    public DbSet<Materias> Materias { get; set; }
+
+    public DbSet<ICCReservasServer.Models.Clases> Clases { get; set; }
 }

@@ -14,7 +14,7 @@ namespace ICCReservasServer.Models
         public int MateriaID { get; set; }
         public Materias Materia { get; set; }
 
-        public List<Reservas> Reservas { get; set; }
+        //public List<Reservas> Reservas { get; set; }
 
         public string UserID { get; set; }
         public ApplicationUser User { get; set; }
