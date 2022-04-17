@@ -1,13 +1,7 @@
-﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Entities.Data;
 using Entities.Models;
+using ICCReservasServer.Repos;
 
 namespace ICCReservasServer.Controllers
 {
@@ -15,11 +9,11 @@ namespace ICCReservasServer.Controllers
     [ApiController]
     public class DispositivosController : Controller
     {
-        private readonly ApplicationDataContext _context;
+        private readonly IDispositivosRepository _repo;
 
-        public DispositivosController(ApplicationDataContext context)
+        public DispositivosController(IDispositivosRepository repo)
         {
-            _context = context;
+            _repo = repo;
         }
 
         // GET: Dispositivos
@@ -27,7 +21,7 @@ namespace ICCReservasServer.Controllers
         //[Authorize]
         public async Task<IActionResult> Index()
         {
-            return Ok(await _context.Dispositivos.ToListAsync());
+            return Ok(await _repo.Index());
         }
 
         // GET: Dispositivos/Details/5
@@ -41,8 +35,7 @@ namespace ICCReservasServer.Controllers
                 return NotFound();
             }
 
-            var dispositivo = await _context.Dispositivos
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var dispositivo = await _repo.Details(id);
             if (dispositivo == null)
             {
                 return NotFound();
@@ -62,9 +55,8 @@ namespace ICCReservasServer.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(dispositivo);
-                var result = await _context.SaveChangesAsync();
-                return Ok(result);
+                _repo.Create(dispositivo);
+                return Ok(await _repo.SaveAsync());
             }
             else
                 return BadRequest(new { code = "InstalacionNotCreated", message = "Error: no se pudo crear la instalación." });
@@ -83,13 +75,12 @@ namespace ICCReservasServer.Controllers
             {
                 try
                 {
-                    _context.Update(dispositivo);
-                    var result = await _context.SaveChangesAsync();
-                    return Ok(result);
+                    _repo.Edit(id, dispositivo);
+                    return Ok(await _repo.SaveAsync());
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DispositivosExists(id))
+                    if (!_repo.DispositivosExists(id))
                     {
                         return NotFound();
                     }
@@ -110,15 +101,9 @@ namespace ICCReservasServer.Controllers
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var dispositivo = await _context.Dispositivos.FindAsync(id);
-            _context.Dispositivos.Remove(dispositivo);
-            var result = await _context.SaveChangesAsync();
-            return Ok(result);
+            _repo.DeleteConfirmed(id);
+            return Ok(await _repo.SaveAsync());
         }
 
-        private bool DispositivosExists(int id)
-        {
-            return _context.Dispositivos.Any(e => e.ID == id);
-        }
     }
 }

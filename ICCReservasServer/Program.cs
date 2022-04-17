@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using ICCReservasServer.DTOs;
+using ICCReservasServer.Repos;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDataContextConnection");
@@ -36,6 +37,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     });
 
 builder.Services.AddCors();
+builder.Services.AddScoped<IDispositivosRepository, DispositivosRepository>();
 
 //JWT Authentication
 var JWT_Secret = builder.Configuration.GetSection("ApplicationSettings:JWT_Secret").Value;
