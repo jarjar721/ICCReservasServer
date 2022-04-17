@@ -14,6 +14,6 @@ namespace Entities.Models
         [Required]
         public string Descripcion { get; set; }
 
-        //public List<StatusReserva> StatusReserva { get; set; }
+        public List<StatusReserva>? StatusReserva { get; set; }
     }
 }

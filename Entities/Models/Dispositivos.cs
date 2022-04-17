@@ -32,6 +32,6 @@ namespace Entities.Models
         [Required]
         public int Status { get; set; }
 
-        //public List<ReservaDispositivo> ReservaDispositivo { get; set; }
+        public List<ReservaDispositivo>? ReservaDispositivo { get; set; }
     }
 }

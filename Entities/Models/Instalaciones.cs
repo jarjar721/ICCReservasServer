@@ -24,6 +24,6 @@ namespace Entities.Models
         [Required]
         public int Status { get; set; }
 
-        //public List<Reservas> Reservas { get; set; }
+        public List<Reservas>? Reservas { get; set; }
     }
 }

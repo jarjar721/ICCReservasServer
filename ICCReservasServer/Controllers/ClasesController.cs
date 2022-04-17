@@ -52,7 +52,7 @@ namespace ICCReservasServer.Controllers
                 return NotFound();
             }
 
-            return View(clases);
+            return Ok(clases);
         }
 
         // POST: Clases/Create
@@ -67,13 +67,11 @@ namespace ICCReservasServer.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(clases);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var result = await _context.SaveChangesAsync();
+                return Ok(result);
             }
-            ViewData["HorarioID"] = new SelectList(_context.Horarios, "ID", "HoraFin", clases.HorarioID);
-            ViewData["MateriaID"] = new SelectList(_context.Materias, "ID", "Codigo", clases.MateriaID);
-            ViewData["UserID"] = new SelectList(_context.Users, "Id", "Id", clases.UserID);
-            return View(clases);
+            else
+                return BadRequest(new { code = "ClaseNotCreated", message = "Error: no se pudo crear la clase." });
         }
 
         // PUT: Clases/Edit/5
@@ -85,17 +83,13 @@ namespace ICCReservasServer.Controllers
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,HorarioID,MateriaID,UserID")] Clases clases)
         {
-            if (id != clases.ID)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
                 try
                 {
                     _context.Update(clases);
-                    await _context.SaveChangesAsync();
+                    var result = await _context.SaveChangesAsync();
+                    return Ok(result);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -108,12 +102,9 @@ namespace ICCReservasServer.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
-            ViewData["HorarioID"] = new SelectList(_context.Horarios, "ID", "HoraFin", clases.HorarioID);
-            ViewData["MateriaID"] = new SelectList(_context.Materias, "ID", "Codigo", clases.MateriaID);
-            ViewData["UserID"] = new SelectList(_context.Users, "Id", "Id", clases.UserID);
-            return View(clases);
+            else
+                return BadRequest(new { code = "InvalidModelState", message = "Error: ModelState inválido." });
         }
 
         // DELETE: Clases/Delete/5
@@ -125,8 +116,8 @@ namespace ICCReservasServer.Controllers
         {
             var clases = await _context.Clases.FindAsync(id);
             _context.Clases.Remove(clases);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            var result = await _context.SaveChangesAsync();
+            return Ok(result);
         }
 
         private bool ClasesExists(int id)

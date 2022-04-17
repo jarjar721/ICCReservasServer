@@ -11,9 +11,9 @@ namespace Entities.Models
         public DateTime FechaStatus { get; set; }
 
         public int ReservaID { get; set; }
-        public Reservas Reserva { get; set; }
+        public Reservas? Reserva { get; set; }
 
         public int StatusID { get; set; }
-        public Status Status { get; set; }
+        public Status? Status { get; set; }
     }
 }

@@ -23,6 +23,6 @@ namespace Entities.Models
         //[Required]
         //public string TipoHora { get; set; }
 
-        //public List<Clases> Clases { get; set; }
+        public List<Clases>? Clases { get; set; }
     }
 }
