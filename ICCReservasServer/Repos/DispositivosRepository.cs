@@ -1,5 +1,6 @@
 ﻿using Entities.Data;
 using Entities.Models;
+using ICCReservasServer.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace ICCReservasServer.Repos
@@ -18,18 +19,15 @@ namespace ICCReservasServer.Repos
             await _context.Dispositivos.AddAsync(dispositivo);
         }
 
-        public async void DeleteConfirmed(int id)
+        public void DeleteConfirmed(int id)
         {
-            var dispositivo = await _context.Dispositivos.FindAsync(id);
+            var dispositivo = _context.Dispositivos.Find(id);
             _context.Dispositivos.Remove(dispositivo);
         }
 
         public async Task<Dispositivos> Details(int? id)
         {
-            var dispositivo = await _context.Dispositivos
-                .FirstOrDefaultAsync(m => m.ID == id);
-
-            return dispositivo;
+            return await _context.Dispositivos.FirstOrDefaultAsync(m => m.ID == id);
         }
 
         public void Edit(int id, Dispositivos dispositivo)
@@ -40,11 +38,6 @@ namespace ICCReservasServer.Repos
         public async Task<IEnumerable<Dispositivos>> Index()
         {
             return await _context.Dispositivos.ToListAsync();
-        }
-
-        public async Task<bool> SaveAsync()
-        {
-            return await _context.SaveChangesAsync() > 0;
         }
 
         public bool DispositivosExists(int id)

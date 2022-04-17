@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Entities.Models;
-using ICCReservasServer.Repos;
+using ICCReservasServer.Interfaces;
+using ICCReservasServer.DTOs;
 
 namespace ICCReservasServer.Controllers
 {
@@ -9,11 +10,11 @@ namespace ICCReservasServer.Controllers
     [ApiController]
     public class DispositivosController : Controller
     {
-        private readonly IDispositivosRepository _repo;
+        private readonly IUnitOfWork _uow;
 
-        public DispositivosController(IDispositivosRepository repo)
+        public DispositivosController(IUnitOfWork uow)
         {
-            _repo = repo;
+            _uow = uow;
         }
 
         // GET: Dispositivos
@@ -21,7 +22,21 @@ namespace ICCReservasServer.Controllers
         //[Authorize]
         public async Task<IActionResult> Index()
         {
-            return Ok(await _repo.Index());
+            var dispositivos = await _uow.DispositivosRepository.Index();
+            var dispositivosDTO = from dispositivo in dispositivos
+                                  select new DispositivosDTO {
+                                      ID = dispositivo.ID,
+                                      Tipo = dispositivo.Tipo,
+                                      Marca = dispositivo.Marca,
+                                      Modelo = dispositivo.Modelo,
+                                      Observacion = dispositivo.Observacion,
+                                      Serial = dispositivo.Serial,
+                                      Status = dispositivo.Status,
+                                      Ubicacion = dispositivo.Ubicacion,
+                                      Uso = dispositivo.Uso
+                                  };
+
+            return Ok(dispositivosDTO);
         }
 
         // GET: Dispositivos/Details/5
@@ -35,7 +50,7 @@ namespace ICCReservasServer.Controllers
                 return NotFound();
             }
 
-            var dispositivo = await _repo.Details(id);
+            var dispositivo = await _uow.DispositivosRepository.Details(id);
             if (dispositivo == null)
             {
                 return NotFound();
@@ -51,12 +66,25 @@ namespace ICCReservasServer.Controllers
         //[Authorize]
         [Route("Create")]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Tipo,Observacion,Marca,Modelo,Serial,Uso,Ubicacion,Status")] Dispositivos dispositivo)
+        public async Task<IActionResult> Create(DispositivosDTO dispositivoDTO)
         {
             if (ModelState.IsValid)
             {
-                _repo.Create(dispositivo);
-                return Ok(await _repo.SaveAsync());
+                var dispositivo = new Dispositivos { 
+                    ID = dispositivoDTO.ID,
+                    Tipo = dispositivoDTO.Tipo,
+                    Marca = dispositivoDTO.Marca,
+                    Modelo = dispositivoDTO.Modelo,
+                    Observacion = dispositivoDTO.Observacion,
+                    Serial = dispositivoDTO.Serial,
+                    Status = dispositivoDTO.Status,
+                    Ubicacion = dispositivoDTO.Ubicacion,
+                    Uso = dispositivoDTO.Uso,
+                    LastUpdatedOn = DateTime.UtcNow
+                };
+
+                _uow.DispositivosRepository.Create(dispositivo);
+                return Ok(await _uow.SaveAsync());
             }
             else
                 return BadRequest(new { code = "InstalacionNotCreated", message = "Error: no se pudo crear la instalación." });
@@ -69,18 +97,18 @@ namespace ICCReservasServer.Controllers
         [Route("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Tipo,Observacion,Marca,Modelo,Serial,Uso,Ubicacion,Status")] Dispositivos dispositivo)
+        public async Task<IActionResult> Edit(int id, Dispositivos dispositivo)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _repo.Edit(id, dispositivo);
-                    return Ok(await _repo.SaveAsync());
+                    _uow.DispositivosRepository.Edit(id, dispositivo);
+                    return Ok(await _uow.SaveAsync());
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_repo.DispositivosExists(id))
+                    if (!_uow.DispositivosRepository.DispositivosExists(id))
                     {
                         return NotFound();
                     }
@@ -101,8 +129,8 @@ namespace ICCReservasServer.Controllers
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            _repo.DeleteConfirmed(id);
-            return Ok(await _repo.SaveAsync());
+            _uow.DispositivosRepository.DeleteConfirmed(id);
+            return Ok(await _uow.SaveAsync());
         }
 
     }

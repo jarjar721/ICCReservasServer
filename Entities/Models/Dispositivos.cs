@@ -32,6 +32,11 @@ namespace Entities.Models
         [Required]
         public int Status { get; set; }
 
+        public DateTime? LastUpdatedOn { get; set; }
+
+        public string? LastUpdatedByID { get; set; }
+
         public List<ReservaDispositivo>? ReservaDispositivo { get; set; }
+
     }
 }

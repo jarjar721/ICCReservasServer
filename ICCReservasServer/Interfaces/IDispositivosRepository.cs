@@ -1,6 +1,6 @@
 ﻿using Entities.Models;
 
-namespace ICCReservasServer.Repos
+namespace ICCReservasServer.Interfaces
 {
     public interface IDispositivosRepository
     {
@@ -16,6 +16,5 @@ namespace ICCReservasServer.Repos
 
         bool DispositivosExists(int id);
 
-        Task<bool> SaveAsync();
     }
 }
