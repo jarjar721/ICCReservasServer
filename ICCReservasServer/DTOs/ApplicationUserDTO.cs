@@ -5,7 +5,7 @@ namespace ICCReservasServer.DTOs
     [NotMapped]
     public class ApplicationUserDTO
     {
-        public string ID { get; set; }
+        public string? ID { get; set; }
 
         public string Names { get; set; }
 

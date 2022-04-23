@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ICCReservasServer.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -87,11 +88,55 @@ namespace ICCReservasServer.Controllers
                     UserName = applicationUserDTO.Email.Split('@')[0]
                 };
 
-                _uow.UsuariosRepository.Create(applicationUser);
-                return Ok(await _uow.SaveAsync());
+                //await _uow.UsuariosRepository.Create(applicationUser);
+                return Ok(await _uow.UsuariosRepository.Create(applicationUser));
             }
             else
                 return BadRequest(new { code = "UsuarioNotCreated", message = "Error: no se pudo crear el usuario." });
+        }
+
+        // PUT: Usuarios/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPut]
+        [Route("Edit/{id}")]
+        //[Authorize]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, ApplicationUserDTO applicationUserDTO)
+        {
+            if (ModelState.IsValid)
+            {
+
+                try
+                {
+                    //await _uow.UsuariosRepository.Edit(usuario);
+                    return Ok(await _uow.UsuariosRepository.Edit(id, applicationUserDTO));
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!_uow.UsuariosRepository.ApplicationUserExists(id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+            }
+            else
+                return BadRequest(new { code = "InvalidModelState", message = "Error: ModelState inválido." });
+        }
+
+        // DELETE: Usuarios/Delete/5
+        [HttpDelete]
+        //[Authorize]
+        [Route("Delete/{id}")]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+            //await _uow.UsuariosRepository.DeleteConfirmed(id);
+            return Ok(await _uow.UsuariosRepository.DeleteConfirmed(id));
         }
 
     }

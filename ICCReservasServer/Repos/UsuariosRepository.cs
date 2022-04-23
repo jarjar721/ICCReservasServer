@@ -1,5 +1,6 @@
 ﻿using Entities.Data;
 using Entities.Models;
+using ICCReservasServer.DTOs;
 using ICCReservasServer.Interfaces;
 using Microsoft.AspNetCore.Identity;
 
@@ -16,15 +17,15 @@ namespace ICCReservasServer.Repos
             this._userManager = userManager;
         }
 
-        public async void Create(ApplicationUser applicationUser)
+        public async Task<IdentityResult> Create(ApplicationUser applicationUser)
         {
-            await _userManager.CreateAsync(applicationUser);
+            return await _userManager.CreateAsync(applicationUser);
         }
 
-        public async void DeleteConfirmed(string id)
+        public async Task<IdentityResult> DeleteConfirmed(string id)
         {
             ApplicationUser applicationUser = await _userManager.FindByIdAsync(id);
-            await _userManager.DeleteAsync(applicationUser);
+            return await _userManager.DeleteAsync(applicationUser);
         }
 
         public async Task<ApplicationUser> Details(string? id)
@@ -32,9 +33,17 @@ namespace ICCReservasServer.Repos
             return await _userManager.FindByIdAsync(id);
         }
 
-        public async void Edit(ApplicationUser applicationUser)
+        public async Task<IdentityResult> Edit(string id, ApplicationUserDTO applicationUserDTO)
         {
-            await _userManager.UpdateAsync(applicationUser);
+            var usuario = await _userManager.FindByIdAsync(id);
+
+            usuario.Email = applicationUserDTO.Email;
+            usuario.UserName = applicationUserDTO.UserName;
+            usuario.Names = applicationUserDTO.Names;
+            usuario.LastNames = applicationUserDTO.LastNames;
+
+            return await _userManager.UpdateAsync(usuario);
+
         }
 
         public IEnumerable<ApplicationUser> Index()

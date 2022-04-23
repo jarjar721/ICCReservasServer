@@ -1,4 +1,6 @@
 ﻿using Entities.Models;
+using ICCReservasServer.DTOs;
+using Microsoft.AspNetCore.Identity;
 
 namespace ICCReservasServer.Interfaces
 {
@@ -6,13 +8,13 @@ namespace ICCReservasServer.Interfaces
     {
         Task<ApplicationUser> Details(string? id);
 
-        void Create(ApplicationUser applicationUser);
+        Task<IdentityResult> Create(ApplicationUser applicationUser);
 
         IEnumerable<ApplicationUser> Index();
 
-        void Edit(ApplicationUser applicationUser);
+        Task<IdentityResult> Edit(string id, ApplicationUserDTO applicationUserDTO);
 
-        void DeleteConfirmed(string id);
+        Task<IdentityResult> DeleteConfirmed(string id);
 
         bool ApplicationUserExists(string id);
     }
