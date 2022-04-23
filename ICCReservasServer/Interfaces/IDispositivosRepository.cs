@@ -10,7 +10,7 @@ namespace ICCReservasServer.Interfaces
 
         void Create(Dispositivos dispositivo);
 
-        void Edit(int id, Dispositivos dispositivo);
+        void Edit(Dispositivos dispositivo);
 
         void DeleteConfirmed(int id);
 

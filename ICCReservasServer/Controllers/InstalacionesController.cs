@@ -1,15 +1,9 @@
-﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Entities.Data;
-using Microsoft.AspNetCore.Authorization;
 using ICCReservasServer.DTOs;
 using Entities.Models;
+using ICCReservasServer.Interfaces;
 
 namespace ICCReservasServer.Controllers
 {
@@ -17,19 +11,34 @@ namespace ICCReservasServer.Controllers
     [ApiController]
     public class InstalacionesController : Controller
     {
-        private readonly ApplicationDataContext _context;
+        private readonly IUnitOfWork _uow;
 
-        public InstalacionesController(ApplicationDataContext context)
+        public InstalacionesController(IUnitOfWork uow)
         {
-            _context = context;
+            this._uow = uow;
         }
 
         // GET: Instalaciones
         [HttpGet]
         //[Authorize]
-        public async Task<IActionResult> GetAllInstalaciones()
+        public async Task<IActionResult> Index()
         {
-            return Ok(await _context.Instalaciones.ToListAsync());
+            var instalaciones = await _uow.InstalacionesRepository.Index();
+            var instalacionDTO = from instalacion in instalaciones
+                                 select new InstalacionesDTO
+                                 {
+                                  ID = instalacion.ID,
+                                  Codigo = instalacion.Codigo,
+                                  Nombre = instalacion.Nombre,
+                                  Tipo = instalacion.Tipo,
+                                  Descripcion = instalacion.Descripcion,
+                                  Capacidad = instalacion.Capacidad,
+                                  Edificio = instalacion.Edificio,
+                                  Piso = instalacion.Piso,
+                                  Status = instalacion.Status
+                              };
+
+            return Ok(instalacionDTO);
         }
 
         // GET: Instalaciones/Details/5
@@ -43,14 +52,25 @@ namespace ICCReservasServer.Controllers
                 return NotFound();
             }
 
-            var instalacion = await _context.Instalaciones
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var instalacion = await _uow.InstalacionesRepository.Details(id);
             if (instalacion == null)
             {
                 return NotFound();
             }
 
-            return Ok(instalacion);
+            var instalacionDTO = new InstalacionesDTO {
+                ID = instalacion.ID,
+                Codigo = instalacion.Codigo,
+                Tipo = instalacion.Tipo,
+                Nombre = instalacion.Nombre,
+                Capacidad = instalacion.Capacidad,
+                Edificio = instalacion.Edificio,
+                Piso = instalacion.Piso,
+                Descripcion = instalacion.Descripcion,
+                Status = instalacion.Status
+            };
+
+            return Ok(instalacionDTO);
         }
 
         // POST: Instalaciones/Create
@@ -60,13 +80,25 @@ namespace ICCReservasServer.Controllers
         [Route("Create")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Codigo,Nombre,Tipo,Descripcion,Capacidad,Edificio,Piso,Status")] Instalaciones instalacion)
+        public async Task<IActionResult> Create(InstalacionesDTO instalacionDTO)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(instalacion);
-                var result = await _context.SaveChangesAsync();
-                return Ok(result);
+                var instalacion = new Instalaciones
+                {
+                    ID = instalacionDTO.ID,
+                    Codigo = instalacionDTO.Codigo,
+                    Nombre = instalacionDTO.Nombre,
+                    Tipo = instalacionDTO.Tipo,
+                    Descripcion = instalacionDTO.Descripcion,
+                    Capacidad = instalacionDTO.Capacidad,
+                    Edificio = instalacionDTO.Edificio,
+                    Piso = instalacionDTO.Piso,
+                    Status = instalacionDTO.Status
+                };
+
+                _uow.InstalacionesRepository.Create(instalacion);
+                return Ok(await _uow.SaveAsync());
             }
             else
             {
@@ -81,19 +113,31 @@ namespace ICCReservasServer.Controllers
         [Route("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Codigo,Nombre,Tipo,Descripcion,Capacidad,Edificio,Piso,Status")] Instalaciones instalacion)
+        public async Task<IActionResult> Edit(int id, InstalacionesDTO instalacionDTO)
         {
             if (ModelState.IsValid)
             {
+                var instalacion = new Instalaciones
+                {
+                    ID = instalacionDTO.ID,
+                    Codigo = instalacionDTO.Codigo,
+                    Nombre = instalacionDTO.Nombre,
+                    Tipo = instalacionDTO.Tipo,
+                    Descripcion = instalacionDTO.Descripcion,
+                    Capacidad = instalacionDTO.Capacidad,
+                    Edificio = instalacionDTO.Edificio,
+                    Piso = instalacionDTO.Piso,
+                    Status = instalacionDTO.Status
+                };
+
                 try
                 {
-                    _context.Update(instalacion);
-                    var result = await _context.SaveChangesAsync();
-                    return Ok(result);
+                    _uow.InstalacionesRepository.Edit(instalacion);
+                    return Ok(await _uow.SaveAsync());
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!InstalacionesExists(id))
+                    if (!_uow.InstalacionesRepository.InstalacionesExists(instalacion.ID))
                     {
                         return NotFound();
                     }
@@ -113,16 +157,9 @@ namespace ICCReservasServer.Controllers
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var instalacion = await _context.Instalaciones.FindAsync(id);
-            _context.Instalaciones.Remove(instalacion);
-            var result = await _context.SaveChangesAsync();
-            return Ok(result);
+            _uow.InstalacionesRepository.DeleteConfirmed(id);
+            return Ok(await _uow.SaveAsync());
         }
         
-
-        private bool InstalacionesExists(int id)
-        {
-            return _context.Instalaciones.Any(e => e.ID == id);
-        }
     }
 }

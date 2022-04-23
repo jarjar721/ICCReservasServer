@@ -30,7 +30,7 @@ namespace ICCReservasServer.Repos
             return await _context.Dispositivos.FirstOrDefaultAsync(m => m.ID == id);
         }
 
-        public void Edit(int id, Dispositivos dispositivo)
+        public void Edit(Dispositivos dispositivo)
         {
             _context.Dispositivos.Update(dispositivo);
         }

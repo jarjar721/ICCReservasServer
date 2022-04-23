@@ -56,7 +56,19 @@ namespace ICCReservasServer.Controllers
                 return NotFound();
             }
 
-            return Ok(dispositivo);
+            var dispositivoDTO = new DispositivosDTO { 
+                ID=dispositivo.ID,
+                Serial = dispositivo.Serial,
+                Tipo=dispositivo.Tipo,
+                Marca=dispositivo.Marca,
+                Modelo=dispositivo.Modelo,
+                Ubicacion=dispositivo.Ubicacion,
+                Observacion=dispositivo.Observacion,
+                Uso=dispositivo.Uso,
+                Status=dispositivo.Status
+            };
+
+            return Ok(dispositivoDTO);
         }
 
         // POST: Dispositivos/Create
@@ -97,18 +109,32 @@ namespace ICCReservasServer.Controllers
         [Route("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Dispositivos dispositivo)
+        public async Task<IActionResult> Edit(int id, DispositivosDTO dispositivoDTO)
         {
             if (ModelState.IsValid)
             {
+                var dispositivo = new Dispositivos
+                {
+                    ID = dispositivoDTO.ID,
+                    Tipo = dispositivoDTO.Tipo,
+                    Marca = dispositivoDTO.Marca,
+                    Modelo = dispositivoDTO.Modelo,
+                    Observacion = dispositivoDTO.Observacion,
+                    Serial = dispositivoDTO.Serial,
+                    Status = dispositivoDTO.Status,
+                    Ubicacion = dispositivoDTO.Ubicacion,
+                    Uso = dispositivoDTO.Uso,
+                    LastUpdatedOn = DateTime.UtcNow
+                };
+
                 try
                 {
-                    _uow.DispositivosRepository.Edit(id, dispositivo);
+                    _uow.DispositivosRepository.Edit(dispositivo);
                     return Ok(await _uow.SaveAsync());
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_uow.DispositivosRepository.DispositivosExists(id))
+                    if (!_uow.DispositivosRepository.DispositivosExists(dispositivo.ID))
                     {
                         return NotFound();
                     }

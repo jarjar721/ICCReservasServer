@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Entities.Data;
 using Entities.Models;
+using ICCReservasServer.Interfaces;
+using ICCReservasServer.DTOs;
 
 namespace ICCReservasServer.Controllers
 {
@@ -15,11 +17,11 @@ namespace ICCReservasServer.Controllers
     [ApiController]
     public class MateriasController : Controller
     {
-        private readonly ApplicationDataContext _context;
+        private readonly IUnitOfWork _uow;
 
-        public MateriasController(ApplicationDataContext context)
+        public MateriasController(IUnitOfWork uow)
         {
-            _context = context;
+            this._uow = uow;
         }
 
         // GET: Materias
@@ -27,7 +29,20 @@ namespace ICCReservasServer.Controllers
         //[Authorize]
         public async Task<IActionResult> Index()
         {
-            return Ok(await _context.Materias.ToListAsync());
+            var materias = await _uow.MateriasRepository.Index();
+            var materiaDTO = from materia in materias
+                             select new MateriasDTO
+                                 {
+                                     ID = materia.ID,
+                                     Codigo = materia.Codigo,
+                                     Nivel = materia.Nivel,
+                                     Grado = materia.Grado,
+                                     Nombre = materia.Nombre,
+                                     Descripcion = materia.Descripcion,
+                                     Status = materia.Status
+                                 };
+
+            return Ok(materiaDTO);
         }
 
         // GET: Materias/Details/5
@@ -41,14 +56,23 @@ namespace ICCReservasServer.Controllers
                 return NotFound();
             }
 
-            var materias = await _context.Materias
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (materias == null)
+            var materia = await _uow.MateriasRepository.Details(id);
+            if (materia == null)
             {
                 return NotFound();
             }
 
-            return Ok(materias);
+            var materiaDTO = new MateriasDTO { 
+                ID = materia.ID,
+                Codigo = materia.Codigo,
+                Nivel = materia.Nivel,
+                Grado = materia.Grado,
+                Nombre = materia.Nombre,
+                Descripcion = materia.Descripcion,
+                Status = materia.Status
+            };
+
+            return Ok(materiaDTO);
         }
 
         // POST: Materias/Create
@@ -58,13 +82,23 @@ namespace ICCReservasServer.Controllers
         //[Authorize]
         [Route("Create")]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Codigo,Nombre,Grado,Nivel,Descripcion,Status")] Materias materias)
+        public async Task<IActionResult> Create(MateriasDTO materiasDTO)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(materias);
-                var result = await _context.SaveChangesAsync();
-                return Ok(result);
+                var materia = new Materias
+                {
+                    ID = materiasDTO.ID,
+                    Codigo = materiasDTO.Codigo,
+                    Nivel = materiasDTO.Nivel,
+                    Grado = materiasDTO.Grado,
+                    Nombre = materiasDTO.Nombre,
+                    Descripcion = materiasDTO.Descripcion,
+                    Status = materiasDTO.Status
+                };
+
+                _uow.MateriasRepository.Create(materia);
+                return Ok(await _uow.SaveAsync());
             }
             else
                 return BadRequest(new { code = "MateriaNotCreated", message = "Error: no se pudo crear la materia." });
@@ -77,19 +111,29 @@ namespace ICCReservasServer.Controllers
         [Route("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Codigo,Nombre,Grado,Nivel,Descripcion,Status")] Materias materias)
+        public async Task<IActionResult> Edit(int id, MateriasDTO materiasDTO)
         {
             if (ModelState.IsValid)
             {
+                var materia = new Materias
+                {
+                    ID = materiasDTO.ID,
+                    Codigo = materiasDTO.Codigo,
+                    Nivel = materiasDTO.Nivel,
+                    Grado = materiasDTO.Grado,
+                    Nombre = materiasDTO.Nombre,
+                    Descripcion = materiasDTO.Descripcion,
+                    Status = materiasDTO.Status
+                };
+
                 try
                 {
-                    _context.Update(materias);
-                    var result = await _context.SaveChangesAsync();
-                    return Ok(result);
+                    _uow.MateriasRepository.Edit(materia);
+                    return Ok(await _uow.SaveAsync());
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MateriasExists(materias.ID))
+                    if (!_uow.MateriasRepository.MateriasExists(materia.ID))
                     {
                         return NotFound();
                     }
@@ -110,15 +154,9 @@ namespace ICCReservasServer.Controllers
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var materias = await _context.Materias.FindAsync(id);
-            _context.Materias.Remove(materias);
-            var result = await _context.SaveChangesAsync();
-            return Ok(result);
+            _uow.MateriasRepository.DeleteConfirmed(id);
+            return Ok(await _uow.SaveAsync());
         }
 
-        private bool MateriasExists(int id)
-        {
-            return _context.Materias.Any(e => e.ID == id);
-        }
     }
 }

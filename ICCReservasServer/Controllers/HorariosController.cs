@@ -1,13 +1,9 @@
-﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Entities.Data;
 using Entities.Models;
+using ICCReservasServer.Interfaces;
+using ICCReservasServer.DTOs;
 
 namespace ICCReservasServer.Controllers
 {
@@ -15,11 +11,11 @@ namespace ICCReservasServer.Controllers
     [ApiController]
     public class HorariosController : Controller
     {
-        private readonly ApplicationDataContext _context;
+        private readonly IUnitOfWork _uow;
 
-        public HorariosController(ApplicationDataContext context)
+        public HorariosController(IUnitOfWork uow)
         {
-            _context = context;
+            this._uow = uow;
         }
 
         // GET: Horarios
@@ -27,7 +23,17 @@ namespace ICCReservasServer.Controllers
         //[Authorize]
         public async Task<IActionResult> Index()
         {
-            return Ok(await _context.Horarios.ToListAsync());
+            var horarios = await _uow.HorariosRepository.Index();
+            var horariosDTO = from horario in horarios
+                              select new HorariosDTO { 
+                                ID = horario.ID,
+                                Nivel = horario.Nivel,
+                                Numero = horario.Numero,
+                                HoraInicio = horario.HoraInicio,
+                                HoraFin = horario.HoraFin
+                              };
+
+            return Ok(horariosDTO);
         }
 
         // GET: Horarios/Details/5
@@ -41,14 +47,21 @@ namespace ICCReservasServer.Controllers
                 return NotFound();
             }
 
-            var horarios = await _context.Horarios
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var horarios = await _uow.HorariosRepository.Details(id);
             if (horarios == null)
             {
                 return NotFound();
             }
 
-            return Ok(horarios);
+            var horariosDTO = new HorariosDTO { 
+                ID=horarios.ID,
+                Nivel=horarios.Nivel,
+                Numero = horarios.Numero,
+                HoraInicio = horarios.HoraInicio,
+                HoraFin=horarios.HoraFin
+            };
+
+            return Ok(horariosDTO);
         }
 
         // POST: Horarios/Create
@@ -58,13 +71,20 @@ namespace ICCReservasServer.Controllers
         //[Authorize]
         [Route("Create")]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Numero,HoraInicio,HoraFin,Nivel,TipoHora")] Horarios horarios)
+        public async Task<IActionResult> Create(HorariosDTO horariosDTO)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(horarios);
-                var result = await _context.SaveChangesAsync();
-                return Ok(result);
+                var horario = new Horarios { 
+                    ID = horariosDTO.ID,
+                    Nivel = horariosDTO.Nivel,
+                    Numero = horariosDTO.Numero,
+                    HoraInicio = horariosDTO.HoraInicio,
+                    HoraFin = horariosDTO.HoraFin
+                };
+
+                _uow.HorariosRepository.Create(horario);
+                return Ok(await _uow.SaveAsync());
             }
             else
                 return BadRequest(new { code = "HorarioNotCreated", message = "Error: no se pudo crear el horario." });
@@ -77,19 +97,26 @@ namespace ICCReservasServer.Controllers
         [Route("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Numero,HoraInicio,HoraFin,Nivel,TipoHora")] Horarios horarios)
+        public async Task<IActionResult> Edit(int id, HorariosDTO horariosDTO)
         {
             if (ModelState.IsValid)
             {
+                var horarios = new Horarios { 
+                    ID = horariosDTO.ID,
+                    Nivel = horariosDTO.Nivel,
+                    Numero = horariosDTO.Numero,
+                    HoraInicio = horariosDTO.HoraInicio,
+                    HoraFin = horariosDTO.HoraFin
+                };
+
                 try
                 {
-                    _context.Update(horarios);
-                    var result = await _context.SaveChangesAsync();
-                    return Ok(result);
+                    _uow.HorariosRepository.Edit(horarios);
+                    return Ok(await _uow.SaveAsync());
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!HorariosExists(horarios.ID))
+                    if (!_uow.HorariosRepository.HorariosExists(horarios.ID))
                     {
                         return NotFound();
                     }
@@ -111,15 +138,9 @@ namespace ICCReservasServer.Controllers
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var horarios = await _context.Horarios.FindAsync(id);
-            _context.Horarios.Remove(horarios);
-            var result = await _context.SaveChangesAsync();
-            return Ok(result);
+            _uow.HorariosRepository.DeleteConfirmed(id);
+            return Ok(await _uow.SaveAsync());
         }
 
-        private bool HorariosExists(int id)
-        {
-            return _context.Horarios.Any(e => e.ID == id);
-        }
     }
 }
