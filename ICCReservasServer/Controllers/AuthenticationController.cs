@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using ICCReservasServer.Middleware.Models;
 
 namespace ICCReservasServer.Controllers
 {
@@ -37,11 +38,15 @@ namespace ICCReservasServer.Controllers
         public async Task<object> UserAccountUnlock(UserAccountDTO unlockAccount)
         {
 
-            try
-            {
-                var user = await _userManager.FindByEmailAsync(unlockAccount.Email);
+            var user = await _userManager.FindByEmailAsync(unlockAccount.Email);
 
-                if (user != null)
+            if (user != null)
+            {
+                if (user.EmailConfirmed) 
+                {
+                    throw new RegisteredEmailException("Ya existe un usuario registrado con este email");
+                }
+                else
                 {
                     var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     var result = await _userManager.ConfirmEmailAsync(user, token);
@@ -50,15 +55,12 @@ namespace ICCReservasServer.Controllers
 
                     return Ok(result);
                 }
-                else
-                {
-                    return BadRequest( new { code = "UserNotFound", message = "No existe un usuario registrado con ese email." });
-                }
             }
-            catch (Exception ex)
+            else
             {
-                throw ex;
+                throw new UnauthorizedEmailException("El email ingresado no está autorizado");
             }
+            
 
         }
 
@@ -67,6 +69,11 @@ namespace ICCReservasServer.Controllers
         public async Task<IActionResult> UserLogin(UserAccountDTO userAccount)
         {
             var user = await _userManager.FindByEmailAsync(userAccount.Email);
+
+            if (user == null)
+            {
+                throw new EmailNotFoundException("Email ingresado no existe");
+            }
 
             if (user != null && await _userManager.CheckPasswordAsync(user, userAccount.Password))
             {
@@ -83,19 +90,19 @@ namespace ICCReservasServer.Controllers
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                 var token = tokenHandler.WriteToken(securityToken);
 
-                var responseUser = new { 
-                    userID = user.Id,
-                    firstName = user.Names,
-                    lastName = user.LastNames,
-                    email = user.Email,
-                    userName = user.UserName
+                var responseUser = new ApplicationUserDTO { 
+                    ID = user.Id,
+                    Names = user.Names,
+                    LastNames = user.LastNames,
+                    Email = user.Email,
+                    UserName = user.UserName
                 };
 
-                return Ok(new { token = token, user = responseUser });
+                return Ok(new { token, responseUser });
             }
             else
             {
-                return BadRequest(new { code = "IncorrectCredentials", message = "Email o contraseña incorrectas." });
+                throw new FailedLoginException("Email o Password incorrecto");
             }
 
         }

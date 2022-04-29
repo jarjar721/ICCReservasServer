@@ -8,6 +8,7 @@ using System.Text;
 using ICCReservasServer.DTOs;
 using ICCReservasServer.Interfaces;
 using ICCReservasServer.Data;
+using ICCReservasServer.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDataContextConnection");
@@ -83,6 +84,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware(typeof(ExceptionHandlingMiddleware));
 
 app.UseCors(builder =>
     {
