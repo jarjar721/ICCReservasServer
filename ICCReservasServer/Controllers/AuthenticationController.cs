@@ -1,15 +1,11 @@
 ﻿using ICCReservasServer.DTOs;
 using Entities.Models;
 using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 using ICCReservasServer.Middleware.Models;
+using ICCReservasServer.Interfaces;
 
 namespace ICCReservasServer.Controllers
 {
@@ -21,21 +17,24 @@ namespace ICCReservasServer.Controllers
         private UserManager<ApplicationUser> _userManager;
         private SignInManager<ApplicationUser> _signInManager;
         private readonly ApplicationSettings _appSettings;
+        private readonly IUnitOfWork _uow;
 
         public AuthenticationController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            IOptions<ApplicationSettings> appSettings)
+            IOptions<ApplicationSettings> appSettings,
+            IUnitOfWork uow)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _appSettings = appSettings.Value;
+            _uow = uow;
 
         }
         
         [HttpPost]
         [Route("AccountUnlock")] // POST --> api/AuthenticationController/AccountUnlock
-        public async Task<object> UserAccountUnlock(UserAccountDTO unlockAccount)
+        public async Task<IActionResult> UserAccountUnlock(UserAccountDTO unlockAccount)
         {
 
             var user = await _userManager.FindByEmailAsync(unlockAccount.Email);
@@ -48,12 +47,7 @@ namespace ICCReservasServer.Controllers
                 }
                 else
                 {
-                    var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    var result = await _userManager.ConfirmEmailAsync(user, token);
-
-                    await _userManager.AddPasswordAsync(user, unlockAccount.Password);
-
-                    return Ok(result);
+                    return Ok(await _uow.AuthenticationRepository.UserAccountUnlock(user, unlockAccount));
                 }
             }
             else
@@ -77,18 +71,8 @@ namespace ICCReservasServer.Controllers
 
             if (user != null && await _userManager.CheckPasswordAsync(user, userAccount.Password))
             {
-                var tokenDescriptor = new SecurityTokenDescriptor()
-                {
-                    Subject = new ClaimsIdentity(new Claim[]
-                    {
-                        new Claim("UserID", user.Id.ToString())
-                    }),
-                    Expires = DateTime.UtcNow.AddDays(1),
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.JWT_Secret)), SecurityAlgorithms.HmacSha256Signature)
-                };
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var securityToken = tokenHandler.CreateToken(tokenDescriptor);
-                var token = tokenHandler.WriteToken(securityToken);
+                
+                var token = _uow.AuthenticationRepository.CreateToken(user);
 
                 var responseUser = new ApplicationUserDTO { 
                     ID = user.Id,

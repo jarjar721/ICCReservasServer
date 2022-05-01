@@ -28,6 +28,8 @@ namespace ICCReservasServer.Data
 
         public IUsuariosRepository UsuariosRepository => new UsuariosRepository(_userManager);
 
+        public IAuthenticationRepository AuthenticationRepository => new AuthenticationRepository(_userManager);
+
         public async Task<bool> SaveAsync()
         {
             return await _context.SaveChangesAsync() > 0;

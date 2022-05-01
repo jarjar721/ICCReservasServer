@@ -12,6 +12,8 @@
 
         IUsuariosRepository UsuariosRepository { get; }
 
+        IAuthenticationRepository AuthenticationRepository { get; }
+
         Task<bool> SaveAsync();
     }
 }
