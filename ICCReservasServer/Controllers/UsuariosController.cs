@@ -1,8 +1,10 @@
 ﻿using ICCReservasServer.DTOs;
-using ICCReservasServer.Models;
+using Entities.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using ICCReservasServer.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,78 +17,127 @@ namespace ICCReservasServer.Controllers
 
         private UserManager<ApplicationUser> _userManager;
         private SignInManager<ApplicationUser> _signInManager;
+        private readonly IUnitOfWork _uow;
 
-        public UsuariosController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public UsuariosController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IUnitOfWork uow)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-
+            this._uow = uow;
         }
 
-        // GET: api/<UsuariosController>
+        // GET: Usuarios
         [HttpGet]
-        public IEnumerable<string> Get()
+        //[Authorize]
+        public IActionResult Index()
         {
-            return new string[] { "value1", "value2" };
+            var usuarios = _uow.UsuariosRepository.Index();
+            var applicationUserDTO = from usuario in usuarios
+                             select new ApplicationUserDTO
+                             {
+                                 ID = usuario.Id,
+                                 Names = usuario.Names,
+                                 LastNames = usuario.LastNames,
+                                 Email = usuario.Email,
+                                 UserName = usuario.UserName
+                             };
+
+            return Ok(applicationUserDTO);
         }
 
         // GET api/<UsuariosController>/User/string-id-goes-here
         [HttpGet()]
-        [Authorize]
-        [Route("User/{userID}")]
-        public async Task<object> GetUserDetails([FromRoute] string userID)
+        //[Authorize]
+        [Route("User/{id}")]
+        public async Task<object> Details(string id)
         {
-            var user = await _userManager.FindByIdAsync(userID);
-            var responseUser = new
+            if (id == null)
             {
-                userID = user.Id,
-                firstName = user.FirstName,
-                middleName = user.MiddleName,
-                lastName = user.LastName,
-                secondLastName = user.SecondLastName,
-                email = user.Email,
-                userName = user.UserName
+                return NotFound();
+            }
+
+            var applicationUser = await _uow.UsuariosRepository.Details(id);
+            if (applicationUser == null)
+            {
+                return NotFound();
+            }
+
+            var applicationUserDTO = new ApplicationUserDTO {
+                ID = applicationUser.Id,
+                Names = applicationUser.Names,
+                LastNames = applicationUser.LastNames,
+                Email = applicationUser.Email,
+                UserName = applicationUser.UserName
             };
 
-            return Ok(new { user = responseUser });
+            return Ok(applicationUserDTO);
         }
 
-        // POST api/Usuarios/AddUsuario
+        // POST api/Usuarios/Create
         [HttpPost]
-        [Route("AddUsuario")] // POST --> api/Usuarios/Register
-        public async Task<object> UserRegistration(AddUserDTO userDTO)
+        [Route("Create")] // POST --> api/Usuarios/Create
+        public async Task<IActionResult> Create(ApplicationUserDTO applicationUserDTO)
         {
-            var applicationUser = new ApplicationUser()
+            if (ModelState.IsValid)
             {
-                FirstName = userDTO.FirstName,
-                MiddleName = userDTO.MiddleName,
-                LastName = userDTO.LastName,
-                SecondLastName = userDTO.SecondLastName,
-                Email = userDTO.Email,
-                UserName = userDTO.Email.Split('@')[0]
-            };
+                var applicationUser = new ApplicationUser()
+                {
+                    Names = applicationUserDTO.Names,
+                    LastNames = applicationUserDTO.LastNames,
+                    Email = applicationUserDTO.Email,
+                    UserName = applicationUserDTO.Email.Split('@')[0]
+                };
 
-            try
-            {
-                var result = await _userManager.CreateAsync(applicationUser);
-                return Ok(result);
+                //await _uow.UsuariosRepository.Create(applicationUser);
+                return Ok(await _uow.UsuariosRepository.Create(applicationUser));
             }
-            catch (Exception ex)
+            else
+                return BadRequest(new { code = "UsuarioNotCreated", message = "Error: no se pudo crear el usuario." });
+        }
+
+        // PUT: Usuarios/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPut]
+        [Route("Edit/{id}")]
+        //[Authorize]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, ApplicationUserDTO applicationUserDTO)
+        {
+            if (ModelState.IsValid)
             {
-                throw ex;
+
+                try
+                {
+                    //await _uow.UsuariosRepository.Edit(usuario);
+                    return Ok(await _uow.UsuariosRepository.Edit(id, applicationUserDTO));
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!_uow.UsuariosRepository.ApplicationUserExists(id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
             }
+            else
+                return BadRequest(new { code = "InvalidModelState", message = "Error: ModelState inválido." });
         }
 
-        // PUT api/<UsuariosController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        // DELETE: Usuarios/Delete/5
+        [HttpDelete]
+        //[Authorize]
+        [Route("Delete/{id}")]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
+            //await _uow.UsuariosRepository.DeleteConfirmed(id);
+            return Ok(await _uow.UsuariosRepository.DeleteConfirmed(id));
         }
 
-        // DELETE api/<UsuariosController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

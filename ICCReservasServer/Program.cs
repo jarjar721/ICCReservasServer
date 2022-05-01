@@ -1,17 +1,21 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using ICCReservasServer.Data;
-using ICCReservasServer.Models;
+using Entities.Data;
+using Entities.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using ICCReservasServer.DTOs;
+using ICCReservasServer.Interfaces;
+using ICCReservasServer.Data;
+using ICCReservasServer.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDataContextConnection");
 
 builder.Services.AddDbContext<ApplicationDataContext>(options =>
-    options.UseNpgsql(connectionString));
+    options.UseNpgsql(connectionString, options => options.MigrationsAssembly("ICCReservasServer")));
+
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDataContext>();
 // Add services to the container.
@@ -35,6 +39,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     });
 
 builder.Services.AddCors();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 //JWT Authentication
 var JWT_Secret = builder.Configuration.GetSection("ApplicationSettings:JWT_Secret").Value;
@@ -79,6 +84,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware(typeof(ExceptionHandlingMiddleware));
 
 app.UseCors(builder =>
     {
