@@ -23,7 +23,7 @@ namespace ICCReservasServer.Controllers
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            this._uow = uow;
+            _uow = uow;
         }
 
         // GET: Usuarios
@@ -31,6 +31,7 @@ namespace ICCReservasServer.Controllers
         //[Authorize]
         public IActionResult Index()
         {
+
             var usuarios = _uow.UsuariosRepository.Index();
             var applicationUserDTO = from usuario in usuarios
                              select new ApplicationUserDTO
