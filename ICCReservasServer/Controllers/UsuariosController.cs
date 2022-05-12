@@ -46,10 +46,9 @@ namespace ICCReservasServer.Controllers
             return Ok(applicationUserDTO);
         }
 
-        // GET api/<UsuariosController>/User/string-id-goes-here
-        [HttpGet()]
+        // GET: Usuarios/Details/string-id-goes-here
+        [HttpGet("Details/{id}")]
         //[Authorize]
-        [Route("User/{id}")]
         public async Task<object> Details(string id)
         {
             if (id == null)
@@ -74,9 +73,9 @@ namespace ICCReservasServer.Controllers
             return Ok(applicationUserDTO);
         }
 
-        // POST api/Usuarios/Create
-        [HttpPost]
-        [Route("Create")] // POST --> api/Usuarios/Create
+        // POST: Usuarios/Create
+        [HttpPost("Create")]
+        //[Authorize]
         public async Task<IActionResult> Create(ApplicationUserDTO applicationUserDTO)
         {
             if (ModelState.IsValid)
@@ -97,10 +96,7 @@ namespace ICCReservasServer.Controllers
         }
 
         // PUT: Usuarios/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPut]
-        [Route("Edit/{id}")]
+        [HttpPut("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, ApplicationUserDTO applicationUserDTO)
@@ -130,9 +126,8 @@ namespace ICCReservasServer.Controllers
         }
 
         // DELETE: Usuarios/Delete/5
-        [HttpDelete]
+        [HttpDelete("Delete/{id}")]
         //[Authorize]
-        [Route("Delete/{id}")]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {

@@ -38,9 +38,9 @@ namespace ICCReservasServer.Controllers
             _emailSender = emailSender;
 
         }
-        
-        [HttpPost]
-        [Route("AccountUnlock")] // POST --> api/AuthenticationController/AccountUnlock
+
+        // POST: Authentication/AccountUnlock
+        [HttpPost("AccountUnlock")]
         public async Task<IActionResult> UserAccountUnlock(UserAccountDTO unlockAccount)
         {
 
@@ -65,13 +65,10 @@ namespace ICCReservasServer.Controllers
 
         }
 
-        [HttpPost]
-        [Route("UserLogin")] // POST --> api/AuthenticationController/Login
+        // POST: Authentication/UserLogin
+        [HttpPost("UserLogin")]
         public async Task<IActionResult> UserLogin(UserAccountDTO userAccount)
         {
-            var rng = new Random();
-            var message = new Message(new string[] { "jarp820@gmail.com" }, "Test email", "This is the content from our email.", null);
-            await _emailSender.SendEmailAsync(message);
 
             var user = await _userManager.FindByEmailAsync(userAccount.Email);
 
@@ -103,7 +100,7 @@ namespace ICCReservasServer.Controllers
         }
 
         [HttpPost("ForgotPassword")]
-        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDTO forgotPasswordDTO)
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordDTO forgotPasswordDTO)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
@@ -128,7 +125,7 @@ namespace ICCReservasServer.Controllers
         }
 
         [HttpPost("ResetPassword")]
-        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDTO resetPasswordDTO)
+        public async Task<IActionResult> ResetPassword(ResetPasswordDTO resetPasswordDTO)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
