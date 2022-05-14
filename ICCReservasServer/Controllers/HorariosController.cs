@@ -37,9 +37,8 @@ namespace ICCReservasServer.Controllers
         }
 
         // GET: Horarios/Details/5
-        [HttpGet]
+        [HttpGet("Details/{id}")]
         //[Authorize]
-        [Route("Details/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -65,11 +64,8 @@ namespace ICCReservasServer.Controllers
         }
 
         // POST: Horarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost("Create")]
         //[Authorize]
-        [Route("Create")]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(HorariosDTO horariosDTO)
         {

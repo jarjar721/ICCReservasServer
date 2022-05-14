@@ -14,11 +14,13 @@ namespace Entities.Models
 
         public List<ReservaDispositivo>? ReservaDispositivo { get; set; }
         public List<StatusReserva>? StatusReserva { get; set; }
+        public List<HorarioReserva>? HorarioReserva { get; set; }
+
+        public string UserID { get; set; }
+        public ApplicationUser? User { get; set; }
 
         public int InstalacionID { get; set; }
         public Instalaciones? Instalacion { get; set; }
 
-        public int ClaseID { get; set; }
-        public Clases? Clase { get; set; }
     }
 }
