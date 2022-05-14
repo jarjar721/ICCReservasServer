@@ -67,7 +67,8 @@ namespace ICCReservasServer.Controllers
                 Names = applicationUser.Names,
                 LastNames = applicationUser.LastNames,
                 Email = applicationUser.Email,
-                UserName = applicationUser.UserName
+                UserName = applicationUser.UserName,
+                Status = applicationUser.Status
             };
 
             return Ok(applicationUserDTO);
