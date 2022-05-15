@@ -29,6 +29,7 @@ namespace ICCReservasServer.Controllers
                                 ID = horario.ID,
                                 Nivel = horario.Nivel,
                                 Numero = horario.Numero,
+                                Nombre = horario.Nombre,
                                 HoraInicio = horario.HoraInicio,
                                 HoraFin = horario.HoraFin
                               };
@@ -49,6 +50,7 @@ namespace ICCReservasServer.Controllers
                                   ID = horario.ID,
                                   Nivel = horario.Nivel,
                                   Numero = horario.Numero,
+                                  Nombre = horario.Nombre,
                                   HoraInicio = horario.HoraInicio,
                                   HoraFin = horario.HoraFin
                               };
