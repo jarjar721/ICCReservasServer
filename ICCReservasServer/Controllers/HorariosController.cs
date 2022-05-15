@@ -36,6 +36,26 @@ namespace ICCReservasServer.Controllers
             return Ok(horariosDTO);
         }
 
+        // GET: Horarios
+        [HttpGet("Nivel/{nivel}")]
+        //[Authorize]
+        public async Task<IActionResult> HorariosByNivel(string nivel)
+        {
+            var horarios = await _uow.HorariosRepository.Index();
+            var horariosDTO = from horario in horarios
+                              where horario.Nivel == nivel
+                              select new HorariosDTO
+                              {
+                                  ID = horario.ID,
+                                  Nivel = horario.Nivel,
+                                  Numero = horario.Numero,
+                                  HoraInicio = horario.HoraInicio,
+                                  HoraFin = horario.HoraFin
+                              };
+
+            return Ok(horariosDTO);
+        }
+
         // GET: Horarios/Details/5
         [HttpGet("Details/{id}")]
         //[Authorize]
@@ -87,10 +107,7 @@ namespace ICCReservasServer.Controllers
         }
 
         // PUT: Horarios/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPut]
-        [Route("Edit/{id}")]
+        [HttpPut("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, HorariosDTO horariosDTO)
@@ -128,9 +145,8 @@ namespace ICCReservasServer.Controllers
         }
 
         // DELETE: Horarios/Delete/5
-        [HttpDelete]
+        [HttpDelete("Delete/{id}")]
         //[Authorize]
-        [Route("Delete/{id}")]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
