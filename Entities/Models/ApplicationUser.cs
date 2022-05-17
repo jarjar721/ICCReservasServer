@@ -19,6 +19,7 @@ public class ApplicationUser : IdentityUser
     [Required]
     public int Status { get; set; }
 
-    public List<Clases>? Clases { get; set; }
+    public List<Reservas>? Reservas { get; set; }
+
 }
 

@@ -3,6 +3,7 @@ using System;
 using Entities.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ICCReservasServer.Migrations
 {
     [DbContext(typeof(ApplicationDataContext))]
-    partial class ApplicationDataContextModelSnapshot : ModelSnapshot
+    [Migration("20220515201746_fixedHorarioConfig")]
+    partial class fixedHorarioConfig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -101,9 +103,9 @@ namespace ICCReservasServer.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "49e87bb2-ced3-46a7-a37f-187972e2ad5c",
+                            Id = "d0eb7102-85aa-43cc-aa63-c2c10257ef4f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "818a1e7d-48bb-415d-88ac-66af9c8058f3",
+                            ConcurrencyStamp = "7bf69c6b-d9a5-45aa-956c-5571ce78f6d9",
                             Email = "nadorno@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Adorno",
@@ -112,16 +114,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "NADORNO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "NADORNO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c129e082-e874-4e17-92a5-e59defbac229",
+                            SecurityStamp = "05fbd1be-d018-4ffb-bc05-0008e63ec762",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "nadorno"
                         },
                         new
                         {
-                            Id = "9696d148-7d79-4931-9ee9-4da5abe0dc0a",
+                            Id = "0138a35a-63d2-429a-b0cf-be6371d8c426",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1a2d6e3e-05d5-407d-85fb-c1590cd9a629",
+                            ConcurrencyStamp = "61b5ebca-6c6d-4da0-baac-2b730b5afa6d",
                             Email = "caguilar@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Aguilar",
@@ -130,16 +132,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CAGUILAR@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CAGUILAR",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1d9fe04b-25b2-4743-8368-63d72303f85c",
+                            SecurityStamp = "8ae63ea3-0c19-4c9f-a4e7-6a86aed9b459",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "caguilar"
                         },
                         new
                         {
-                            Id = "b572dbae-7584-4878-a5b3-d3e95211d6ba",
+                            Id = "a811a675-9fca-40f2-b7c1-a11655f087f0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "50fc0581-f5b0-4e42-ab3c-c50df9888379",
+                            ConcurrencyStamp = "22a413cb-5a3a-4ce5-a044-a5851a30ed3f",
                             Email = "gaguilar@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Aguilar",
@@ -148,16 +150,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "GAGUILAR@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "GAGUILAR",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "894dff16-f351-44b7-adae-402f372ed8ec",
+                            SecurityStamp = "9f17a42f-89e1-4d92-bfbb-a1530eff851c",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "gaguilar"
                         },
                         new
                         {
-                            Id = "bc5e1809-5e5c-491e-bd3b-5e0bf6e7416e",
+                            Id = "4ddda47f-a9da-42c1-88bf-6927279edea8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b9039356-e7d5-42f0-bae0-4f80de223215",
+                            ConcurrencyStamp = "eae4db95-4ad8-4229-b301-56bc6b77ba48",
                             Email = "malcala@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Alcala",
@@ -166,16 +168,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MALCALA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MALCALA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e7ce6771-1613-4d1e-baa1-1755aceb55a0",
+                            SecurityStamp = "78419312-6b33-4276-bcea-331cca58b543",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "malcala"
                         },
                         new
                         {
-                            Id = "7d7db61b-85ac-4450-8a06-2f735760aa86",
+                            Id = "5c209e2c-af6b-4253-96be-1403a836e2ff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a1bc86ab-b6cf-4474-89e5-6b02623e59e2",
+                            ConcurrencyStamp = "51c73819-6199-4595-9def-82cd3d9fb2ae",
                             Email = "jaleman@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Alemán",
@@ -184,16 +186,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JALEMAN@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JALEMAN",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e04e99b5-8bb0-4a5a-b2b3-216db9ad3a75",
+                            SecurityStamp = "6b8662f2-25ae-4bff-9264-a3b73f43fb82",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jaleman"
                         },
                         new
                         {
-                            Id = "ab7a0bdf-4fe4-4cd6-9456-2c7d8d33313f",
+                            Id = "78e2f0f8-c15f-45db-aa74-41ad0efbd157",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dfbf7449-7447-4283-82fa-b36977ab6ef1",
+                            ConcurrencyStamp = "cad5f0da-cfde-4c88-a73e-72bc49da058c",
                             Email = "gandara@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Andara",
@@ -202,16 +204,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "GANDARA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "GANDARA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f382ba58-5b0b-4a39-8028-9fe1e32dd8df",
+                            SecurityStamp = "81b15ec2-d6f9-4ad3-b56b-d10e24d308c0",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "gandara"
                         },
                         new
                         {
-                            Id = "958e4e57-2c35-4729-9571-c7f352a98780",
+                            Id = "f7bc5c43-eca9-45bd-b501-4b610f93c802",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0f4fc07a-8c1b-4c5e-ae9a-f129c4f93224",
+                            ConcurrencyStamp = "358a3c83-687e-46fa-83d7-90398dd35a50",
                             Email = "loumarangulo@gmail.com",
                             EmailConfirmed = false,
                             LastNames = "Angulo",
@@ -220,16 +222,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "LOUMARANGULO@GMAIL.COM",
                             NormalizedUserName = "LOUMARANGULO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "fd256a3e-4b06-42bc-9c6e-53c037dfe01d",
+                            SecurityStamp = "6f62244b-6549-454a-a3f4-580a984a7275",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "loumarangulo"
                         },
                         new
                         {
-                            Id = "75cabb96-d477-4ac8-941e-7002680eca03",
+                            Id = "286b5cbd-f0ce-416c-b4bf-23773f9d7eea",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8dbc97b5-de43-4807-b0c2-c56be3072fde",
+                            ConcurrencyStamp = "b31c1490-3d38-40e7-b68b-2566e83a8ba8",
                             Email = "yardila@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Ardila",
@@ -238,16 +240,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "YARDILA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "YARDILA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e9bbd1a6-1e84-4aee-8e3a-c19fce59feac",
+                            SecurityStamp = "40f30835-f8c6-4301-8e98-06ebb156efeb",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "yardila"
                         },
                         new
                         {
-                            Id = "47443348-7ae0-4013-bd75-4e5b36002fae",
+                            Id = "7095019a-e0d7-4610-af1e-cef9e7d318f4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "51a9f6ff-445d-4d9d-b469-32ea8cd2f808",
+                            ConcurrencyStamp = "bc3899ac-27aa-4de3-bc7e-1cccb3ae2e4b",
                             Email = "larellano@legionaries.org",
                             EmailConfirmed = false,
                             LastNames = "Arellano",
@@ -256,16 +258,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "LARELLANO",
                             NormalizedUserName = "LARELLANO@LEGIONARIES.ORG",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "873cefef-f550-4798-a2aa-a265c0ef5127",
+                            SecurityStamp = "1099afc9-ffb8-4dad-bf37-e028e7ae3757",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "larellano"
                         },
                         new
                         {
-                            Id = "581fffdc-5289-4d90-b24b-fb9e905e72c2",
+                            Id = "b6e45a4f-76d8-4a2a-b1d2-a1d70661954f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "635ceac7-630f-460f-9c9e-9abf2c32b2b7",
+                            ConcurrencyStamp = "53bd90aa-f0d3-444a-857f-aedf131e9739",
                             Email = "marismendi@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Arismendi",
@@ -274,16 +276,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MARISMENDI",
                             NormalizedUserName = "MARISMENDI@CUMBRESCARACAS.EDU.VE",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3b710e7e-99c1-45ab-ae3d-ffd2b122c54a",
+                            SecurityStamp = "1dad396c-49fd-4aa9-b425-9f0012c4b85f",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "marismendi"
                         },
                         new
                         {
-                            Id = "fca57aba-ea6d-4221-9c43-2745074472d9",
+                            Id = "2def22e1-d592-42a1-8c72-3beca90b3a7f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6846ff8b-0ebc-4658-ab14-a843b708d5d0",
+                            ConcurrencyStamp = "8bf201ee-676f-42ed-a2f3-238ebf4ad9c2",
                             Email = "earmas@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Armas",
@@ -292,16 +294,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "EARMAS",
                             NormalizedUserName = "EARMAS@CUMBRESCARACAS.EDU.VE",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1d21efc7-e32a-4ab7-ae4c-586bd8e6d447",
+                            SecurityStamp = "5c721ea5-e657-456f-bd85-78130bcd0ea1",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "earmas"
                         },
                         new
                         {
-                            Id = "08760a04-023a-49f3-ae04-b5357944ae9d",
+                            Id = "eb488fb8-1913-4fc8-91e0-895b6208823b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "07356fb0-9daf-4d9f-bcd8-ee0e6633868b",
+                            ConcurrencyStamp = "fd662a9b-ff0b-4971-b633-0a94ef09656e",
                             Email = "aarmas@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Armas De Hanna",
@@ -310,16 +312,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "AARMAS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "AARMAS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c9a6ee89-b5a3-4e98-9465-c79025ad7d92",
+                            SecurityStamp = "75fe1604-a88b-493a-b161-9e341e47407f",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "aarmas"
                         },
                         new
                         {
-                            Id = "63c458fe-ae58-42b9-b473-298a8525ced6",
+                            Id = "4c2e09c0-517d-4243-b95a-7edc90f946e4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b37fbf3a-e00d-46e3-bd5b-fe03344e27dd",
+                            ConcurrencyStamp = "e6505361-401c-4303-802c-5ffc456c5f89",
                             Email = "yarrayago@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Arrayago",
@@ -328,16 +330,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "YARRAYAGO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "YARRAYAGO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "80557bce-ac2a-4778-8d48-46094877448e",
+                            SecurityStamp = "55ceab21-7cd4-4547-bb65-23ba93ab892d",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "yarrayago"
                         },
                         new
                         {
-                            Id = "cb120d2d-5d63-45be-8102-9c87079a6e03",
+                            Id = "b842e0e6-99ba-46f3-95ba-bca30425f948",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b5266e3a-fce0-4593-820b-75153cae7c07",
+                            ConcurrencyStamp = "b05bbb83-058f-48ad-b9b2-72a4b02b4222",
                             Email = "iavendano@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Avendaño",
@@ -346,16 +348,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "IAVENDANO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "IAVENDANO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f88f1a15-67fe-4c3e-8083-f5b61adc2b5b",
+                            SecurityStamp = "4ea05496-ffcb-4bd4-961f-48ac662abc1f",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "iavendano"
                         },
                         new
                         {
-                            Id = "72e10108-0c3f-4754-b66a-c65caf6c38bd",
+                            Id = "d21ce20e-c574-4513-884b-746767533263",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f1624b7b-16a0-4776-9d58-75a45800116f",
+                            ConcurrencyStamp = "61226865-55c6-4c4f-bfbc-4a907128a50f",
                             Email = "javila@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Avila",
@@ -364,16 +366,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JAVILA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JAVILA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ea5e6c14-23e9-47a8-b44c-6a41f3c3a38b",
+                            SecurityStamp = "fefbe713-1249-4fee-8b21-2f9df2c41e5f",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "javila"
                         },
                         new
                         {
-                            Id = "2e99907c-2a5c-45df-9715-d04c4c4af6f0",
+                            Id = "efdd2684-42cf-47d4-939a-0fe58a8dbd0f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b0a8f45c-1a22-495b-b4d1-c113688c11e9",
+                            ConcurrencyStamp = "a8c4d2f2-7c77-4d13-abae-e2b57180c9db",
                             Email = "abedetti@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Bedetti",
@@ -382,16 +384,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "ABEDETTI@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "ABEDETTI",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4451e975-5261-4d3d-8122-11a834e88b55",
+                            SecurityStamp = "0993b720-112a-4cfa-ab09-a4fc946425d9",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "abedetti"
                         },
                         new
                         {
-                            Id = "d04f1c4b-9e9f-4faf-981c-629b28975e2f",
+                            Id = "303497ba-ea11-47d3-8c8a-8675646506cd",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0e922998-a43f-430b-8f4f-90bf4abefc36",
+                            ConcurrencyStamp = "56681c19-5434-44bf-bef1-da5fab17879b",
                             Email = "gbellorin@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Bellorin",
@@ -400,16 +402,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "GBELLORIN@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "GBELLORIN",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3a293c40-9ef2-4fdf-b526-9048a62bea32",
+                            SecurityStamp = "413bd2a8-64f6-4159-a37b-499782394e3f",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "gbellorin"
                         },
                         new
                         {
-                            Id = "121eecc9-4a18-48a6-8552-d5d8eea08fa6",
+                            Id = "72e51d90-e4e4-4428-9284-43793080b805",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "643de178-c124-48b1-8058-77e006c6fe37",
+                            ConcurrencyStamp = "b27964dd-1bef-410b-8539-0f291ae2dcf8",
                             Email = "ebellorin@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Bellorín",
@@ -418,16 +420,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "EBELLORIN@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "EBELLORIN",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d64a223e-1d58-442e-842b-87c04cb87769",
+                            SecurityStamp = "64588371-89a1-4357-a415-4462727972bc",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ebellorin"
                         },
                         new
                         {
-                            Id = "c4d79dea-0270-4090-9701-be91b2e738d8",
+                            Id = "73bf71e8-d585-43fb-b16c-0e6f416369e7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0a0e35a6-33b6-4fd1-a8e3-937daef89cfe",
+                            ConcurrencyStamp = "94e7923a-79cd-4294-bc6c-c5ae45177d30",
                             Email = "mgallardo@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Benavides",
@@ -436,16 +438,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MGALLARDO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MGALLARDO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f05a9d1a-84a7-4663-9238-173b5105b379",
+                            SecurityStamp = "fa56a443-696b-4a4b-b47c-974ecd35dc1b",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mgallardo"
                         },
                         new
                         {
-                            Id = "7586376d-6937-4ea3-9b3a-8f71321ad7b3",
+                            Id = "4664962d-f38c-40b1-ae12-eb521baa8df8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1b4371cd-3901-4beb-b119-82ec846af8a7",
+                            ConcurrencyStamp = "6363d782-6f4c-4abb-9302-4d512a15d760",
                             Email = "leninbetancourt@yahoo.es",
                             EmailConfirmed = false,
                             LastNames = "Betancourt",
@@ -454,16 +456,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "LENINBETANCOURT@YAHOO.ES",
                             NormalizedUserName = "LENINBETANCOURT",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5a2937c2-bcbd-4d27-a333-969a0c54e959",
+                            SecurityStamp = "3591a9cd-58bf-4560-a66d-ad7dfd74d0c4",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "leninbetancourt"
                         },
                         new
                         {
-                            Id = "328f2de6-950e-45b5-bc9f-dabde54f1e8c",
+                            Id = "9c2b1eba-10a5-4fa7-9420-4b3090a17cb6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f66d8460-f777-4cf6-92f8-ba30c5eee350",
+                            ConcurrencyStamp = "e287b395-37e2-4fc1-a752-964c137bfc38",
                             Email = "ablanco@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Blanco",
@@ -472,16 +474,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "ABLANCO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "ABLANCO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4f753246-9852-4466-85bb-b305df65e0d8",
+                            SecurityStamp = "8846b67b-02bc-44f2-89f5-c40920df3f75",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ablanco"
                         },
                         new
                         {
-                            Id = "4cfe8a3d-d486-4dcb-9da5-1c248aa28874",
+                            Id = "23b05338-bd89-44ad-ae07-4308901b2a1b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8422e318-5604-4201-830f-b6d5d799955e",
+                            ConcurrencyStamp = "538915f1-44fa-403d-8e3d-ad6f0b1d69cf",
                             Email = "jblanco@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Blanco",
@@ -490,16 +492,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JBLANCO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JBLANCO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3e6330d8-5876-4a71-b1da-6bd26143423c",
+                            SecurityStamp = "36f7a204-cfee-492b-b874-1f6174e9fbb5",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jblanco"
                         },
                         new
                         {
-                            Id = "2a392cd2-9260-47a2-a8ad-dc8fe48b7c1c",
+                            Id = "1130931c-d6ed-4200-b377-c831265033fe",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9893d5db-562c-4215-a08d-3c0107ffd332",
+                            ConcurrencyStamp = "0403213a-7313-4582-951f-b0de71129f5e",
                             Email = "isabeldevillasmil@hotmail.com",
                             EmailConfirmed = false,
                             LastNames = "Bolinaga",
@@ -508,16 +510,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "ISABELDEVILLASMIL@HOTMAIL.COM",
                             NormalizedUserName = "ISABELDEVILLASMIL",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e777b39f-b8ee-45e8-8939-784c5b0de618",
+                            SecurityStamp = "f0b9af6c-d6f3-4a59-9b6d-8c8195f8eb40",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "isabeldevillasmil"
                         },
                         new
                         {
-                            Id = "8f56b62d-caef-4e35-acff-a129e6a0a6bd",
+                            Id = "0ac33446-510b-47c7-bd2a-fe61291680eb",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "cb91a3cc-6c43-452d-b31e-14869251ad89",
+                            ConcurrencyStamp = "748d3e33-908f-4468-b89a-f8028d2f9e06",
                             Email = "ibolivar@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Bolívar",
@@ -526,16 +528,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "IBOLIVAR@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "IBOLIVAR",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8970696f-9eba-4b63-8baf-f507a5015ba4",
+                            SecurityStamp = "92bd8b7a-8a61-49e0-ba10-5bb87bc796dc",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ibolivar"
                         },
                         new
                         {
-                            Id = "3e3f725c-84f6-41e6-92d4-bd5c806490b9",
+                            Id = "d4c90d2c-f2df-462a-9d51-b8a8347624a1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ffe18fe5-d01d-4a44-b0c8-25fc3a063df6",
+                            ConcurrencyStamp = "13642595-161e-4678-ba55-45a6457d8d8c",
                             Email = "dbrando@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Brando",
@@ -544,16 +546,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "DBRANDO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "DBRANDO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d5856c31-7bf5-4164-8544-f22089a3d745",
+                            SecurityStamp = "b86bcc11-0fce-48fb-9679-a674463f386e",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "dbrando"
                         },
                         new
                         {
-                            Id = "f0a7ebe4-2068-4fba-8e98-a39b5fcc7a3b",
+                            Id = "a1b1cb38-cc09-4db1-98dc-2498e86a4d1c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b71de934-eddf-4961-945b-6a9d436f811f",
+                            ConcurrencyStamp = "9fa0cb89-c9b0-4573-976d-cf1f0b381e1a",
                             Email = "kbrun@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Brun",
@@ -562,16 +564,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "KBRUN@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "KBRUN",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0993c609-91b8-44bf-80b9-c862282cdb5b",
+                            SecurityStamp = "12ca9793-2244-48b0-9af3-ddf0472d100d",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "kbrun"
                         },
                         new
                         {
-                            Id = "040a04cb-db8f-44ea-9a84-d0cf934cfa99",
+                            Id = "8e6c72f5-5260-43c5-b918-43f5e3224813",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6de5b9b5-d0e9-4abf-9de0-ab2574c17864",
+                            ConcurrencyStamp = "24b21fa0-d9ef-4518-a9c5-7f2cbb4b969e",
                             Email = "ecalvo@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Calvo",
@@ -580,16 +582,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "ECALVO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "ECALVO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1afce790-ab46-4f42-b70d-4d791d3328f5",
+                            SecurityStamp = "e3229e38-41e2-444c-a609-10c53339463e",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ecalvo"
                         },
                         new
                         {
-                            Id = "c96f13fa-0350-4c87-8b66-a8329a4001bc",
+                            Id = "9423ca92-fc72-4e21-8899-2f3ce030dd9f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8cd61443-af32-4070-9a6c-691af1c922a2",
+                            ConcurrencyStamp = "2b925baa-5d04-4c7c-b13f-9a060008948f",
                             Email = "mcalzadilla@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Calzadilla",
@@ -598,16 +600,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MCALZADILLA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MCALZADILLA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "57ebd68c-08a0-43bd-85ee-4cfcf53676a8",
+                            SecurityStamp = "976b68c5-ec5c-4f76-9b9a-b0be642ca53e",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mcalzadilla"
                         },
                         new
                         {
-                            Id = "7910815d-9782-4f64-a5b1-41fa25a09446",
+                            Id = "2e3b7d9e-18b6-4825-9ba3-ee4a99bf76cd",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "aa9a131e-2b9c-4512-8ca4-8ee9971e8e01",
+                            ConcurrencyStamp = "63c85ec1-ec63-465f-838f-9116ea7e7abb",
                             Email = "ccampos@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Campos",
@@ -616,16 +618,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CCAMPOS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CCAMPOS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "152e4b60-6fa7-450a-9938-d87eaa54af51",
+                            SecurityStamp = "b732b620-0be5-4b4d-bd65-1622057f1339",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ccampos"
                         },
                         new
                         {
-                            Id = "008bc6d1-1d43-48c9-b7e9-7bbb11d5e591",
+                            Id = "26e65613-5143-45a8-a632-a104d4ba7669",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1024cee1-1117-4718-b668-d14f4ccf7177",
+                            ConcurrencyStamp = "762a7444-fecf-4bf7-b807-7195dc5e5f18",
                             Email = "ccano@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Cano",
@@ -634,16 +636,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CCANO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CCANO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "616d7386-5b46-4c82-996a-4913203adf50",
+                            SecurityStamp = "ee4eba23-bb2f-4405-b1ce-ae1eac2f6712",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ccano"
                         },
                         new
                         {
-                            Id = "af457333-cc19-4c10-ac95-c693e522e6a0",
+                            Id = "4bb955f4-89b5-42a1-a9cd-d0cfc5222f5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "cebdbfac-6dea-46ae-bf40-a3847f8950e4",
+                            ConcurrencyStamp = "c65a5c83-1c16-45e9-b9a7-59e0913054de",
                             Email = "mcapuz@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Capuz",
@@ -652,16 +654,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MCAPUZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MCAPUZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b5138172-db64-4a8a-a694-3d07100a6ef3",
+                            SecurityStamp = "11a36227-3f4e-45dd-ac23-e47e07ea7903",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mcapuz"
                         },
                         new
                         {
-                            Id = "af8b2875-ccc0-4fe8-8b76-4766f5772e66",
+                            Id = "7f600094-67a9-42d2-a67a-b63d6c23c224",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "751b908c-971e-4364-93a0-09725853a98f",
+                            ConcurrencyStamp = "ac94a49b-c810-4aff-9cc5-e64825cf0d6f",
                             Email = "jcaraballo@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Caraballo",
@@ -670,16 +672,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JCARABALLO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JCARABALLO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "645a35b7-a928-4715-8a0d-95f5b06dfec7",
+                            SecurityStamp = "42da8aa6-8755-4111-9428-48aef5ceee13",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jcaraballo"
                         },
                         new
                         {
-                            Id = "fb13f24b-1f55-49f6-aadd-e92a11807f38",
+                            Id = "d972ec43-17e2-4255-b4ad-a3e07bb46816",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fa63f3eb-3b68-4686-9bfa-47788c0abaf0",
+                            ConcurrencyStamp = "b3868e51-3afd-4647-96bd-622dd59803de",
                             Email = "gcardas@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Cardas",
@@ -688,16 +690,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "GCARDAS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "GCARDAS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0c528cdb-5510-4a30-b864-ac3299ba60ae",
+                            SecurityStamp = "79f21765-27c0-40c9-b766-dd1dd91201c1",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "gcardas"
                         },
                         new
                         {
-                            Id = "f6d6cc7b-cf25-4424-b669-a9d9483ff662",
+                            Id = "f3051983-56ce-4eb2-bb66-05406a2d4395",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "503b1b8d-ca34-41ea-a982-10a6ca343ad1",
+                            ConcurrencyStamp = "2af3eed6-0525-4e7f-b9b8-c9f6a047fb60",
                             Email = "mcardona@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Cardona",
@@ -706,16 +708,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MCARDONA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MCARDONA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9777e6ac-732c-4a07-a2b6-6230fb315d63",
+                            SecurityStamp = "dc8e70ac-3a53-46d1-8051-6dd817144ec2",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mcardona"
                         },
                         new
                         {
-                            Id = "d20768cf-1542-42c4-a0b2-ca9560403780",
+                            Id = "ff5bec9e-a423-404c-b519-cf11ca0f0241",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a01e94e6-1135-4da2-8299-0ef208ec76ed",
+                            ConcurrencyStamp = "4e4052e0-2792-45db-8553-2c7c4a9e28a2",
                             Email = "gcarvajal@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Carvajal",
@@ -724,16 +726,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "GCARVAJAL@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "GCARVAJAL",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c5068bfe-ca6a-413d-ba34-aa473e408355",
+                            SecurityStamp = "9778b2cf-811f-432d-a489-3dc9df99e0c5",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "gcarvajal"
                         },
                         new
                         {
-                            Id = "3442bc44-233c-49b4-bfb2-7d192fce6e1f",
+                            Id = "7680000e-71f3-44e4-9972-4f703c2bffad",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b5ea9f06-6b40-4ec8-ba7f-93ef606b254b",
+                            ConcurrencyStamp = "74fb2c99-7b94-4b2d-9c87-a4968cba8455",
                             Email = "lcasique@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Casique",
@@ -742,16 +744,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "LCASIQUE@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "LCASIQUE",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0268266a-61f4-4ac6-8c7d-852d3f3598b2",
+                            SecurityStamp = "fd0e5678-b1d8-4bea-afbc-e62f3f3355ef",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "lcasique"
                         },
                         new
                         {
-                            Id = "bc909edd-0be1-4f74-a915-e3326e999020",
+                            Id = "bff4cd63-7cd5-4ea3-8535-82254c745014",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ff1b61ab-5a94-4759-aad7-508ee646d390",
+                            ConcurrencyStamp = "75bf9928-835f-47df-9f23-f786e3a54215",
                             Email = "mcastro@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Castro",
@@ -760,16 +762,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MCASTRO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MCASTRO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a636670c-0cfe-4926-9900-6c9df5792af1",
+                            SecurityStamp = "e6912a2c-faf2-41a1-b31c-a8638da0a30b",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mcastro"
                         },
                         new
                         {
-                            Id = "17ccf6b4-99f5-463b-8144-a4a4777d23d7",
+                            Id = "32fc547f-195a-453d-8456-1d3ccc6f3cc1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0dc25425-9c4c-458f-909c-10c17b86962e",
+                            ConcurrencyStamp = "20cfc534-d945-4fe4-9204-df82bd4c48c9",
                             Email = "cchacon@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Chacón",
@@ -778,16 +780,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CCHACON@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CCHACON",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f8042111-0e7a-4887-97da-bcce7c3c0d49",
+                            SecurityStamp = "e2e76214-6b4c-4380-8a7b-4265840bac25",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "cchacon"
                         },
                         new
                         {
-                            Id = "b3cb61df-7ab0-4548-984d-048db3b13588",
+                            Id = "0ae383fd-a7eb-4000-bdaa-f472824d6dd2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f72e861c-71c4-434f-bba6-8ecc2bdc0d5c",
+                            ConcurrencyStamp = "b3cb5dd0-3d9d-492b-b9be-bee9175aa996",
                             Email = "cchirinos@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Chirinos",
@@ -796,16 +798,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CCHIRINOS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CCHIRINOS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "07bc198b-490b-421f-8ba1-65df8d1f3c9e",
+                            SecurityStamp = "6e29a2f1-7cb6-42f4-b9ef-9eff7fddfb47",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "cchirinos"
                         },
                         new
                         {
-                            Id = "844b4b24-c2cd-4a2a-898f-e8578899100b",
+                            Id = "6f981bdb-6ad0-4035-bf47-69674cd7188f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e7733665-f061-4526-bf0d-162044903af2",
+                            ConcurrencyStamp = "b688e8e6-7b6f-4b1c-81db-680836da675e",
                             Email = "cpadron@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Chumbi",
@@ -814,16 +816,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CPADRON@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CPADRON",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e8e67418-491c-4e08-bc31-803b95b8a9ca",
+                            SecurityStamp = "320c8e8a-0ab6-41d3-83fb-9e7f4e2a4dc9",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "cpadron"
                         },
                         new
                         {
-                            Id = "73edd497-ea60-4dae-bae0-a2955b83f30f",
+                            Id = "59263173-1698-4974-8ec1-dbd975b381b7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "19e55e7a-cbb7-4f35-a5c3-28f9fd2db465",
+                            ConcurrencyStamp = "ce704f03-3a60-4da6-90cb-cd58a610e68e",
                             Email = "acorton@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Corton",
@@ -832,16 +834,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "ACORTON@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "ACORTON",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6f1ba232-7b25-4dd7-813c-80a63d554c45",
+                            SecurityStamp = "7b2932e5-f574-4039-9534-18101cf39ef2",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "acorton"
                         },
                         new
                         {
-                            Id = "69934fac-3b72-4b86-b6a8-7afe61c3d613",
+                            Id = "81a54324-a5cb-4d26-9ad5-bf7a629ce6d4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b75e18a1-857a-4649-9efb-881b050eaad7",
+                            ConcurrencyStamp = "ade1b5d2-b08a-4260-8fa0-e7ed017de152",
                             Email = "pdaumy@losarcos.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Daumy",
@@ -850,16 +852,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "PDAUMY@LOSARCOS.EDU.VE",
                             NormalizedUserName = "PDAUMY",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "18e64712-f305-4dd1-a0b3-7660dfb6868f",
+                            SecurityStamp = "e6e32e80-d96a-4d75-8111-3e31e2fbfa25",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "pdaumy"
                         },
                         new
                         {
-                            Id = "cfc68f19-c390-49f1-a063-da897a74d124",
+                            Id = "3c422180-ac98-40c8-a07f-4531f0082933",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0665c9c5-eff9-4d4e-8cb1-126b63b09d24",
+                            ConcurrencyStamp = "e0b76fe6-fba2-4dd2-aff5-aa2e331ce2b8",
                             Email = "rpan@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Dávila",
@@ -868,16 +870,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "RPAN@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "RPAN",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9afee43b-8646-4d06-b720-dda04eb5f82d",
+                            SecurityStamp = "8c97019c-9ab9-4028-8f66-7141198ff062",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "rpan"
                         },
                         new
                         {
-                            Id = "dfcee0c3-9b3d-416c-81f7-14e503532d6d",
+                            Id = "966b8fb5-5aaa-46a9-9099-43630af23e2b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4db15a05-4b88-401c-b36b-890cbe3b01ac",
+                            ConcurrencyStamp = "5a1cd897-6d06-4460-9f01-ddada0a2c34b",
                             Email = "cdearmas@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "De Armas",
@@ -886,16 +888,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CDEARMAS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CDEARMAS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "120a2728-40b1-4bf2-bf94-bca22a9137a5",
+                            SecurityStamp = "217d2a8d-cc12-4179-a255-a564c5cea976",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "cdearmas"
                         },
                         new
                         {
-                            Id = "9d4e3178-7ec8-4422-8bbe-34a020506a76",
+                            Id = "f253a3a0-cd0e-4215-9eaa-35b42979dfbd",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b377bb66-7f9e-49ff-9450-315a121f9e13",
+                            ConcurrencyStamp = "e007de5a-e18d-425e-8fbc-50f164d59369",
                             Email = "igabaldon@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "De Gabaldon",
@@ -904,16 +906,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "IGABALDON@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "IGABALDON",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9da98947-f201-43b6-b77b-bc5cde25787b",
+                            SecurityStamp = "0df8e76f-448c-4830-a0b8-7b6c9f71567c",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "igabaldon"
                         },
                         new
                         {
-                            Id = "af32762b-7432-4a44-81d9-610b6dc3cbfc",
+                            Id = "6c91a266-fd8f-4abf-94f0-11687ff461ee",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "efce599a-4d15-43a3-bf2c-e9282bed9a56",
+                            ConcurrencyStamp = "903dc204-6d21-45f1-94f6-b8277b7a514c",
                             Email = "ldelgado@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Delgado",
@@ -922,16 +924,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "LDELGADO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "LDELGADO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1e8e59b0-ed0d-4d58-b6b4-01ad82962bea",
+                            SecurityStamp = "1ab893ae-b130-4acc-9006-5844acd9f3ad",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ldelgado"
                         },
                         new
                         {
-                            Id = "408c6ca4-192b-4e54-8a30-7813477dba10",
+                            Id = "24a659a2-75da-46e0-b436-69ec57d821b7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "27f63ce4-8d67-48ed-b1af-0bfe95ab398a",
+                            ConcurrencyStamp = "0861d55e-a8ad-49c0-8643-26770b1898f4",
                             Email = "mdiaz@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Diaz",
@@ -940,16 +942,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MDIAZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MDIAZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0861cb7d-a5cd-47e0-889d-9245aebc4cf8",
+                            SecurityStamp = "29742385-f64b-49f2-9a52-7fce18497e06",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mdiaz"
                         },
                         new
                         {
-                            Id = "f6f2b0a3-8552-46ab-8ec8-a25b3352eed5",
+                            Id = "871153da-093b-4831-8fa8-db88bf01e009",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "27cfccbe-630b-4f89-b2ec-88ba47c50ac2",
+                            ConcurrencyStamp = "87fc8411-83c5-47e8-847a-9a7b30989e04",
                             Email = "cadiaz@arcol.org",
                             EmailConfirmed = false,
                             LastNames = "Díaz",
@@ -958,16 +960,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CADIAZ@ARCOL.ORG",
                             NormalizedUserName = "CADIAZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3c368689-0e1b-4f1b-973f-01c1d4965169",
+                            SecurityStamp = "b8326b5c-684d-4578-9148-b830b06e2691",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "cadiaz"
                         },
                         new
                         {
-                            Id = "b2662155-376a-4b14-bf8a-32ff89c39927",
+                            Id = "85d765f4-a3d9-490b-bdba-b6b5788d1663",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "46817dec-20e8-4c59-a1e5-ec993708a5d8",
+                            ConcurrencyStamp = "67072b5d-9390-4790-9e3a-ee35f9f4abb4",
                             Email = "gadiaz@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Díaz",
@@ -976,16 +978,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "GADIAZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "GADIAZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9ce34df2-dc3c-4720-9c11-795de67ffce2",
+                            SecurityStamp = "13916289-2dcd-4b2f-8749-63e354a222d4",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "gadiaz"
                         },
                         new
                         {
-                            Id = "6d2ad9a1-3d2a-43f5-8286-e0be2e1d1a8a",
+                            Id = "d6a348b4-629f-446f-8dac-848de9927c28",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "25ea784f-3555-4b79-b18b-457144aaa2ea",
+                            ConcurrencyStamp = "57174d8e-e373-4f07-85ea-2bf3dfebfb9a",
                             Email = "mdjekki@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Djekki",
@@ -994,16 +996,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MDJEKKI@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MDJEKKI",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "596710bd-a164-48a8-bcda-cb8aa11e222b",
+                            SecurityStamp = "5501bbd4-fc86-4c34-950b-6f9a5be8b49c",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mdjekki"
                         },
                         new
                         {
-                            Id = "580d710e-8bed-4b1a-8c5b-270f06dc3a63",
+                            Id = "641f05e0-00e8-4f74-ac08-eefc1b48163d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f065071c-052e-4fb1-b954-519b8dd245fb",
+                            ConcurrencyStamp = "e7cb8a52-8e41-496f-b5fb-83563eb0aec8",
                             Email = "rdosreis@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Dos Reis",
@@ -1012,16 +1014,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "RDOSREIS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "RDOSREIS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a7a0de29-b3f9-4240-a54d-dc56b41dbcc8",
+                            SecurityStamp = "a249e0fa-9ff9-4649-9e85-244ea9938ca8",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "rdosreis"
                         },
                         new
                         {
-                            Id = "aeee6103-5874-415a-8b26-20c31934c0bb",
+                            Id = "3e95b97c-68dd-40cb-9d02-0a033714870a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f7bff97e-e026-4a00-b8fa-323eae60197a",
+                            ConcurrencyStamp = "e6b63fc8-6e8d-4ccc-96c7-c01478273130",
                             Email = "lduquem@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Duque",
@@ -1030,16 +1032,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "LDUQUEM@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "LDUQUEM",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d4494ba8-023b-4f5f-85e3-dcbc425c8136",
+                            SecurityStamp = "bc31581f-c57b-489b-b1f6-d5e8512fcabb",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "lduquem"
                         },
                         new
                         {
-                            Id = "fc0d6308-fad4-4ca5-834a-53146f6451f0",
+                            Id = "03ca9751-bba2-449a-afb4-0e463ce688b6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "af8ee8c4-0d4a-46b9-81ea-fd1f7de66655",
+                            ConcurrencyStamp = "e1b91ec2-21ba-457e-a98a-c5056eb394f2",
                             Email = "jduran@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Duran",
@@ -1048,16 +1050,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JDURAN@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JDURAN",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2521bb21-b441-4b94-9c07-dd8c848e1209",
+                            SecurityStamp = "17cbecad-a891-453e-88b1-923d202478f2",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jduran"
                         },
                         new
                         {
-                            Id = "6e15eab8-e042-4473-9c6c-3a2d02be2c4b",
+                            Id = "0d0d709e-d4cf-47fa-8199-c0074dbb017d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "13cca053-48da-4eaf-a9cd-3080a712d330",
+                            ConcurrencyStamp = "c65295ca-c01d-49c5-a5ec-cb93d44b887d",
                             Email = "rescobar@arcol.org",
                             EmailConfirmed = false,
                             LastNames = "Escobar",
@@ -1066,16 +1068,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "RESCOBAR@ARCOL.ORG",
                             NormalizedUserName = "RESCOBAR",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3fea0ac5-663a-44ad-b1a3-5491dc2b5692",
+                            SecurityStamp = "e31fac29-7f22-4b3e-be04-0dbe54fddb69",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "rescobar"
                         },
                         new
                         {
-                            Id = "1b4cddb6-00e1-4977-be40-8626e8310969",
+                            Id = "38ac9261-2a3e-41d4-a0b5-dd440849850e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "67b2588a-b797-4026-befc-00d74260b939",
+                            ConcurrencyStamp = "f7feda92-66b0-40ac-a396-ba2903e84fbb",
                             Email = "mestevez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Estévez",
@@ -1084,16 +1086,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MESTEVEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MESTEVEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "09b0de8b-3ab0-4eb0-a718-3a1b904e41b5",
+                            SecurityStamp = "93ba7cfc-6080-4a36-9c27-362acdd7be22",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mestevez"
                         },
                         new
                         {
-                            Id = "a8e14759-ddc7-4158-9e14-bd8f94589a84",
+                            Id = "a1a992b8-b5fc-4082-b681-708a22028989",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "534c0287-1341-4bf4-8fad-013989e6d07c",
+                            ConcurrencyStamp = "b187fb9b-d873-4071-b834-0edd21e95937",
                             Email = "afeola@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Feola Carrasquel",
@@ -1102,16 +1104,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "AFEOLA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "AFEOLA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "33978a40-408e-4b1c-a8aa-89ddd606d2b0",
+                            SecurityStamp = "4f9a7e49-c43e-4983-8e02-4a655b5c55d6",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "afeola"
                         },
                         new
                         {
-                            Id = "862b4ee2-ff20-4014-94ab-368b5b2ecae6",
+                            Id = "9a6f71b3-3e3a-4f51-bf7c-640514ef8db0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "49f03f0e-6fc3-47b8-ac87-c972d027528d",
+                            ConcurrencyStamp = "8d3a51d8-8c3f-41b0-b108-855eea3a51dc",
                             Email = "pfernandez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Fernández",
@@ -1120,16 +1122,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "PFERNANDEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "PFERNANDEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ca32c42a-75a4-46b4-863a-7d6a7c15cabb",
+                            SecurityStamp = "4fa34797-a2d8-4399-be6f-65246849edc4",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "pfernandez"
                         },
                         new
                         {
-                            Id = "c9408415-807a-4407-a2ec-99df0c76ba8c",
+                            Id = "1df7a9ee-9f7b-4938-9577-d5fd19aaaee9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d6d55363-b7b3-4e01-be38-14ee583d5c41",
+                            ConcurrencyStamp = "2f18b313-a808-4f0a-b425-54bf7de7248c",
                             Email = "rofernandez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Fernández",
@@ -1138,16 +1140,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "ROFERNANDEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "ROFERNANDEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8b7421fe-e5fb-4e67-a0d6-08306513addd",
+                            SecurityStamp = "53476454-2410-4588-96b3-3308921aa8db",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "rofernandez"
                         },
                         new
                         {
-                            Id = "9109aa4b-9111-4bed-a73d-98f8cb102b05",
+                            Id = "4bbf76bc-e331-4b82-b8ca-5a3dd402adf0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e56c7dd1-53c1-41c5-bdd2-46ac208ecd5f",
+                            ConcurrencyStamp = "673df971-27e7-4eb5-b185-64091ef368d9",
                             Email = "mfuenmayor@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Fuenmayor",
@@ -1156,16 +1158,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MFUENMAYOR@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MFUENMAYOR",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "71ee4475-9f0b-4eb5-8b77-09fcbe809278",
+                            SecurityStamp = "40ae4fd6-41b7-4cf4-ba64-029a041b13d2",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mfuenmayor"
                         },
                         new
                         {
-                            Id = "abea8699-58bd-4e1d-9c05-677a146748dc",
+                            Id = "d5296936-71bd-4846-9abe-9825e656003b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "72903e02-c414-483b-afd9-2d25c0be29d6",
+                            ConcurrencyStamp = "10899776-e9f0-4445-9bb2-ee87a29a4825",
                             Email = "sfuenmayor@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Fuenmayor",
@@ -1174,16 +1176,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "SFUENMAYOR@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "SFUENMAYOR",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "828ef6bf-e4c1-4a10-b4fb-3314c0b55e04",
+                            SecurityStamp = "f1dceb45-e8b1-4268-8ae4-02877b43f24f",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "sfuenmayor"
                         },
                         new
                         {
-                            Id = "accde0bc-0e59-405d-b233-3e806573f283",
+                            Id = "d8bf24f1-defa-4992-95ef-f004538bf3ae",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "24e7736d-10b4-4731-908a-1ef3ba6386e5",
+                            ConcurrencyStamp = "05a41e14-0208-4b92-b440-18abc8d61503",
                             Email = "tayling_steffany@hotmail.com",
                             EmailConfirmed = false,
                             LastNames = "Galindo",
@@ -1192,16 +1194,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "TAYLING_STEFFANY@HOTMAIL.COM",
                             NormalizedUserName = "TAYLING_STEFFANY",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2abe66d3-ecd9-4c65-ac2f-8d4812df0e3e",
+                            SecurityStamp = "44fd82b9-174e-4097-86f8-ed5563025d4b",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "tayling_steffany"
                         },
                         new
                         {
-                            Id = "acc3c11a-2ec8-43ec-879b-4aaaab163a37",
+                            Id = "475e1278-3696-4a22-9841-46e38dace052",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b2656667-422d-4f3d-9e1b-88b1f4d88b40",
+                            ConcurrencyStamp = "5d49d15a-7c00-4545-8c7f-70d9913f57b0",
                             Email = "rgallo@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Gallo",
@@ -1210,16 +1212,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "RGALLO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "RGALLO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e0177539-4b2c-4d6a-a7b4-e600e1a784d7",
+                            SecurityStamp = "c278c2aa-eaa9-42be-be16-a1b2e432c893",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "rgallo"
                         },
                         new
                         {
-                            Id = "1ef4657a-e1a3-4ef8-98b3-3354940ea472",
+                            Id = "96f7cac7-18f1-42d6-a8bd-8b8e01412328",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "879b42a9-b658-4532-8864-fd9ebdbc9b0f",
+                            ConcurrencyStamp = "8b54a70f-f539-409c-9646-57063ae9eefd",
                             Email = "agalviz@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Galviz",
@@ -1228,16 +1230,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "AGALVIZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "AGALVIZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ed15f854-f377-41f5-9347-9080b901ae73",
+                            SecurityStamp = "b8d81862-baad-4592-bb69-4300f125e687",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "agalviz"
                         },
                         new
                         {
-                            Id = "7b5735d2-0cad-400a-a1a9-1c0abb828c7b",
+                            Id = "332ecf02-a063-4dea-9708-b29378113c6a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7231d394-702c-4423-8d2a-b55fadd21928",
+                            ConcurrencyStamp = "8f35a353-52f0-4335-8aed-c6b9b24f9968",
                             Email = "amgarcia@legionaries.org",
                             EmailConfirmed = false,
                             LastNames = "García",
@@ -1246,16 +1248,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "AMGARCIA@LEGIONARIES.ORG",
                             NormalizedUserName = "AMGARCIA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5b8fd1f1-428c-4052-a14e-2e31fc642de5",
+                            SecurityStamp = "f0045236-2559-4f01-9386-c67260569c3c",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "amgarcia"
                         },
                         new
                         {
-                            Id = "5f776be5-02f3-440c-ad49-d72cca313e4b",
+                            Id = "55b9fa4f-6369-47aa-9c78-15a65327fdb9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c4d5d904-0fce-4a83-8960-ad09a0edcce6",
+                            ConcurrencyStamp = "90953244-6736-43d1-bf1d-f5d641ca5d86",
                             Email = "jgarcia@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "García",
@@ -1264,16 +1266,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JGARCIA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JGARCIA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c7430ccd-7b63-4a33-a386-f96ea68332f1",
+                            SecurityStamp = "44a9d3d2-8a98-4083-bcc4-ffdeb52f8386",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jgarcia"
                         },
                         new
                         {
-                            Id = "c025df09-5a3c-4eb9-a6b4-dc23ed181042",
+                            Id = "18184def-01d3-400b-b95f-27dc72843d9d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b5f1c9ae-ec57-4cc5-883d-2f36e1332ede",
+                            ConcurrencyStamp = "b08f3273-b4a3-43d6-8792-05fb6f10df49",
                             Email = "tgarcia@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "García",
@@ -1282,16 +1284,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "TGARCIA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "TGARCIA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a6e1feb2-367f-496a-8348-9a67c1dc13fc",
+                            SecurityStamp = "4af59a3a-b6bf-46fa-838e-d6233ec7ed04",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "tgarcia"
                         },
                         new
                         {
-                            Id = "a4667814-53b0-4a16-a775-6ab8e88024f6",
+                            Id = "9f424395-8581-4225-be95-83e557efd55a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e0941058-f6c9-448f-823a-6afa8d962b16",
+                            ConcurrencyStamp = "75098916-7abf-4ff4-b0a5-d51564265d1d",
                             Email = "jgil@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Gil",
@@ -1300,16 +1302,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JGIL@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JGIL",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7069ae33-33ee-4d13-9c5f-99958afa06b2",
+                            SecurityStamp = "b2885868-1aba-4035-aef5-23057167b3ac",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jgil"
                         },
                         new
                         {
-                            Id = "38a873ba-0dfc-49d9-90ea-6267b2b88407",
+                            Id = "10f891c7-8052-4e4a-93c6-a5dded23d1c9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bb4b3790-d4ff-424d-91a7-ad13cc240527",
+                            ConcurrencyStamp = "d1229963-a623-41b0-a4c6-1663fb7cf2c6",
                             Email = "dgiuliani@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Giuliani",
@@ -1318,16 +1320,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "DGIULIANI@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "DGIULIANI",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ef94e8db-0581-41d2-9c95-334e14a27b90",
+                            SecurityStamp = "5d22447c-1080-482e-9b0c-215e9a4543b4",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "dgiuliani"
                         },
                         new
                         {
-                            Id = "c87b5b74-e58f-4960-a068-24aa3594403c",
+                            Id = "a3616db1-2c18-4366-8d53-d0a714ce60e2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d9d63ac1-d180-4492-96c0-c5cabf8645d5",
+                            ConcurrencyStamp = "1b58176b-acca-4375-bbb9-3a702c429025",
                             Email = "cgomez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Gomez",
@@ -1336,16 +1338,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CGOMEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CGOMEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b21358f2-7c8b-4a4d-870f-df67e72de4d5",
+                            SecurityStamp = "eef6f3c5-a0c5-457d-a165-dd1dbc951091",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "cgomez"
                         },
                         new
                         {
-                            Id = "c0474742-5618-479d-b3c6-a97ae91f6345",
+                            Id = "83c7bca0-47c7-4864-adcb-1e17b06ec9c0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9267ba2a-c4e3-4253-bfd2-04dcc423b7c3",
+                            ConcurrencyStamp = "731963d0-f1aa-4bbd-acaf-ac849669c985",
                             Email = "mgonzalez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "González",
@@ -1354,16 +1356,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MGONZALEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MGONZALEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5d903730-2278-40e5-b9ce-14794d9c9e26",
+                            SecurityStamp = "a2fa1adc-f5ed-4274-8dca-f7d41433bc8c",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mgonzalez"
                         },
                         new
                         {
-                            Id = "0cc9458a-2351-43bd-8ea9-a91b7d8bedd9",
+                            Id = "2bd1ddb0-c63a-478f-82fc-80c99391441f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "802c1e26-b05a-401c-85bc-e553651456e2",
+                            ConcurrencyStamp = "0ec54b89-8999-4043-b7fb-dd0451288d04",
                             Email = "rvgonzalez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "González",
@@ -1372,16 +1374,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "RVGONZALEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "RVGONZALEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "478b4f70-3042-4189-8905-882f85dc2acd",
+                            SecurityStamp = "133dc1d8-15a8-4e75-89f3-7cdbec98e5b2",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "rvgonzalez"
                         },
                         new
                         {
-                            Id = "c885728f-e62f-453a-9a7d-a6f44ce03d9e",
+                            Id = "7f1ac272-cb65-4eec-9305-b577529abfe8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "cebfa4f8-f4be-4d64-a994-e91d97518e38",
+                            ConcurrencyStamp = "22ee6800-32f4-402b-a1bd-75cb35c13932",
                             Email = "arguerra@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Guerra",
@@ -1390,16 +1392,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "ARGUERRA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "ARGUERRA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "373103e3-1417-4eea-9732-442fa541642b",
+                            SecurityStamp = "7ae0775f-17c3-40df-9371-0e4fb0a8b634",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "arguerra"
                         },
                         new
                         {
-                            Id = "52d92212-bd4c-456a-8861-3620c004b36b",
+                            Id = "3ce8b80a-bc50-40c7-926a-c31f05f40b0a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "071b60c2-d662-47eb-87b3-5bc5e2836a35",
+                            ConcurrencyStamp = "7acce9c3-d4a6-44aa-9748-5dd7db43542c",
                             Email = "jguillen@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Guillén",
@@ -1408,16 +1410,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JGUILLEN@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JGUILLEN",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b14a3d7e-fafd-4f86-bbd6-041c602d907c",
+                            SecurityStamp = "37c4b29d-076f-4938-94d6-aa91671095e7",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jguillen"
                         },
                         new
                         {
-                            Id = "c308bc18-78c2-4f37-98cf-4f4100ddb176",
+                            Id = "e806f172-c682-4253-8189-81f221961603",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fdf2a316-103f-4d50-b240-b6913f1907db",
+                            ConcurrencyStamp = "45bf41cd-e3a1-4730-ab4f-d4e71de7d6ef",
                             Email = "mguillen@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Guillén",
@@ -1426,16 +1428,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MGUILLEN@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MGUILLEN",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "420d1108-8799-440d-ba6f-65ce0711f522",
+                            SecurityStamp = "5e9f349e-e541-4a1f-af25-f6f954f0f62f",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mguillen"
                         },
                         new
                         {
-                            Id = "9127e4fe-db89-4e35-b5a8-086357868dc7",
+                            Id = "b5285a1b-7fcc-49a5-8874-5afa387700ef",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7f188019-5366-4d66-93c3-34b0319881d7",
+                            ConcurrencyStamp = "9809d526-a428-470c-afc6-a8387579e4f2",
                             Email = "jmgutierrez@cumbrescracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Gutierrez",
@@ -1444,16 +1446,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JMGUTIERREZ@CUMBRESCRACAS.EDU.VE",
                             NormalizedUserName = "JMGUTIERREZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "aa13b8ae-a1d5-4bfc-a27a-f4bff58d1ba5",
+                            SecurityStamp = "61a4262d-b115-42c1-b7c9-6100392091b4",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jmgutierrez"
                         },
                         new
                         {
-                            Id = "24a05b1e-0ea3-4123-82d0-33746c59e0ab",
+                            Id = "cf57de36-20f8-42ad-816d-9aade4e1b4e9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5b62a40c-36c5-41d1-a0cc-efdd1260d5cf",
+                            ConcurrencyStamp = "ba0c5ed0-f541-438a-9a88-1ddbd8513cf9",
                             Email = "legutierrez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Gutiérrez",
@@ -1462,16 +1464,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "LEGUTIERREZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "LEGUTIERREZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1f8da50c-7e94-457d-8011-e50d7d345c55",
+                            SecurityStamp = "76c1306b-ee81-4ed6-b8da-bbacc1c2819d",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "legutierrez"
                         },
                         new
                         {
-                            Id = "6f8864b8-0bc9-4357-a22f-e7a406d9327d",
+                            Id = "55618f52-0c1f-4e7c-973f-5d5d3c478a2f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b81357e8-743c-424c-9f9f-d0a3142548d7",
+                            ConcurrencyStamp = "3d346c12-d919-4dc6-8ee0-a0c904951809",
                             Email = "sharrisson@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Harrisson",
@@ -1480,16 +1482,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "SHARRISSON@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "SHARRISSON",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b9113c1e-5f36-49d3-9d52-2cc2dc0591a1",
+                            SecurityStamp = "c4525aa1-8245-409a-b303-b23a6e1f4792",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "sharrisson"
                         },
                         new
                         {
-                            Id = "46f9ffa2-fc55-412a-a9e9-49a57ac24143",
+                            Id = "78f29381-dc7b-4fff-a3d2-dd0e4cd62778",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8fef9cfb-4657-48d0-9112-689ce86e2a5d",
+                            ConcurrencyStamp = "6e8e2c05-96ff-409a-aa3e-bfdfe4f7e614",
                             Email = "ahenriquez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Henríquez",
@@ -1498,16 +1500,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "AHENRIQUEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "AHENRIQUEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "87ce474b-5742-4fcb-a3c2-caa22e01b0be",
+                            SecurityStamp = "5849b048-dea7-41f9-b03b-7d9dec80b558",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ahenriquez"
                         },
                         new
                         {
-                            Id = "fc4cda21-1c86-4849-874a-cd1339c14f24",
+                            Id = "92f7ebda-0e6d-454e-b708-a3198d330f18",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c00cd5f9-8f30-434f-9586-d707a1db3cf6",
+                            ConcurrencyStamp = "7c2968e4-f354-4bfb-ad98-1c77470a8349",
                             Email = "chenriquez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Henríquez",
@@ -1516,16 +1518,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CHENRIQUEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CHENRIQUEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "adc1e3ab-9fef-40be-9ce5-8a82a51b00da",
+                            SecurityStamp = "187bcc29-5d84-42be-9108-a04b460d590b",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "chenriquez"
                         },
                         new
                         {
-                            Id = "a5f13063-afa1-41e0-94d3-33204be5ca4a",
+                            Id = "2c2c8ad8-cc8d-4f9d-aa71-6832df33a271",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5d0b996f-53e8-4651-a6ff-f4d3e0bdd4bb",
+                            ConcurrencyStamp = "bbed507c-c8a3-4e0b-a548-3f36674a91b9",
                             Email = "mhernandez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Hernandez",
@@ -1534,16 +1536,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MHERNANDEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MHERNANDEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "65a12110-1339-46c7-bfcb-cd0d00b7a263",
+                            SecurityStamp = "ce9d2906-a648-489d-b87e-b7de11dd7d04",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mhernandez"
                         },
                         new
                         {
-                            Id = "478c1dc7-df51-493b-b0dd-20aa7f28cb67",
+                            Id = "3e83a6b2-ba7b-4532-a37b-e527e9296c26",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d0933e20-1b28-47be-98c7-ab0e1902b8a4",
+                            ConcurrencyStamp = "c3d28188-5949-430f-9404-f2534c5e67ce",
                             Email = "maherrera@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Herrera Bello",
@@ -1552,16 +1554,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MAHERRERA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MAHERRERA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9cf2e35e-d700-4ff0-8434-9116ac29d090",
+                            SecurityStamp = "943e0a7d-f608-4fdb-9cc3-09ee1b7e6534",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "maherrera"
                         },
                         new
                         {
-                            Id = "69970c64-4097-42aa-bc92-784f677386a3",
+                            Id = "e35a1c9a-4aae-4ada-b6c3-4b5b881f044e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "95b68ec1-33e6-4954-87a5-89aae5e7ae26",
+                            ConcurrencyStamp = "0937d4f9-ea38-4989-9ab2-a0e09e8660f1",
                             Email = "mitriago@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Itriago",
@@ -1570,16 +1572,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MITRIAGO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MITRIAGO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8f7cf309-a7de-4176-bfae-66a5c8097e61",
+                            SecurityStamp = "2fc21082-e8f6-4ae9-ad26-5916ffb12536",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mitriago"
                         },
                         new
                         {
-                            Id = "f9d8a047-b901-43f5-8cf3-8dba29725b18",
+                            Id = "0f655433-c033-434b-ad1d-2921c291e920",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c9cefc22-eb1e-4f49-aa58-26c044422f7e",
+                            ConcurrencyStamp = "068ac85e-1b72-4d0d-9640-03ef9bc3c674",
                             Email = "blosada@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Losada",
@@ -1588,16 +1590,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "BLOSADA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "BLOSADA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f9684960-15f5-4c44-a453-98cf60443601",
+                            SecurityStamp = "69549ce7-16ad-472f-a0bf-c4447a4290f2",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "blosada"
                         },
                         new
                         {
-                            Id = "16f9f9eb-57cb-41d8-9a49-8ecaad8a6759",
+                            Id = "1bbf9609-3a8a-4fb7-a475-9d3494856a58",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4ba16609-b2f8-4393-becc-ed042aba058b",
+                            ConcurrencyStamp = "58c678de-b1cb-4349-a38e-10a42adef943",
                             Email = "alovera@cumbrescarcas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Lovera",
@@ -1606,16 +1608,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "ALOVERA@CUMBRESCARCAS.EDU.VE",
                             NormalizedUserName = "ALOVERA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b69682e6-3717-4050-92b3-d9a83196746b",
+                            SecurityStamp = "d3c21832-7df3-4107-a05f-c4fd2221f915",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "alovera"
                         },
                         new
                         {
-                            Id = "c8dcafe3-ba0a-4f2c-95e7-602256b5bc99",
+                            Id = "d63e01f1-6289-48b7-bfde-f5d8da9f8340",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e6bdfb67-1f83-4aab-863c-d33958938a74",
+                            ConcurrencyStamp = "15d0dd48-64d5-4424-aecd-98d42663552c",
                             Email = "iluca@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Luca",
@@ -1624,16 +1626,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "ILUCA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "ILUCA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d4788e50-e73e-4a92-bf94-7d37c7b53646",
+                            SecurityStamp = "cb6007dc-831c-46cd-bdc6-2ae28eb6dbd2",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "iluca"
                         },
                         new
                         {
-                            Id = "ca2822fe-9adc-46f4-8f8a-6d2194fe1bb9",
+                            Id = "89c5c7ad-bd78-4c30-a918-2efd49c3e146",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "73e82ef2-a785-4287-9441-12c7298fb518",
+                            ConcurrencyStamp = "12ade464-2817-454f-a52e-0f8785359b7f",
                             Email = "dlucero@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Lucero",
@@ -1642,16 +1644,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "DLUCERO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "DLUCERO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6ccf5222-d5b4-41f5-bbc5-15b30650de73",
+                            SecurityStamp = "33a5a9c6-5f1d-43ea-8265-52d6bfc0e90d",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "dlucero"
                         },
                         new
                         {
-                            Id = "969680b5-27fe-4712-8ba7-8683076fd5b7",
+                            Id = "c13487e4-f007-48bc-a115-1f859c8cbb33",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "aeaa33cb-08d0-4242-b114-fdf339f5c47a",
+                            ConcurrencyStamp = "eebbf9c8-3ad1-45a4-b47d-26d9e77ae865",
                             Email = "ilugo@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Lugo Caravallo",
@@ -1660,16 +1662,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "ILUGO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "ILUGO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ce040b03-410d-42b9-b3b6-9854a9abd8bc",
+                            SecurityStamp = "1ecacd7e-639f-4e17-bd15-941b28aef799",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ilugo"
                         },
                         new
                         {
-                            Id = "c6801e7d-68dd-4d47-b0de-029135b2d3b1",
+                            Id = "f6e692e4-d083-490e-811d-0ac80388f159",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fad896ba-1104-401c-a5c1-799d08a93a3a",
+                            ConcurrencyStamp = "d2434fbb-76c4-41ff-9a03-76b4640e2a98",
                             Email = "ayepes@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Machado",
@@ -1678,16 +1680,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "AYEPES@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "AYEPES",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2e8d3c83-6c88-48f4-a52c-a8f83ba1487a",
+                            SecurityStamp = "9d1c873f-8a3f-4ef3-913c-fe3fde1acf0e",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ayepes"
                         },
                         new
                         {
-                            Id = "e7c3415e-ad8d-4fe3-af17-75f61c42bd38",
+                            Id = "50134069-11e0-47e8-accd-c80579d23b67",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "04538343-4036-4187-8aab-8bcfc6bfa462",
+                            ConcurrencyStamp = "665f9ce2-3ce1-4a8c-824c-0f23e7d6149d",
                             Email = "nmagdaleno@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Magdaleno",
@@ -1696,16 +1698,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "NMAGDALENO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "NMAGDALENO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f3e7274e-ff15-4a3c-80e3-e95a54af1018",
+                            SecurityStamp = "e3c5d937-1fc0-451a-a30a-0a0bcc8e21de",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "nmagdaleno"
                         },
                         new
                         {
-                            Id = "59ddb270-b590-4d64-b56b-1adad29518ca",
+                            Id = "1ffd0801-608d-40b6-b05b-04fde6af7433",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2934e708-e715-4d4b-9425-6e01abef5654",
+                            ConcurrencyStamp = "5e53734a-8793-4a23-af2a-3d153c98e29c",
                             Email = "mariomanrique@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Manrique",
@@ -1714,16 +1716,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MARIOMANRIQUE@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MARIOMANRIQUE",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1f55be58-249e-43cd-812d-5b05c59aba03",
+                            SecurityStamp = "1b4ac9c2-fe1f-49a4-8571-8822c98c8fc6",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mariomanrique"
                         },
                         new
                         {
-                            Id = "801e30e0-9561-47e6-8dc8-552b752b5ec2",
+                            Id = "b6369a3f-3515-446e-a274-4c0db784ae8c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bcfeeb04-4ac4-42b1-bfb9-2bb8039edcb3",
+                            ConcurrencyStamp = "2a6b66ca-3d67-4a2b-93f9-5e00926f729a",
                             Email = "kmarcano@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Marcano",
@@ -1732,16 +1734,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "KMARCANO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "KMARCANO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "41e74986-ff2b-4628-8987-8d9c7c3b3c13",
+                            SecurityStamp = "892e3061-6eb6-4913-8276-693e837619e0",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "kmarcano"
                         },
                         new
                         {
-                            Id = "c8d27f3e-3d93-4263-8335-39a6df7b8bce",
+                            Id = "330f4f49-5ec5-437f-a789-0d49f98d48a3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "57b344ee-f102-4826-a25e-11cad0c16c46",
+                            ConcurrencyStamp = "d16acf85-4fe2-4def-9620-a0dd9af288ca",
                             Email = "jumarmol@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Mármol",
@@ -1750,16 +1752,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JUMARMOL@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JUMARMOL",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "49f8517e-306b-4106-b5c1-77fdd82649b4",
+                            SecurityStamp = "3c4720e9-3ebd-452c-ae7b-119e387c4750",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jumarmol"
                         },
                         new
                         {
-                            Id = "3cfe7ebc-68f8-4b01-a382-02dfcb879c60",
+                            Id = "c0b06609-c3ac-47f1-a95a-50cb94262a8e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "45e90b22-e8bf-486e-9b56-bc9e6539cb33",
+                            ConcurrencyStamp = "a2db104b-d4b2-417e-a574-4e668fdb12ff",
                             Email = "mmarquez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Márquez",
@@ -1768,16 +1770,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MMARQUEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MMARQUEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c4ab1b99-a768-4a23-a567-edbaa32c2c5f",
+                            SecurityStamp = "007e6c85-19ed-45d8-a507-2cf0a8fd0c6a",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mmarquez"
                         },
                         new
                         {
-                            Id = "7051a01d-4bd9-4ad6-a621-7188b1153495",
+                            Id = "ad1e6e28-4ca7-4b25-9a9b-6c6cb7aabae1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4b850c80-568f-4f8c-b283-494700fb0540",
+                            ConcurrencyStamp = "21161ea5-e06a-47ac-8fb2-b5094487734f",
                             Email = "jmarti@legionaries.org",
                             EmailConfirmed = false,
                             LastNames = "Martí",
@@ -1786,16 +1788,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JMARTI@LEGIONARIES.ORG",
                             NormalizedUserName = "JMARTI",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "454bb87b-c1d1-4b12-9602-286446fa9751",
+                            SecurityStamp = "64740efc-27b9-4336-b19f-0d88b4cc88ab",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jmarti"
                         },
                         new
                         {
-                            Id = "d2d89199-8b66-4811-a598-5e9847f595e4",
+                            Id = "18630156-2454-4538-8297-751df599e940",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "342cda2c-9f03-4e7f-9d10-4a781cc952d3",
+                            ConcurrencyStamp = "fa9eac98-b0b8-4aba-8dc7-473962baed97",
                             Email = "dmarval@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Marval",
@@ -1804,16 +1806,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "DMARVAL@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "DMARVAL",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "dbf67755-effd-4f03-b462-2c17a2a26fbb",
+                            SecurityStamp = "bb0562bc-12cd-482e-ba40-dcc4a41a3fbf",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "dmarval"
                         },
                         new
                         {
-                            Id = "250583b8-c2bd-49f8-8007-75a0a5e98c8b",
+                            Id = "0d9c9940-4637-4d2a-8ee1-00aa6158ed9d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b405e0e6-07e8-429e-a25e-7394e1226c23",
+                            ConcurrencyStamp = "c4883689-f40c-4178-a5ba-605ef76e5eb8",
                             Email = "amarzucco@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Marzucco",
@@ -1822,16 +1824,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "AMARZUCCO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "AMARZUCCO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d0633360-c536-4646-b3e4-8330cc0a4282",
+                            SecurityStamp = "a7dbd623-c08c-4b42-9915-f0100591c9d2",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "amarzucco"
                         },
                         new
                         {
-                            Id = "a063f278-413a-4611-9f76-416306878ac5",
+                            Id = "f99df576-6037-4b8a-9e12-1f850015b582",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "55b5e1df-dfe7-465c-8ffa-087de38c29b9",
+                            ConcurrencyStamp = "af0a5b5d-343a-4fc1-ba49-e992705a4051",
                             Email = "dmata@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Mata",
@@ -1840,16 +1842,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "DMATA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "DMATA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e0d17d01-f984-492c-a1a9-9d57c5e25e38",
+                            SecurityStamp = "39da2d31-4db8-49d7-8665-afc5ace2da6e",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "dmata"
                         },
                         new
                         {
-                            Id = "317dccb5-c0cb-496d-9df2-76e4f0cff162",
+                            Id = "a95392fe-682c-4221-b67f-5d9bf7bad018",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f6f65fac-4452-4ae0-a55f-8ca9af485a64",
+                            ConcurrencyStamp = "421b0bfd-ce2c-4110-8bca-6e95d676ed55",
                             Email = "mmata@arcol.org",
                             EmailConfirmed = false,
                             LastNames = "Mata De Mora",
@@ -1858,16 +1860,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MMATA@ARCOL.ORG",
                             NormalizedUserName = "MMATA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b6377fd7-0e3f-4609-a794-4d07f6b88b36",
+                            SecurityStamp = "47bd15a3-60f5-4f48-ace1-9fefae49f3b1",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mmata"
                         },
                         new
                         {
-                            Id = "46340b44-f2b3-4fbc-a582-31bb37a6f8ca",
+                            Id = "423d83b9-6b5d-4d59-8037-ad590c10194b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6affe52d-f30c-4974-ae0c-db87b93985af",
+                            ConcurrencyStamp = "899ad047-6ba5-4d78-b92a-5b7bb4206424",
                             Email = "imaurovich@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Maurovich",
@@ -1876,16 +1878,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "IMAUROVICH@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "IMAUROVICH",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d8557074-7945-4376-900c-5d3d35a1d544",
+                            SecurityStamp = "ee3ade41-98aa-4f42-9232-1c3ae484b56e",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "imaurovich"
                         },
                         new
                         {
-                            Id = "63d97a5a-0f3d-4531-9d33-0582fa4a6218",
+                            Id = "7996a219-4c45-4152-b0cb-548f5faf1d1a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0f59e30d-a11f-467d-b7fb-92ef3cf5d1c3",
+                            ConcurrencyStamp = "86b5c6d9-fb63-40c5-9a8a-8eb6175760d3",
                             Email = "imejias@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Mejias",
@@ -1894,16 +1896,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "IMEJIAS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "IMEJIAS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1c888322-8b99-4964-9e9d-ec61d436451a",
+                            SecurityStamp = "bcdc3b2c-0356-4a9d-bde1-d8456d8ea452",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "imejias"
                         },
                         new
                         {
-                            Id = "146ee65a-ae13-4a80-8bf4-a661d518462a",
+                            Id = "a6c32146-b2fa-4a3f-8f15-b4ecb9ab98e3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5f4850c3-79a1-468c-aafe-2971bdddd7e8",
+                            ConcurrencyStamp = "be32de67-059a-43cd-bac1-b8c0165865cb",
                             Email = "lmesa@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Mesa",
@@ -1912,16 +1914,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "LMESA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "LMESA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2fe7ec1e-6f85-49da-98c7-35d35fa6df68",
+                            SecurityStamp = "120b0670-a978-4a03-9aba-147379640a58",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "lmesa"
                         },
                         new
                         {
-                            Id = "792334cb-e51c-449d-8eee-411e3fddde99",
+                            Id = "b8184102-7f35-4aa7-97cb-659171540244",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b9bc6506-0aaa-4e87-acb4-f33082ec6483",
+                            ConcurrencyStamp = "295d0c74-94c3-4977-a8f7-2c6f49737b5b",
                             Email = "mmichelena@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Michelena",
@@ -1930,16 +1932,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MMICHELENA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MMICHELENA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bbdcbd4c-db5b-4b0e-af16-f48eedf1cfb6",
+                            SecurityStamp = "2d4207e3-810c-4350-8042-5e1f2a01a5b0",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mmichelena"
                         },
                         new
                         {
-                            Id = "90ca07c7-d450-4ccf-a943-f227dc6aed05",
+                            Id = "bd02e5d3-3496-4fc0-9ac1-39a547b8a688",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "83ab4e80-94dd-4271-a8da-bef95a5abed9",
+                            ConcurrencyStamp = "f476948f-bfd9-4566-8460-ed7fc5ffa703",
                             Email = "jmontilla@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Montilla",
@@ -1948,16 +1950,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JMONTILLA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JMONTILLA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0f2f049c-144d-4ce7-bfde-faa061ec81a4",
+                            SecurityStamp = "f2a172ed-e310-4af0-bd46-13f584258ec0",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jmontilla"
                         },
                         new
                         {
-                            Id = "e8ebb23f-a633-4368-9c4f-e71f48667b4e",
+                            Id = "b79400ca-06f8-4cef-8697-a8ecaf318654",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "27f9b7b1-9360-4320-a882-14bbc9184291",
+                            ConcurrencyStamp = "72c0cf3f-adac-40e9-9693-50d7c11298e5",
                             Email = "dmoreau@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Moreau",
@@ -1966,16 +1968,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "DMOREAU@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "DMOREAU",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3d7b91f7-a211-4d71-a6ae-fba231d68009",
+                            SecurityStamp = "d0ddd22b-7e07-4f6a-9ab6-967ea4e8c642",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "dmoreau"
                         },
                         new
                         {
-                            Id = "522331d4-b816-4500-819c-c1a9e4624dc2",
+                            Id = "611bf5e7-984a-47cf-8c50-041e9bc050ae",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "03815944-797a-4c69-b6d6-e9e238768ea3",
+                            ConcurrencyStamp = "d2ccc806-5525-424a-87f0-511ba55f69df",
                             Email = "ymoreira@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Moreira",
@@ -1984,16 +1986,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "YMOREIRA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "YMOREIRA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "75f53a6a-b629-4a9e-ac13-38936a29df75",
+                            SecurityStamp = "12d37663-8dac-439b-872d-f599c1407691",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ymoreira"
                         },
                         new
                         {
-                            Id = "1d804a4d-409b-438c-ac69-63da14c77003",
+                            Id = "5bfdc96f-0ca6-4c1d-9ab9-20506501a857",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9bf808ee-b3ea-4e5a-b772-90cfbd793358",
+                            ConcurrencyStamp = "808fccc9-2320-49c9-ba10-e998ba4c51c9",
                             Email = "kmoreno@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Moreno",
@@ -2002,16 +2004,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "KMORENO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "KMORENO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9d4543b5-9713-42ac-aa12-88fcd65b1254",
+                            SecurityStamp = "c0b03cc4-2aaa-4830-a4ae-c26b09088779",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "kmoreno"
                         },
                         new
                         {
-                            Id = "5db7ecf6-68ef-4b70-9185-9d6fd50c0632",
+                            Id = "b62b2ff4-f44d-41e9-8392-1cfbe0bce2f9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "016d207e-3d90-4969-b5c7-ddc4bdcb760a",
+                            ConcurrencyStamp = "266f2324-d026-4351-80ff-a267aa9218f6",
                             Email = "mnakhal@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Nakhal Akel",
@@ -2020,16 +2022,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MNAKHAL@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MNAKHAL",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "44458ad0-dc0c-4526-9ad2-15f2e1be61ea",
+                            SecurityStamp = "340af6e9-a042-4b20-84ec-b8ccd6b316dc",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mnakhal"
                         },
                         new
                         {
-                            Id = "a749f81b-5ece-4731-8dcf-6a160074b7a0",
+                            Id = "1e1fdba9-4074-4f09-8de5-39f1aac1e4ec",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6aed5f89-92cb-49fe-a59c-0500185e1de4",
+                            ConcurrencyStamp = "26794dc5-24f6-4bb6-85d4-8dcae48e11ef",
                             Email = "dnava@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Nava",
@@ -2038,16 +2040,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "DNAVA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "DNAVA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "17884cd9-75b3-4f5d-bca2-b7d775427057",
+                            SecurityStamp = "2d95b312-ac9c-40ca-8412-d83d81b0ed90",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "dnava"
                         },
                         new
                         {
-                            Id = "3cec97f6-59b1-450a-b0e2-d00fde8d6efa",
+                            Id = "470fb3a6-14c8-41b6-9b79-a39c5d2cb80e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "58be05f5-0db8-42d1-bf8f-33df775c25d3",
+                            ConcurrencyStamp = "b4aaf506-8779-4353-874b-f78e2ec14af1",
                             Email = "cnoguera@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Noguera",
@@ -2056,16 +2058,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CNOGUERA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CNOGUERA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c145bf15-f345-4c0e-a475-c7e56f4ad60c",
+                            SecurityStamp = "a088dfcc-f291-4a8e-ad94-3722330a0473",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "cnoguera"
                         },
                         new
                         {
-                            Id = "2b56af7a-5079-48f4-b480-013bcaf45032",
+                            Id = "7abcf5af-065e-47c6-b2b9-7afa2d662ad6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "16bfef45-f5df-49a6-88af-8f140c0ff22e",
+                            ConcurrencyStamp = "8a6a329b-d54e-48b3-ae26-8a0b7ed0ef1c",
                             Email = "yoropeza@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Oropeza",
@@ -2074,16 +2076,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "YOROPEZA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "YOROPEZA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a9e15ed6-1816-48f9-ad4b-17ba973cea90",
+                            SecurityStamp = "16ab0ee2-edd9-4e9d-a713-e6af48f7ed12",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "yoropeza"
                         },
                         new
                         {
-                            Id = "bfab47b8-8c7a-4a4e-8e1e-bc8d09e68286",
+                            Id = "e3086ad4-ee6e-4062-bc7e-47bc6dade74d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "77319938-634f-45d6-9e0f-8a69302da137",
+                            ConcurrencyStamp = "fdff9b60-8b9b-4b0b-a9c0-ccac42af9092",
                             Email = "gaortega@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Ortega",
@@ -2092,16 +2094,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "GAORTEGA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "GAORTEGA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "41beac4a-4873-4f88-b889-dba13adba5f8",
+                            SecurityStamp = "ddb55be5-76b1-4766-9e90-4f735dbab031",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "gaortega"
                         },
                         new
                         {
-                            Id = "2a91b021-cc47-4c31-85d8-4f9f08db24db",
+                            Id = "73b12af7-e7ae-4491-985d-91bf9a308ee7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "19cbe1f0-2249-4381-bfe8-99dfea985975",
+                            ConcurrencyStamp = "bec53e57-b364-4d77-acc6-d2e09d366b26",
                             Email = "aortuno@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Ortuño",
@@ -2110,16 +2112,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "AORTUNO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "AORTUNO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "79a1250b-097c-4b84-b7bd-5b8790341dfe",
+                            SecurityStamp = "db77b329-581a-474a-8d1a-3a163d6963d8",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "aortuno"
                         },
                         new
                         {
-                            Id = "008b4a06-7859-4622-b8dc-7ce871596ea8",
+                            Id = "b38aa08b-e8df-4088-a9c0-c9dfa49854a5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "900fe79f-f75c-4eca-a98c-d04f955f1633",
+                            ConcurrencyStamp = "30987bcf-f3fe-4345-994b-d3f6a62a12d2",
                             Email = "pparis@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Paris",
@@ -2128,16 +2130,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "PPARIS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "PPARIS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "aeb4267f-9d5f-4b1e-abc2-e71262f6589a",
+                            SecurityStamp = "2c6cf659-b174-4cb0-9acd-6aef6ff5816e",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "pparis"
                         },
                         new
                         {
-                            Id = "d36db9c1-9cf9-4654-8f7b-3101f4f3a2f8",
+                            Id = "62b31cf3-68f0-4999-89c0-adf5d294d65c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d88f11c0-98b7-438d-96cc-df939856998f",
+                            ConcurrencyStamp = "35025cce-6846-400a-b156-4f0d747f5b0f",
                             Email = "mparra@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Parra",
@@ -2146,16 +2148,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MPARRA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MPARRA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "064b6a58-bf3d-4afa-a34e-a328cafc691f",
+                            SecurityStamp = "51ad414f-6e39-48f8-b4bb-517f7775a5ab",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mparra"
                         },
                         new
                         {
-                            Id = "9e2f9c09-9e17-4755-b095-537478a077e7",
+                            Id = "83103ab8-1b85-445a-b722-ea13fb10d03b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7aed9215-acb5-455b-a589-5da316dd87b0",
+                            ConcurrencyStamp = "997fe370-f234-460f-bb3d-b609d502d22a",
                             Email = "mpenaranda@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Peñaranda",
@@ -2164,16 +2166,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MPENARANDA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MPENARANDA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "aaf38be6-80d0-4035-b9c0-2c29488f8766",
+                            SecurityStamp = "5b07193e-d3df-494d-ba6e-74caca5d949f",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mpenaranda"
                         },
                         new
                         {
-                            Id = "2d48c3c5-5eaa-4fee-af8c-c29e99140980",
+                            Id = "ccb4f022-dd24-4482-842e-a99940da1484",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "070b6e85-6df8-41c5-a9b2-ed688d19d220",
+                            ConcurrencyStamp = "098bb3ff-0cf0-4226-a966-718a6f111126",
                             Email = "bperez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Perez",
@@ -2182,16 +2184,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "BPEREZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "BPEREZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7544e960-9af4-40dd-8640-8b59fd5e7dca",
+                            SecurityStamp = "5b95a6fb-3b2d-43dd-a3dd-ddf0301ddf05",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "bperez"
                         },
                         new
                         {
-                            Id = "35ab7ccc-939e-467f-add6-07c1eed173b7",
+                            Id = "3b2d1866-2cb8-46c5-9db8-44609b56a766",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2d848828-1fe1-4aad-ac9e-77b2a1294d50",
+                            ConcurrencyStamp = "8e9cae4c-925a-4393-aad2-39966e35695d",
                             Email = "mperezr@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Pérez",
@@ -2200,16 +2202,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MPEREZR@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MPEREZR",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "473caafd-40a6-4798-84f1-037f3a7965d1",
+                            SecurityStamp = "2128681e-76c4-4303-90a4-02fddf3e30d2",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mperezr"
                         },
                         new
                         {
-                            Id = "7360ebec-4db5-459e-9493-19a6a9aef28c",
+                            Id = "615d4956-705e-4806-8e35-cce6f82626ab",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "052fc759-d920-4335-98bc-ef6e503b70f1",
+                            ConcurrencyStamp = "f4f09e43-3a9c-48bc-b9e4-b9ff2dc567da",
                             Email = "lperezcastilla@legionaries.org",
                             EmailConfirmed = false,
                             LastNames = "Perez Castilla",
@@ -2218,16 +2220,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "LPEREZCASTILLA@LEGIONARIES.ORG",
                             NormalizedUserName = "LPEREZCASTILLA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "92e617be-932d-4d4c-9a47-a07c8f8fe8de",
+                            SecurityStamp = "22acd261-63d6-4ba5-926b-bb10ae9e5396",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "lperezcastilla"
                         },
                         new
                         {
-                            Id = "099d9c19-678e-4baf-8a94-7f5eb3350663",
+                            Id = "d91b9969-40e7-4c35-9d5f-b4931467914c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "88948ad3-edd1-4554-909f-ee949cfd5451",
+                            ConcurrencyStamp = "e9fc3f8e-58a9-4280-ac14-6ac23916e817",
                             Email = "dperrucci@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Perrucci Meló",
@@ -2236,16 +2238,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "DPERRUCCI@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "DPERRUCCI",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8638c09a-d577-4291-ba9e-e111247baf11",
+                            SecurityStamp = "15c7e067-0ff0-4098-84bd-633065736afd",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "dperrucci"
                         },
                         new
                         {
-                            Id = "0e21adf4-261b-44e7-9dcb-72f2549e12bf",
+                            Id = "da772d6a-62ad-4aff-b4c4-0ba5c44734c9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8b892960-b6ee-45d6-bdd4-6bdbb0f33df1",
+                            ConcurrencyStamp = "056ba484-9a61-4a4d-8f9a-9adbd7a1286e",
                             Email = "apinero@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Piñero",
@@ -2254,16 +2256,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "APINERO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "APINERO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e7debad7-5232-4ca7-b7bd-02391f5cd27c",
+                            SecurityStamp = "46ca0b9f-8ec0-40b4-a830-52f81c5eee9b",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "apinero"
                         },
                         new
                         {
-                            Id = "71065eb8-68f0-4ef6-80d2-21ba442ea730",
+                            Id = "07e59b96-c035-40e6-95fa-a458e2b3a806",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2dc1ca14-b4f9-4de0-9a4c-624b7c0a7461",
+                            ConcurrencyStamp = "d94f8d22-8b8b-4de0-90dd-9259830e50d4",
                             Email = "rpunceles@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Punceles",
@@ -2272,16 +2274,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "RPUNCELES@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "RPUNCELES",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8e3e6b8a-7dee-4c82-8992-211e99893c41",
+                            SecurityStamp = "d6dbd6e7-28cb-49d6-be88-feb0c0d735db",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "rpunceles"
                         },
                         new
                         {
-                            Id = "2752458c-35f8-4c3b-89e6-7586d8dd581e",
+                            Id = "fb4dea5c-5fe3-4634-938f-52ab24d5d8bd",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "06da4224-8d10-40df-bc35-6aeab882be34",
+                            ConcurrencyStamp = "6794cd45-3f31-413a-9fe0-6e2111dfd076",
                             Email = "cquintana@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Quintana",
@@ -2290,16 +2292,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CQUINTANA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CQUINTANA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9eafe24d-6325-4d2f-84b7-19b862ece0f4",
+                            SecurityStamp = "15cd2ea8-d601-43c3-9ecd-fd1b4deb7a23",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "cquintana"
                         },
                         new
                         {
-                            Id = "f2280d20-b8c3-43df-b342-40bcbfbc3837",
+                            Id = "68fd89be-d0fe-45c3-961b-33cceeca4546",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "63eb3a96-3efd-4774-aab8-5f6083759791",
+                            ConcurrencyStamp = "19f7b38b-d96e-4275-9b19-f2a919590a92",
                             Email = "mramos@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Ramos",
@@ -2308,16 +2310,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MRAMOS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MRAMOS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e92ce8d4-7eaa-44c0-ae3b-2871521bcbaf",
+                            SecurityStamp = "d7f65614-f41f-4ff9-a750-b3e4f2d3c916",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mramos"
                         },
                         new
                         {
-                            Id = "262eceaf-c115-4e8b-a8fe-6597ed05e96c",
+                            Id = "8b45c977-0d34-4ea7-8d46-544b462c6274",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f68568aa-3a9b-4615-94c1-01a2c147d6ed",
+                            ConcurrencyStamp = "1f36ebed-1df0-4561-8140-d54796c12ed5",
                             Email = "grando@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rando",
@@ -2326,16 +2328,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "GRANDO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "GRANDO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c8d82e3b-892b-412f-a005-4a5c279c7924",
+                            SecurityStamp = "2787d9cd-2221-42dd-b746-598e6a413815",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "grando"
                         },
                         new
                         {
-                            Id = "1455c3eb-a444-4076-b904-eba9f375c33a",
+                            Id = "0d187cfe-3f95-4324-82b5-76309efee493",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7086b26a-5bd9-4ea6-9f0e-bdc719cecf9e",
+                            ConcurrencyStamp = "f9a82d1c-4e31-4380-a08a-bcf37b4dcc70",
                             Email = "irangel@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rangel",
@@ -2344,16 +2346,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "IRANGEL@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "IRANGEL",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "701b1f79-7f34-4365-ae60-5b61636058f7",
+                            SecurityStamp = "d1e36e12-4ccf-4c7f-b18f-9cf580a012b4",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "irangel"
                         },
                         new
                         {
-                            Id = "f0b285a2-26f6-4fe7-a020-08b7597ec98f",
+                            Id = "44cff9db-d3b5-4026-9826-1a0c88fb6367",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0b97e9b0-d948-4cc0-a733-282441e43395",
+                            ConcurrencyStamp = "66a94da5-3db6-43f6-8cf0-705c2e46571d",
                             Email = "mrangel@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rangel",
@@ -2362,16 +2364,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MRANGEL@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MRANGEL",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5987f377-8bbf-414f-98b0-c2d08ac973d6",
+                            SecurityStamp = "305e2b00-f783-4398-b511-6a4f5820fc92",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mrangel"
                         },
                         new
                         {
-                            Id = "f6bfe039-a31c-42e3-be94-71aba14ff411",
+                            Id = "4da94c75-fdd8-47e8-8666-d7155ea18682",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "645f2c62-a05f-410a-b9f1-665bf199ab3d",
+                            ConcurrencyStamp = "194fec85-148a-41a4-a700-a0136a0aded0",
                             Email = "mrecchiuti@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Recchiuti",
@@ -2380,16 +2382,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MRECCHIUTI@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MRECCHIUTI",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "378a0db9-7d2f-4ffb-84a6-5a6e6fe60c03",
+                            SecurityStamp = "ab4792d4-13d2-404c-9445-f823ff08498e",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mrecchiuti"
                         },
                         new
                         {
-                            Id = "1f126762-c47c-4d06-a8fc-32d2d6a6f679",
+                            Id = "83ca9626-a744-4d77-9c92-6f653c62e4a5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "112fef72-17e2-40c7-8bff-8ae91a508891",
+                            ConcurrencyStamp = "cb67fee0-89ef-4baa-b057-94d359390385",
                             Email = "rangeli@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rene",
@@ -2398,16 +2400,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "RANGELI@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "RANGELI",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "efeb63df-f006-49d6-a88e-b5e326c6ddf2",
+                            SecurityStamp = "2a246476-4776-4eb9-9679-b6d65887cb5b",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "rangeli"
                         },
                         new
                         {
-                            Id = "8aff7f21-9331-41de-918e-c353dff55108",
+                            Id = "7270f3d0-7db0-4091-a2ab-8114471e6c02",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "adcd7be2-9509-4bf1-888a-0509da1d7eab",
+                            ConcurrencyStamp = "24b234bd-0de6-4c74-a749-5aa332afcad1",
                             Email = "joserivas@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rivas",
@@ -2416,16 +2418,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JOSERIVAS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JOSERIVAS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "84b96954-a0b3-4d4f-a470-ebecd8b9e0d0",
+                            SecurityStamp = "1e13b7e3-0161-4c92-9ff5-33cc0c6b7876",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "joserivas"
                         },
                         new
                         {
-                            Id = "36ab8308-550a-49d1-a89f-f9446e04cd18",
+                            Id = "25de526e-6b85-464c-a90f-be3685d10484",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7b66d218-1b8f-496d-bf73-b85fbf68a322",
+                            ConcurrencyStamp = "511c6c27-d754-449a-a4dc-510b4ebf6bf4",
                             Email = "julieta.elena.rivas@gmail.com",
                             EmailConfirmed = false,
                             LastNames = "Rivas",
@@ -2434,16 +2436,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JULIETA.ELENA.RIVAS@GMAIL.COM",
                             NormalizedUserName = "JULIETA.ELENA.RIVAS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b711f6d8-3f2f-46a7-99d8-d2cd2dbfa55e",
+                            SecurityStamp = "7b0bed17-f7be-4382-8912-56cd8a136668",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "julieta.elena.rivas"
                         },
                         new
                         {
-                            Id = "b140421b-0372-406b-9ba2-342100566f53",
+                            Id = "42374419-0a73-413f-aab3-cb4d930298fc",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f7f6282c-0981-4be1-b675-5795c085e1ba",
+                            ConcurrencyStamp = "c5d27c80-7316-46e0-b42c-008e27ba38d4",
                             Email = "mrivas@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rivas",
@@ -2452,16 +2454,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MRIVAS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MRIVAS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d68938a8-af44-4f54-8156-c6680c200658",
+                            SecurityStamp = "7c55afcf-e257-4b2e-a18d-4e574c3afafb",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mrivas"
                         },
                         new
                         {
-                            Id = "b7c7aa23-5e0e-4b07-a8d2-78664310d7bf",
+                            Id = "ff37d2ff-ecad-4ce7-a635-2c43b41af6b4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1fafc3a4-337b-4e77-a0d1-0ec736a63d2b",
+                            ConcurrencyStamp = "7ebee16e-36a3-4b35-a3ec-110e638a22ab",
                             Email = "mariselayjorge@hotmail.com",
                             EmailConfirmed = false,
                             LastNames = "Rocha",
@@ -2470,16 +2472,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MARISELAYJORGE@HOTMAIL.COM",
                             NormalizedUserName = "MARISELAYJORGE",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "07972886-987f-499f-a6a5-f1330f641d8a",
+                            SecurityStamp = "5068f1f7-9f21-40c0-8551-8e3520cec454",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mariselayjorge"
                         },
                         new
                         {
-                            Id = "80af9233-8e6a-4aa4-bb56-3c757025ddf0",
+                            Id = "777c020f-3999-4816-800a-703df01f9bb2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ccd10ea5-1596-423c-88da-5eb1e339fae9",
+                            ConcurrencyStamp = "97e914cb-1c92-4a91-abc0-d2c8b768d96b",
                             Email = "grodriguez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rodriguez",
@@ -2488,16 +2490,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "GRODRIGUEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "GRODRIGUEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6e42db5e-68b1-4208-a58a-83b6c2bb567e",
+                            SecurityStamp = "48f91ac5-1355-4e39-b342-180d5c6e24ba",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "grodriguez"
                         },
                         new
                         {
-                            Id = "c39b52ae-3fae-421f-b397-4476a2ca4367",
+                            Id = "3f6b1468-5fbf-43f6-98f0-8dc6fb8550d0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "538e8567-2e5d-43fa-bc90-cca46f81cc90",
+                            ConcurrencyStamp = "80227689-1089-4786-ac20-e6a6718ba95e",
                             Email = "lrodriguez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rodriguez",
@@ -2506,16 +2508,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "LRODRIGUEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "LRODRIGUEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4f5444fd-e576-4397-87ff-c0e6788ad22e",
+                            SecurityStamp = "85875114-f88b-4e96-b515-fc6372eb0644",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "lrodriguez"
                         },
                         new
                         {
-                            Id = "b02fcf10-9bec-4dac-8805-547bcb690a84",
+                            Id = "7ce2359d-2521-4167-9119-f65e04fbe4a2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0f9abfd5-a7e4-4a8c-9cb6-d1b5c49be04a",
+                            ConcurrencyStamp = "3277f176-b062-4297-b311-0dbfb21e06fb",
                             Email = "mrodriguez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rodríguez",
@@ -2524,16 +2526,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MRODRIGUEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MRODRIGUEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c149ea55-b1b7-456b-8a3e-3c7c5434daf1",
+                            SecurityStamp = "02474e80-135b-466c-a829-6a14c3849188",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mrodriguez"
                         },
                         new
                         {
-                            Id = "dbc84681-7531-48e0-8c87-da6bbb0d39f4",
+                            Id = "62b04a44-6708-4f32-8a09-1e213e9ee9be",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3d486423-60ce-45c8-8745-ab1e661cd61e",
+                            ConcurrencyStamp = "73585cd5-3f62-46c9-a105-f12cb031b66a",
                             Email = "arodriguez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rodríguez",
@@ -2542,16 +2544,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "ARODRIGUEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "ARODRIGUEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "484104e7-b148-46d8-94a5-dd6cf7c22c77",
+                            SecurityStamp = "dc5caf29-6d83-4195-b0b6-314eb3ee06ec",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "arodriguez"
                         },
                         new
                         {
-                            Id = "9d6bb4af-7a2d-4208-831e-93405d524f4f",
+                            Id = "292b3ee5-4fa6-4bb3-90b5-c68077537d1c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e47b8d5d-e5ce-4f6f-8573-f0b8b9e3c23a",
+                            ConcurrencyStamp = "fe228309-685c-4714-9a62-0a7eb6a0d188",
                             Email = "drodriguez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rodríguez",
@@ -2560,16 +2562,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "DRODRIGUEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "DRODRIGUEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c85b0f28-d83d-4e76-8978-356759156cc7",
+                            SecurityStamp = "b60a89b9-fbce-4e15-b579-8af200653684",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "drodriguez"
                         },
                         new
                         {
-                            Id = "73393e53-433d-48cf-81d3-2225d8e145f9",
+                            Id = "3e4da7ad-ab6c-472d-9678-011b30dceafa",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8bfa4505-a3a8-44c7-9a7d-848de5e76052",
+                            ConcurrencyStamp = "ee5175d5-3862-41fc-9ddb-d06dbbc05aa9",
                             Email = "jorodriguez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rodríguez",
@@ -2578,16 +2580,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JORODRIGUEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JORODRIGUEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a7094fc9-efb4-4bcb-af0c-15c4a032ae1c",
+                            SecurityStamp = "4c685eb9-641c-44b1-a046-400861a99b5c",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jorodriguez"
                         },
                         new
                         {
-                            Id = "c9464270-edf2-48e8-90cd-1ee9cd4bb991",
+                            Id = "f6b8f5d5-0778-4be1-ad89-745f0ec23ea0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "21fe6bfa-f605-4adc-9d0e-3e7222e3442e",
+                            ConcurrencyStamp = "11e23794-8bcd-467a-8649-c634ae6b36cd",
                             Email = "maurodriguez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rodríguez",
@@ -2596,16 +2598,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MAURODRIGUEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MAURODRIGUEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5e2c64d2-eaeb-49b7-a940-3ddf068a8656",
+                            SecurityStamp = "d9b7394c-19a3-4575-9758-132386d58f9a",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "maurodriguez"
                         },
                         new
                         {
-                            Id = "3af15da0-7fba-4d9e-b1c0-af9c9ae7d588",
+                            Id = "5190874d-0c3d-4426-a206-fc6c653b4aff",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "778e7efe-cb53-49ef-b5cf-dff9c3bff444",
+                            ConcurrencyStamp = "f9b3b440-d0f2-4e77-b9f8-0e7624addf4b",
                             Email = "zrodriguez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rodríguez",
@@ -2614,16 +2616,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "ZRODRIGUEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "ZRODRIGUEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "72ad8958-1508-478f-b908-c3eb4da34aef",
+                            SecurityStamp = "8ee3b9d6-ea3b-4746-81fd-8b6943be5b85",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "zrodriguez"
                         },
                         new
                         {
-                            Id = "04c4ccad-5791-4a9f-a7f5-839687e89981",
+                            Id = "1b28db82-7635-49ce-bfb2-b7b6ba2f4c57",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e4ac59c9-7871-4d06-a8ef-d2d0e0e585ef",
+                            ConcurrencyStamp = "2549b213-5bb3-4800-a643-3d36b1e998f7",
                             Email = "arojas@arcol.org",
                             EmailConfirmed = false,
                             LastNames = "Rojas",
@@ -2632,16 +2634,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "AROJAS@ARCOL.ORG",
                             NormalizedUserName = "AROJAS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7c44857c-b350-4419-b9b1-8c417003803f",
+                            SecurityStamp = "bbac1341-9993-4424-a0d9-50f99b70889c",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "arojas"
                         },
                         new
                         {
-                            Id = "e2cabac7-9334-4a23-bcd1-4f9b1eb871b6",
+                            Id = "caf56108-9e96-4f42-a971-bad0f99495cc",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c3c32b8b-8031-4781-b954-7dbf60414de6",
+                            ConcurrencyStamp = "d4da1be6-abc8-4ce7-82ed-d22233775070",
                             Email = "drondon@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Rondon",
@@ -2650,16 +2652,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "DRONDON@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "DRONDON",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "62df1ab8-5d4d-4eda-a287-87ccf3fd522f",
+                            SecurityStamp = "398220c7-6471-4503-9e38-53e45bbd3d18",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "drondon"
                         },
                         new
                         {
-                            Id = "858f5be3-44eb-4ef5-b962-b925c3603b10",
+                            Id = "bb5b6117-51f8-4235-8c66-ee8929baef63",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "336b7c65-ca51-4fb9-abd1-af2cc570f07f",
+                            ConcurrencyStamp = "6575972c-e0fa-42f5-8699-7905c5aed38e",
                             Email = "gsalas@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Salas",
@@ -2668,16 +2670,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "GSALAS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "GSALAS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c3c6b003-e885-472c-b588-67dfadc83c03",
+                            SecurityStamp = "4062bad8-ffc2-4f26-9cd9-55a8c1aeb329",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "gsalas"
                         },
                         new
                         {
-                            Id = "a2424af6-f666-4371-82ff-5b4588a275fb",
+                            Id = "d7b9c6a6-7d4a-469f-bb12-2c06459c2cac",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "177020bc-8225-4f1e-a7c0-a918ae9188f6",
+                            ConcurrencyStamp = "57c8c040-aa9e-4358-87e3-097491de5653",
                             Email = "clopez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Salas",
@@ -2686,16 +2688,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CLOPEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CLOPEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "53e7da05-d4b1-4a32-abc1-6f440e223451",
+                            SecurityStamp = "a157cefb-5220-45cd-bbc4-015ccfc72e8d",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "clopez"
                         },
                         new
                         {
-                            Id = "3409a72b-df03-4f19-a39e-b87ac1b1f3f9",
+                            Id = "0db8064a-623a-4dda-97d5-52b5de1c94ca",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d74f6bc4-3afd-4503-8d8a-6d3d046f33bb",
+                            ConcurrencyStamp = "db4ac909-e7cc-4344-aa0a-8d248a27ad8c",
                             Email = "rsanchez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Sánchez",
@@ -2704,16 +2706,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "RSANCHEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "RSANCHEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9e5cbc6f-67e9-472a-a057-697c0ded9996",
+                            SecurityStamp = "fc9bbab2-a500-4326-80a3-b6cb9e6ddd21",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "rsanchez"
                         },
                         new
                         {
-                            Id = "d39eae93-61a5-4ead-9d49-cdf2b5e02498",
+                            Id = "075f377f-458d-4fd9-885a-1e1333ab9a5e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d680e759-db8a-4fc8-a7c1-da57f6cbac66",
+                            ConcurrencyStamp = "e71360fc-a9ce-4950-a597-37ee0b6fc32a",
                             Email = "ysantaella@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Santaella",
@@ -2722,16 +2724,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "YSANTAELLA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "YSANTAELLA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "95bd2106-7019-4655-b017-252622e651b1",
+                            SecurityStamp = "718f0783-5ae3-4ad7-a328-c14f97ddd28f",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ysantaella"
                         },
                         new
                         {
-                            Id = "72074314-5f22-46e4-9ed3-029e25546370",
+                            Id = "7fed8737-9511-45e7-a2ec-165c9a5a6168",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4bfbb4b6-53c3-435b-a579-d9fb0a5428aa",
+                            ConcurrencyStamp = "26d34dba-8530-46ae-ac4b-d4540312e212",
                             Email = "rsirit@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Sirit",
@@ -2740,16 +2742,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "RSIRIT@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "RSIRIT",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2264ae66-2f37-484b-9239-664da14fe47c",
+                            SecurityStamp = "3c6f2150-c197-4a58-af4b-ced338d8e22a",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "rsirit"
                         },
                         new
                         {
-                            Id = "e5c6d8f6-897c-40c1-a630-bbcbc9918648",
+                            Id = "b0548573-0f42-4c3d-9dd4-ea82ae617610",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4a7b06a6-54c2-429b-83c2-8b474fe22593",
+                            ConcurrencyStamp = "79c78e18-84b3-4921-915b-c4173c2b1f3e",
                             Email = "dsossa@legionaries.org",
                             EmailConfirmed = false,
                             LastNames = "Sossa",
@@ -2758,16 +2760,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "DSOSSA@LEGIONARIES.ORG",
                             NormalizedUserName = "DSOSSA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a180b7f7-573b-46c8-bb05-501398ba98e4",
+                            SecurityStamp = "bcbe9bf0-6292-4a8d-b1cb-678614fbac41",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "dsossa"
                         },
                         new
                         {
-                            Id = "f42f0dce-0b5d-4aa7-b6d3-8216a69c56df",
+                            Id = "84b71d8d-ddea-48b9-82f3-c0d7bb7eac97",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a46bf683-b737-4407-80f1-610fd7aced3e",
+                            ConcurrencyStamp = "785c22c5-4f5f-43d4-bed8-74477c28b18b",
                             Email = "msous@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Sous",
@@ -2776,16 +2778,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MSOUS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MSOUS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2d51ac9e-86cd-44da-9567-5f98a892f84a",
+                            SecurityStamp = "77fa4bb7-83f3-41f1-9399-bdc5c70a99c4",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "msous"
                         },
                         new
                         {
-                            Id = "6df44bf6-d02b-4167-a591-77057e46d086",
+                            Id = "880cdce3-b3f0-4799-aefc-ba092977dd61",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6694928d-c950-4383-aed6-89386fe6918c",
+                            ConcurrencyStamp = "9efbc4d1-cd6e-4833-bf19-918f0ed25208",
                             Email = "ninosuanno@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Suanno",
@@ -2794,16 +2796,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "NINOSUANNO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "NINOSUANNO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "767fb5bd-da87-4bf1-8097-70d7f2833d0e",
+                            SecurityStamp = "abb6e08c-5a0d-42a9-abac-ed51e8a49c6e",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ninosuanno"
                         },
                         new
                         {
-                            Id = "e3a5d3f3-ed89-48d4-9fa5-8ccf8a8a9f44",
+                            Id = "be8ea702-4e04-468c-ba0a-ce1a9106d114",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0a98755d-e448-4884-bb90-6751ddc3a33a",
+                            ConcurrencyStamp = "43c97fb3-79b2-4e19-8f2b-92a393ba28f5",
                             Email = "csuarez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Suárez",
@@ -2812,16 +2814,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CSUAREZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CSUAREZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e811a77b-353f-40f6-8e51-f916ab19bfc1",
+                            SecurityStamp = "5947d0f9-6480-433d-8c6c-91eeac9c5867",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "csuarez"
                         },
                         new
                         {
-                            Id = "e5de5d56-0af1-4b72-b21e-3b3d68b2a28d",
+                            Id = "458411d3-3e30-41ff-88bd-8508045378fe",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a3c24ed2-6eef-4ff9-ba2c-135cc2f77d14",
+                            ConcurrencyStamp = "d1aeb147-2e5e-4ab0-b3a2-f245d5ee72f5",
                             Email = "ltavares@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Tavares Goncalves",
@@ -2830,16 +2832,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "LTAVARES@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "LTAVARES",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e54b570c-aad4-4131-b565-beda81ee18e4",
+                            SecurityStamp = "f6edab51-b04e-4ed6-b74e-53fae6c6d3ce",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "ltavares"
                         },
                         new
                         {
-                            Id = "c92c312f-8cf4-4ab0-a91d-3673047553ef",
+                            Id = "4c4bc8d8-f498-48d3-91fa-97ebc051311a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b47f7a4b-ce6a-4468-b2b4-df390751bb6b",
+                            ConcurrencyStamp = "7607ebd8-52c7-4c54-9d6a-45d17a2804a1",
                             Email = "wteran@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Terán",
@@ -2848,16 +2850,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "WTERAN@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "WTERAN",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7423a5b7-6b48-4a88-a22d-ea595736ad61",
+                            SecurityStamp = "e9cb33b5-3822-49fb-872a-833effabe9fc",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "wteran"
                         },
                         new
                         {
-                            Id = "d9d44160-15c4-4a0e-8ad8-8ceaea549909",
+                            Id = "494fa41e-fd3a-43a1-b1a2-5d36d52677d3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c0b9d130-d8c5-4fe0-8fe7-85f59d554707",
+                            ConcurrencyStamp = "4198d302-ed18-4d59-9541-5b92714b8d0b",
                             Email = "jthimotheo@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Thimotheo",
@@ -2866,16 +2868,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JTHIMOTHEO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JTHIMOTHEO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "776638d1-59ed-4430-9c98-72776ee43e82",
+                            SecurityStamp = "52ed8b70-99b7-40ce-8b7e-422517d6507e",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jthimotheo"
                         },
                         new
                         {
-                            Id = "a65a9fa4-8bd8-4005-909c-07e3433c382a",
+                            Id = "6655f7ee-df74-4381-9c76-b82010cba1d0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fec5f3d9-915c-4d6d-980d-b8656ed70e54",
+                            ConcurrencyStamp = "742b3c03-bfb3-4ed6-9562-11c81153270e",
                             Email = "btogni@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Togni",
@@ -2884,16 +2886,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "BTOGNI@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "BTOGNI",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4ddbf3d2-58e3-4ed3-b870-fe422572b23e",
+                            SecurityStamp = "0463e37c-ee2b-4938-aa3d-75ac6872d125",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "btogni"
                         },
                         new
                         {
-                            Id = "38d94b51-1b5a-4791-9cb5-7f2d8d3e77b0",
+                            Id = "7624ebf5-5d63-4ad0-9a1a-24560357d5fa",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c40bd63a-8a92-4358-8ba2-42f26811f894",
+                            ConcurrencyStamp = "97064d8c-962c-4eb9-9d7e-583c0daf8987",
                             Email = "jtoro@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Toro",
@@ -2902,16 +2904,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "JTORO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "JTORO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4ac5f9ad-8a01-4255-a521-521db471deb1",
+                            SecurityStamp = "86b3d416-bd4a-4828-89e5-1a70a0b12edf",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "jtoro"
                         },
                         new
                         {
-                            Id = "4557d571-82bc-4f59-90e6-ff86382db7ab",
+                            Id = "02b3eba3-967f-49ff-982a-1866b99c75f0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "59d09653-291b-47c6-beda-d7974d1cb811",
+                            ConcurrencyStamp = "d9208f6e-58aa-483c-984a-8ce2d6d5c764",
                             Email = "mtortosa@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Tortosa",
@@ -2920,16 +2922,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MTORTOSA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MTORTOSA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d74c87d1-8c72-4035-a185-9b68fbd669dc",
+                            SecurityStamp = "89646b05-488c-4bd4-95e9-42ac91eab81d",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mtortosa"
                         },
                         new
                         {
-                            Id = "c934d191-dba1-4a9c-b9cf-3fd4dd4ec557",
+                            Id = "60130ea5-831b-4a00-a105-133ee4d3f106",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "49d5ebe6-7e61-44fa-84bd-49e1b373ae69",
+                            ConcurrencyStamp = "14b0ab33-c11b-475d-9326-3dbb9a840dcb",
                             Email = "btrias@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Trias",
@@ -2938,16 +2940,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "BTRIAS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "BTRIAS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "53e6d7ec-0feb-46e0-9e54-b0db95800908",
+                            SecurityStamp = "e8fa1199-84a0-4519-8971-77e816602580",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "btrias"
                         },
                         new
                         {
-                            Id = "4589d85e-0e77-4169-876b-c6a9dcc4c837",
+                            Id = "37d99672-d279-490f-a20d-4ddb45ab35eb",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "404ad714-7a66-4e44-b9b8-ecce07433bb8",
+                            ConcurrencyStamp = "3c67d34a-7db5-4c6c-8d20-f3dda3cf6c32",
                             Email = "mtrujillo@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Trujillo",
@@ -2956,16 +2958,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MTRUJILLO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MTRUJILLO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9dd687fc-1420-4535-b7c8-5d4f02d58363",
+                            SecurityStamp = "44643bb0-b5cd-497a-9f4a-3f098cb0db5b",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mtrujillo"
                         },
                         new
                         {
-                            Id = "38ceaad9-f766-49cf-b810-867b619bd6d8",
+                            Id = "db97c754-b6fb-4628-b72b-c5913006ea32",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d45e5d54-44ea-49d2-a835-4c898bd5600f",
+                            ConcurrencyStamp = "4e54b61a-a8c3-44fe-8380-fdd2267eb782",
                             Email = "carlosurdaneta@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Urdaneta",
@@ -2974,16 +2976,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "CARLOSURDANETA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "CARLOSURDANETA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "16fc22af-70d3-4cfc-a315-8acb3b2d2076",
+                            SecurityStamp = "3264f337-365d-4a73-9824-2d07f95bd790",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "carlosurdaneta"
                         },
                         new
                         {
-                            Id = "e82c6340-1123-47f9-aafe-0f3dffa0369b",
+                            Id = "441aeeeb-ca46-4a09-8d32-cc3720daf96f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "37eb2e69-00d2-4768-acd1-c133876dee48",
+                            ConcurrencyStamp = "4c28b260-d955-46a8-a811-1a43d44a6ea0",
                             Email = "lurueta@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Urueta",
@@ -2992,16 +2994,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "LURUETA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "LURUETA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e30a6d98-449b-42d2-83e7-357eee98301b",
+                            SecurityStamp = "445e6196-565c-449a-92dc-d8f516820599",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "lurueta"
                         },
                         new
                         {
-                            Id = "d5e7f145-fb70-4cae-813d-991ceeb4fe6b",
+                            Id = "8956709d-d0f9-4a96-8d3c-e48c7009ef8a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "06b24f13-def8-4b26-91bb-54a1fa737681",
+                            ConcurrencyStamp = "2f878a3b-2a08-4dd7-8518-7d42d26fac9c",
                             Email = "avalderrama@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Valderrama",
@@ -3010,16 +3012,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "AVALDERRAMA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "AVALDERRAMA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "760428a1-4c09-4713-88e3-a5139fe0d9ad",
+                            SecurityStamp = "07d5f5e6-f290-41af-974a-4b0d347288a6",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "avalderrama"
                         },
                         new
                         {
-                            Id = "97aee835-025c-43b0-861b-60e2ca324f36",
+                            Id = "8d312f2a-64f2-4801-89c6-bc6fbf6dc2de",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "adc13147-89ca-483e-b5d3-cbc7171e9cde",
+                            ConcurrencyStamp = "a0862e43-17b2-466f-a71f-9f7848e5d8cc",
                             Email = "melavalladares@gmail.com",
                             EmailConfirmed = false,
                             LastNames = "Valladares",
@@ -3028,16 +3030,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MELAVALLADARES@GMAIL.COM",
                             NormalizedUserName = "MELAVALLADARES",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d53a8b4a-8701-4d68-b377-19092daa8ce5",
+                            SecurityStamp = "e7257cd4-bd43-4051-bbd2-2c1db7bc48cd",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "melavalladares"
                         },
                         new
                         {
-                            Id = "18dc6980-b3f8-4633-b514-ae46a63d6bb4",
+                            Id = "7cec864f-b9e3-4413-bf59-b4d9232ba1f6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "39845797-2189-4a2e-91d2-2f9b18c6720c",
+                            ConcurrencyStamp = "f7634e28-d895-4a19-ba2d-a6b4ac0ad8d7",
                             Email = "gvelandia@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Velandia",
@@ -3046,16 +3048,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "GVELANDIA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "GVELANDIA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7071e495-5ee1-4a2f-b50b-8fe4ce8accb8",
+                            SecurityStamp = "eb7dca89-358e-465e-8ee7-a4652f1c1674",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "gvelandia"
                         },
                         new
                         {
-                            Id = "6d87a736-6569-43e1-a8e0-0931a97bb0c4",
+                            Id = "5928845b-2089-4d75-99ba-55f9735d9c28",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ce1e5fa7-6efe-44dd-a8c2-a04d3ad6a39f",
+                            ConcurrencyStamp = "edf57d6c-4d37-4a65-bc83-8434070de7d7",
                             Email = "mvelasquez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Velásquez",
@@ -3064,16 +3066,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MVELASQUEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MVELASQUEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bf97a219-fcce-49c2-a564-5983a255af2c",
+                            SecurityStamp = "5573f1b0-749e-409b-8a5f-80efd738e076",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mvelasquez"
                         },
                         new
                         {
-                            Id = "3932784d-a70d-4279-a48f-f4241d391931",
+                            Id = "f8ef4768-ea51-47df-aaaf-3411e2901859",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b4d59bb8-e4fa-49d9-8312-95213d898d2a",
+                            ConcurrencyStamp = "397ae604-f525-467e-a4f2-c367760529b7",
                             Email = "mvillasmil@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Villasmil",
@@ -3082,16 +3084,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MVILLASMIL@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MVILLASMIL",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c243bce6-9859-4d18-ac24-ce6643301a79",
+                            SecurityStamp = "68ad670e-a6bc-423a-b54d-8793bc4ec973",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mvillasmil"
                         },
                         new
                         {
-                            Id = "6519a083-a70e-4c0e-a9da-e83efbdb4e74",
+                            Id = "c67c8cb8-54cd-4b95-a244-468e62abeb0e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "539c8a15-abca-43d4-8601-512cb376aa3e",
+                            ConcurrencyStamp = "2f791475-064a-4cd3-a64d-dbe9721f36c5",
                             Email = "vvinck@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Vinck",
@@ -3100,16 +3102,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "VVINCK@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "VVINCK",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "de0a0822-10f8-4720-acc8-bdf029ca6efe",
+                            SecurityStamp = "c6126fb2-0f9e-4532-9172-b637879c6c76",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "vvinck"
                         },
                         new
                         {
-                            Id = "ad61e0b7-bec9-4217-a536-b302447c8f36",
+                            Id = "c4dc3394-68f6-48ee-b35b-71d6c224e706",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6d0e8f12-e46c-4b7f-931c-cfb560ca7533",
+                            ConcurrencyStamp = "e4b681a0-a148-4202-97cf-00fa11fd4998",
                             Email = "avivas@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Vivas",
@@ -3118,16 +3120,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "AVIVAS@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "AVIVAS",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2feca122-d343-4b5b-933c-88c22d4510d9",
+                            SecurityStamp = "0d9cdb6a-3ce2-4bbc-bdde-8f7d2ed37ec6",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "avivas"
                         },
                         new
                         {
-                            Id = "74fd513f-4226-40e4-bbf8-9403df7e0de1",
+                            Id = "18c61713-7c95-4589-b695-0db2bc0dd5b8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "975bd318-c843-400e-83f7-59dc7df4bf45",
+                            ConcurrencyStamp = "b1bb0701-96d2-4037-a5c0-a2fd9b761f69",
                             Email = "mrocha@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Vizcarrondo",
@@ -3136,16 +3138,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MROCHA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MROCHA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e04c6b4f-73f7-4c04-9c3f-4cf079c195ac",
+                            SecurityStamp = "4e55cfd4-ea01-49cf-a540-f2714623cbcb",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "mrocha"
                         },
                         new
                         {
-                            Id = "9b0bdd40-bd19-4035-a472-fcb5f18b1906",
+                            Id = "2930c94f-1461-464c-9d40-9dda466d1cd6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8efe4902-8060-44d9-9dfa-34a72506a1c0",
+                            ConcurrencyStamp = "c65c2505-19a3-40ea-b5ff-cd69ad102744",
                             Email = "adipentima@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Vona",
@@ -3154,16 +3156,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "ADIPENTIMA@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "ADIPENTIMA",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0786f6c6-cc1f-42de-9479-ea5f0fe25971",
+                            SecurityStamp = "6beba3b5-80a8-4e6b-ac6f-b41624aa99dd",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "adipentima"
                         },
                         new
                         {
-                            Id = "ff8b3b00-33f2-40b4-947d-534a39a147c3",
+                            Id = "c21a9970-458a-4cb6-87f4-c961ef0c87a5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "836efd1b-0a2d-44b7-b483-b82f46982640",
+                            ConcurrencyStamp = "52ebd928-4c44-4511-b9b5-77b222f95b22",
                             Email = "myanez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Yanez",
@@ -3172,16 +3174,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "MYANEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "MYANEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b60675ad-7725-40c2-9bd9-4d876b742a1c",
+                            SecurityStamp = "edea8bfc-fe33-4526-8eae-54d6631a0896",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "myanez"
                         },
                         new
                         {
-                            Id = "c91e4aff-c045-4eb0-8440-aee0430bd87f",
+                            Id = "50e3368d-8008-4863-8225-275c0043c3bc",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "84cf0c42-cf98-461b-8f1b-71e24d50026f",
+                            ConcurrencyStamp = "54b8157f-10f1-4a13-af13-fb1f51115b08",
                             Email = "syanez@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Yanez",
@@ -3190,16 +3192,16 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "SYANEZ@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "SYANEZ",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9c00c4eb-8201-4e98-aa69-41776543e435",
+                            SecurityStamp = "99cbf168-abe4-465a-9dbd-de04ff078d9b",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "syanez"
                         },
                         new
                         {
-                            Id = "b036c7e3-06f2-455a-8b8e-51a1b6be0e5d",
+                            Id = "7cadd933-d876-4ac4-b955-11b013745e26",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "47e93748-9cd0-435c-b739-e90425d741a0",
+                            ConcurrencyStamp = "d467df08-dc2b-484b-8b63-df523373510f",
                             Email = "azambrano@cumbrescaracas.edu.ve",
                             EmailConfirmed = false,
                             LastNames = "Zambrano",
@@ -3208,7 +3210,7 @@ namespace ICCReservasServer.Migrations
                             NormalizedEmail = "AZAMBRANO@CUMBRESCARACAS.EDU.VE",
                             NormalizedUserName = "AZAMBRANO",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "91242d03-0d4b-4fcf-8d70-69809d16e2a3",
+                            SecurityStamp = "ad8f27b8-83be-4a8e-9a8c-359f268a72ee",
                             Status = 0,
                             TwoFactorEnabled = false,
                             UserName = "azambrano"
@@ -3535,6 +3537,9 @@ namespace ICCReservasServer.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("Numero")
+                        .HasColumnType("integer");
+
                     b.HasKey("ID");
 
                     b.ToTable("Horarios", (string)null);
@@ -3546,7 +3551,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "08:15:00",
                             HoraInicio = "07:30:00",
                             Nivel = "HS",
-                            Nombre = "Primera Hora"
+                            Nombre = "Primera Hora",
+                            Numero = 1
                         },
                         new
                         {
@@ -3554,7 +3560,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "09:00:00",
                             HoraInicio = "08:15:00",
                             Nivel = "HS",
-                            Nombre = "Segunda Hora"
+                            Nombre = "Segunda Hora",
+                            Numero = 2
                         },
                         new
                         {
@@ -3562,7 +3569,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "10:30:00",
                             HoraInicio = "09:45:00",
                             Nivel = "HS",
-                            Nombre = "Tercera Hora"
+                            Nombre = "Tercera Hora",
+                            Numero = 3
                         },
                         new
                         {
@@ -3570,7 +3578,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "11:15:00",
                             HoraInicio = "10:30:00",
                             Nivel = "HS",
-                            Nombre = "Cuarta Hora"
+                            Nombre = "Cuarta Hora",
+                            Numero = 4
                         },
                         new
                         {
@@ -3578,7 +3587,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "12:00:00",
                             HoraInicio = "11:15:00",
                             Nivel = "HS",
-                            Nombre = "Quinta Hora"
+                            Nombre = "Quinta Hora",
+                            Numero = 5
                         },
                         new
                         {
@@ -3586,7 +3596,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "13:15:00",
                             HoraInicio = "12:30:00",
                             Nivel = "HS",
-                            Nombre = "Sexta Hora"
+                            Nombre = "Sexta Hora",
+                            Numero = 6
                         },
                         new
                         {
@@ -3594,7 +3605,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "14:00:00",
                             HoraInicio = "13:15:00",
                             Nivel = "HS",
-                            Nombre = "Séptima Hora"
+                            Nombre = "Séptima Hora",
+                            Numero = 7
                         },
                         new
                         {
@@ -3602,7 +3614,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "09:00:00",
                             HoraInicio = "08:15:00",
                             Nivel = "MS",
-                            Nombre = "Primera Hora"
+                            Nombre = "Primera Hora",
+                            Numero = 1
                         },
                         new
                         {
@@ -3610,7 +3623,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "09:45:00",
                             HoraInicio = "09:00:00",
                             Nivel = "MS",
-                            Nombre = "Segunda Hora"
+                            Nombre = "Segunda Hora",
+                            Numero = 2
                         },
                         new
                         {
@@ -3618,7 +3632,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "11:15:00",
                             HoraInicio = "10:30:00",
                             Nivel = "MS",
-                            Nombre = "Tercera Hora"
+                            Nombre = "Tercera Hora",
+                            Numero = 3
                         },
                         new
                         {
@@ -3626,7 +3641,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "12:00:00",
                             HoraInicio = "11:15:00",
                             Nivel = "MS",
-                            Nombre = "Cuarta Hora"
+                            Nombre = "Cuarta Hora",
+                            Numero = 4
                         },
                         new
                         {
@@ -3634,7 +3650,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "12:55:00",
                             HoraInicio = "12:10:00",
                             Nivel = "MS",
-                            Nombre = "Quinta Hora"
+                            Nombre = "Quinta Hora",
+                            Numero = 5
                         },
                         new
                         {
@@ -3642,7 +3659,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "13:40:00",
                             HoraInicio = "12:55:00",
                             Nivel = "MS",
-                            Nombre = "Sexta Hora"
+                            Nombre = "Sexta Hora",
+                            Numero = 6
                         },
                         new
                         {
@@ -3650,7 +3668,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "09:40:00",
                             HoraInicio = "08:50:00",
                             Nivel = "UE",
-                            Nombre = "Primera Hora"
+                            Nombre = "Primera Hora",
+                            Numero = 1
                         },
                         new
                         {
@@ -3658,7 +3677,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "10:30:00",
                             HoraInicio = "09:40:00",
                             Nivel = "UE",
-                            Nombre = "Segunda Hora"
+                            Nombre = "Segunda Hora",
+                            Numero = 2
                         },
                         new
                         {
@@ -3666,7 +3686,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "12:00:00",
                             HoraInicio = "11:15:00",
                             Nivel = "UE",
-                            Nombre = "Tercera Hora"
+                            Nombre = "Tercera Hora",
+                            Numero = 3
                         },
                         new
                         {
@@ -3674,7 +3695,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "12:45:00",
                             HoraInicio = "12:00:00",
                             Nivel = "UE",
-                            Nombre = "Cuarta Hora"
+                            Nombre = "Cuarta Hora",
+                            Numero = 4
                         },
                         new
                         {
@@ -3682,7 +3704,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "13:50:00",
                             HoraInicio = "13:05:00",
                             Nivel = "UE",
-                            Nombre = "Quinta Hora"
+                            Nombre = "Quinta Hora",
+                            Numero = 5
                         },
                         new
                         {
@@ -3690,7 +3713,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "14:35:00",
                             HoraInicio = "13:50:00",
                             Nivel = "UE",
-                            Nombre = "Sexta Hora"
+                            Nombre = "Sexta Hora",
+                            Numero = 6
                         },
                         new
                         {
@@ -3698,7 +3722,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "09:40:00",
                             HoraInicio = "08:50:00",
                             Nivel = "LE",
-                            Nombre = "Primera Hora"
+                            Nombre = "Primera Hora",
+                            Numero = 1
                         },
                         new
                         {
@@ -3706,7 +3731,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "10:30:00",
                             HoraInicio = "09:40:00",
                             Nivel = "LE",
-                            Nombre = "Segunda Hora"
+                            Nombre = "Segunda Hora",
+                            Numero = 2
                         },
                         new
                         {
@@ -3714,7 +3740,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "11:15:00",
                             HoraInicio = "10:30:00",
                             Nivel = "LE",
-                            Nombre = "Tercera Hora"
+                            Nombre = "Tercera Hora",
+                            Numero = 3
                         },
                         new
                         {
@@ -3722,7 +3749,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "12:45:00",
                             HoraInicio = "12:00:00",
                             Nivel = "LE",
-                            Nombre = "Cuarta Hora"
+                            Nombre = "Cuarta Hora",
+                            Numero = 4
                         },
                         new
                         {
@@ -3730,7 +3758,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "13:30:00",
                             HoraInicio = "12:45:00",
                             Nivel = "LE",
-                            Nombre = "Quinta Hora"
+                            Nombre = "Quinta Hora",
+                            Numero = 5
                         },
                         new
                         {
@@ -3738,7 +3767,8 @@ namespace ICCReservasServer.Migrations
                             HoraFin = "14:35:00",
                             HoraInicio = "13:50:00",
                             Nivel = "LE",
-                            Nombre = "Sexta Hora"
+                            Nombre = "Sexta Hora",
+                            Numero = 6
                         });
                 });
 

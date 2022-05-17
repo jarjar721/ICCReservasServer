@@ -9,6 +9,9 @@ using ICCReservasServer.DTOs;
 using ICCReservasServer.Interfaces;
 using ICCReservasServer.Data;
 using ICCReservasServer.Middleware;
+using EmailService;
+using EmailService.Interfaces;
+using EmailService.Repos;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDataContextConnection");
@@ -17,7 +20,8 @@ builder.Services.AddDbContext<ApplicationDataContext>(options =>
     options.UseNpgsql(connectionString, options => options.MigrationsAssembly("ICCReservasServer")));
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<ApplicationDataContext>();
+    .AddEntityFrameworkStores<ApplicationDataContext>()
+    .AddDefaultTokenProviders();
 // Add services to the container.
 
 // Inject appsettings
@@ -44,7 +48,6 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 //JWT Authentication
 var JWT_Secret = builder.Configuration.GetSection("ApplicationSettings:JWT_Secret").Value;
 var Client_URL = builder.Configuration.GetSection("ApplicationSettings:Client_URL").Value;
-
 var key = Encoding.UTF8.GetBytes(JWT_Secret);
 
 builder.Services.AddAuthentication(options =>
@@ -60,12 +63,20 @@ builder.Services.AddAuthentication(options =>
         options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(key), // AQUI VA key
+            IssuerSigningKey = new SymmetricSecurityKey(key),
             ValidateIssuer = false,
             ValidateAudience = false,
             ClockSkew = TimeSpan.Zero
         };
     });
+
+//Email service
+var emailConfig = builder.Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
+builder.Services.AddSingleton(emailConfig);
+builder.Services.AddScoped<IEmailSenderRepository, EmailSenderRepository>();
+
+builder.Services.Configure<DataProtectionTokenProviderOptions>(opt =>
+   opt.TokenLifespan = TimeSpan.FromHours(2));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

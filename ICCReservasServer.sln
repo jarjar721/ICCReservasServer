@@ -5,7 +5,9 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ICCReservasServer", "ICCReservasServer\ICCReservasServer.csproj", "{854C021E-9AF2-4F75-B651-A5282A2B5214}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{A84B04AF-48CD-406A-B6FC-731AFE2725EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{A84B04AF-48CD-406A-B6FC-731AFE2725EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "EmailService\EmailService.csproj", "{C6729ED5-6098-48AF-9C12-EAE58BAFE94F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A84B04AF-48CD-406A-B6FC-731AFE2725EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A84B04AF-48CD-406A-B6FC-731AFE2725EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A84B04AF-48CD-406A-B6FC-731AFE2725EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6729ED5-6098-48AF-9C12-EAE58BAFE94F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6729ED5-6098-48AF-9C12-EAE58BAFE94F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6729ED5-6098-48AF-9C12-EAE58BAFE94F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6729ED5-6098-48AF-9C12-EAE58BAFE94F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

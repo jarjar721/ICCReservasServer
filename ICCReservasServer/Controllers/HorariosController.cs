@@ -28,7 +28,7 @@ namespace ICCReservasServer.Controllers
                               select new HorariosDTO { 
                                 ID = horario.ID,
                                 Nivel = horario.Nivel,
-                                Numero = horario.Numero,
+                                Nombre = horario.Nombre,
                                 HoraInicio = horario.HoraInicio,
                                 HoraFin = horario.HoraFin
                               };
@@ -36,10 +36,29 @@ namespace ICCReservasServer.Controllers
             return Ok(horariosDTO);
         }
 
-        // GET: Horarios/Details/5
-        [HttpGet]
+        // GET: Horarios
+        [HttpGet("Nivel/{nivel}")]
         //[Authorize]
-        [Route("Details/{id}")]
+        public async Task<IActionResult> HorariosByNivel(string nivel)
+        {
+            var horarios = await _uow.HorariosRepository.Index();
+            var horariosDTO = from horario in horarios
+                              where horario.Nivel == nivel
+                              select new HorariosDTO
+                              {
+                                  ID = horario.ID,
+                                  Nivel = horario.Nivel,
+                                  Nombre = horario.Nombre,
+                                  HoraInicio = horario.HoraInicio,
+                                  HoraFin = horario.HoraFin
+                              };
+
+            return Ok(horariosDTO);
+        }
+
+        // GET: Horarios/Details/5
+        [HttpGet("Details/{id}")]
+        //[Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -56,7 +75,7 @@ namespace ICCReservasServer.Controllers
             var horariosDTO = new HorariosDTO { 
                 ID=horarios.ID,
                 Nivel=horarios.Nivel,
-                Numero = horarios.Numero,
+                Nombre = horarios.Nombre,
                 HoraInicio = horarios.HoraInicio,
                 HoraFin=horarios.HoraFin
             };
@@ -65,11 +84,8 @@ namespace ICCReservasServer.Controllers
         }
 
         // POST: Horarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost("Create")]
         //[Authorize]
-        [Route("Create")]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(HorariosDTO horariosDTO)
         {
@@ -78,7 +94,7 @@ namespace ICCReservasServer.Controllers
                 var horario = new Horarios { 
                     ID = horariosDTO.ID,
                     Nivel = horariosDTO.Nivel,
-                    Numero = horariosDTO.Numero,
+                    Nombre = horariosDTO.Nombre,
                     HoraInicio = horariosDTO.HoraInicio,
                     HoraFin = horariosDTO.HoraFin
                 };
@@ -91,10 +107,7 @@ namespace ICCReservasServer.Controllers
         }
 
         // PUT: Horarios/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPut]
-        [Route("Edit/{id}")]
+        [HttpPut("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, HorariosDTO horariosDTO)
@@ -104,7 +117,7 @@ namespace ICCReservasServer.Controllers
                 var horarios = new Horarios { 
                     ID = horariosDTO.ID,
                     Nivel = horariosDTO.Nivel,
-                    Numero = horariosDTO.Numero,
+                    Nombre = horariosDTO.Nombre,
                     HoraInicio = horariosDTO.HoraInicio,
                     HoraFin = horariosDTO.HoraFin
                 };
@@ -132,9 +145,8 @@ namespace ICCReservasServer.Controllers
         }
 
         // DELETE: Horarios/Delete/5
-        [HttpDelete]
+        [HttpDelete("Delete/{id}")]
         //[Authorize]
-        [Route("Delete/{id}")]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

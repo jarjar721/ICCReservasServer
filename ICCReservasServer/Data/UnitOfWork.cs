@@ -1,21 +1,24 @@
 ﻿using Entities.Data;
 using Entities.Models;
+using ICCReservasServer.DTOs;
 using ICCReservasServer.Interfaces;
 using ICCReservasServer.Repos;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 
 namespace ICCReservasServer.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDataContext _context;
-
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly ApplicationSettings _appSettings;
 
-        public UnitOfWork(ApplicationDataContext context, UserManager<ApplicationUser> userManager)
+        public UnitOfWork(ApplicationDataContext context, UserManager<ApplicationUser> userManager, IOptions<ApplicationSettings> appSettings)
         {
-            this._context = context;
-            this._userManager = userManager;
+            _context = context;
+            _userManager = userManager;
+            _appSettings = appSettings.Value;
         }
 
         public IDispositivosRepository DispositivosRepository => new DispositivosRepository(_context);
@@ -28,7 +31,7 @@ namespace ICCReservasServer.Data
 
         public IUsuariosRepository UsuariosRepository => new UsuariosRepository(_userManager);
 
-        public IAuthenticationRepository AuthenticationRepository => new AuthenticationRepository(_userManager);
+        public IAuthenticationRepository AuthenticationRepository => new AuthenticationRepository(_userManager, _appSettings);
 
         public async Task<bool> SaveAsync()
         {

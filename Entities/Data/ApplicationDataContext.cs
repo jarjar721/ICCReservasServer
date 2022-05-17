@@ -37,5 +37,5 @@ public class ApplicationDataContext : IdentityDbContext<ApplicationUser>
 
     public DbSet<Materias> Materias { get; set; }
 
-    public DbSet<Clases> Clases { get; set; }
+    public DbSet<HorarioReserva> Clases { get; set; }
 }

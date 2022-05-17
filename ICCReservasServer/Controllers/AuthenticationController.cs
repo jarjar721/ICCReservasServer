@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using ICCReservasServer.Middleware.Models;
 using ICCReservasServer.Interfaces;
+using EmailService;
+using EmailService.Interfaces;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace ICCReservasServer.Controllers
 {
@@ -18,22 +21,26 @@ namespace ICCReservasServer.Controllers
         private SignInManager<ApplicationUser> _signInManager;
         private readonly ApplicationSettings _appSettings;
         private readonly IUnitOfWork _uow;
+        private IEmailSenderRepository _emailSender;
 
         public AuthenticationController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IOptions<ApplicationSettings> appSettings,
-            IUnitOfWork uow)
+            IUnitOfWork uow,
+            IEmailSenderRepository emailSender
+            )
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _appSettings = appSettings.Value;
             _uow = uow;
+            _emailSender = emailSender;
 
         }
-        
-        [HttpPost]
-        [Route("AccountUnlock")] // POST --> api/AuthenticationController/AccountUnlock
+
+        // POST: Authentication/AccountUnlock
+        [HttpPost("AccountUnlock")]
         public async Task<IActionResult> UserAccountUnlock(UserAccountDTO unlockAccount)
         {
 
@@ -58,10 +65,11 @@ namespace ICCReservasServer.Controllers
 
         }
 
-        [HttpPost]
-        [Route("UserLogin")] // POST --> api/AuthenticationController/Login
+        // POST: Authentication/UserLogin
+        [HttpPost("UserLogin")]
         public async Task<IActionResult> UserLogin(UserAccountDTO userAccount)
         {
+
             var user = await _userManager.FindByEmailAsync(userAccount.Email);
 
             if (user == null)
@@ -89,6 +97,52 @@ namespace ICCReservasServer.Controllers
                 throw new FailedLoginException("Email o Password incorrecto");
             }
 
+        }
+
+        [HttpPost("ForgotPassword")]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordDTO forgotPasswordDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var user = await _userManager.FindByEmailAsync(forgotPasswordDTO.Email);
+            if (user == null)
+                return BadRequest("Invalid Request");
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var param = new Dictionary<string, string>
+            {
+                {"token", token },
+                {"email", forgotPasswordDTO.Email }
+            };
+
+            var callback = QueryHelpers.AddQueryString(forgotPasswordDTO.ClientURI, param);
+
+            var message = new Message(new string[] { user.Email }, "Reset password token", callback, null);
+            await _emailSender.SendEmailAsync(message);
+
+            return Ok();
+        }
+
+        [HttpPost("ResetPassword")]
+        public async Task<IActionResult> ResetPassword(ResetPasswordDTO resetPasswordDTO)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var user = await _userManager.FindByEmailAsync(resetPasswordDTO.Email);
+            if (user == null)
+                return BadRequest("Invalid Request");
+
+            var resetPassResult = await _userManager.ResetPasswordAsync(user, resetPasswordDTO.Token, resetPasswordDTO.Password);
+            if (!resetPassResult.Succeeded)
+            {
+                var errors = resetPassResult.Errors.Select(e => e.Description);
+
+                return BadRequest(new { Errors = errors });
+            }
+
+            return Ok();
         }
 
     }

@@ -2,8 +2,6 @@
 using ICCReservasServer.DTOs;
 using ICCReservasServer.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -16,10 +14,10 @@ namespace ICCReservasServer.Repos
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ApplicationSettings _appSettings;
 
-        public AuthenticationRepository(UserManager<ApplicationUser> userManager, IOptions<ApplicationSettings> appSettings)
+        public AuthenticationRepository(UserManager<ApplicationUser> userManager, ApplicationSettings appSettings)
         {
-            this._userManager = userManager;
-            _appSettings = appSettings.Value;
+            _userManager = userManager;
+            _appSettings = appSettings;
         }
 
         public async Task<IdentityResult> UserAccountUnlock(ApplicationUser user, UserAccountDTO unlockAccount)
