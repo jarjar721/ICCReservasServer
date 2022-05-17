@@ -41,6 +41,7 @@ namespace ICCReservasServer.Repos
             usuario.UserName = applicationUserDTO.UserName;
             usuario.Names = applicationUserDTO.Names;
             usuario.LastNames = applicationUserDTO.LastNames;
+            usuario.Status = applicationUserDTO.Status;
 
             return await _userManager.UpdateAsync(usuario);
 

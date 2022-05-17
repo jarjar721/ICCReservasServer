@@ -12,9 +12,6 @@ namespace Entities.Models
         public string Nivel { get; set; }
 
         [Required]
-        public int Numero { get; set; }
-
-        [Required]
         public string Nombre { get; set; }
 
         [Required]

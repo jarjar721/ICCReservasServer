@@ -28,7 +28,6 @@ namespace ICCReservasServer.Controllers
                               select new HorariosDTO { 
                                 ID = horario.ID,
                                 Nivel = horario.Nivel,
-                                Numero = horario.Numero,
                                 Nombre = horario.Nombre,
                                 HoraInicio = horario.HoraInicio,
                                 HoraFin = horario.HoraFin
@@ -49,7 +48,6 @@ namespace ICCReservasServer.Controllers
                               {
                                   ID = horario.ID,
                                   Nivel = horario.Nivel,
-                                  Numero = horario.Numero,
                                   Nombre = horario.Nombre,
                                   HoraInicio = horario.HoraInicio,
                                   HoraFin = horario.HoraFin
@@ -77,7 +75,7 @@ namespace ICCReservasServer.Controllers
             var horariosDTO = new HorariosDTO { 
                 ID=horarios.ID,
                 Nivel=horarios.Nivel,
-                Numero = horarios.Numero,
+                Nombre = horarios.Nombre,
                 HoraInicio = horarios.HoraInicio,
                 HoraFin=horarios.HoraFin
             };
@@ -96,7 +94,7 @@ namespace ICCReservasServer.Controllers
                 var horario = new Horarios { 
                     ID = horariosDTO.ID,
                     Nivel = horariosDTO.Nivel,
-                    Numero = horariosDTO.Numero,
+                    Nombre = horariosDTO.Nombre,
                     HoraInicio = horariosDTO.HoraInicio,
                     HoraFin = horariosDTO.HoraFin
                 };
@@ -119,7 +117,7 @@ namespace ICCReservasServer.Controllers
                 var horarios = new Horarios { 
                     ID = horariosDTO.ID,
                     Nivel = horariosDTO.Nivel,
-                    Numero = horariosDTO.Numero,
+                    Nombre = horariosDTO.Nombre,
                     HoraInicio = horariosDTO.HoraInicio,
                     HoraFin = horariosDTO.HoraFin
                 };
