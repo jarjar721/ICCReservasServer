@@ -14,6 +14,12 @@
 
         IAuthenticationRepository AuthenticationRepository { get; }
 
+        IReservasRepository ReservasRepository { get; }
+
+        IStatusReservaRepository StatusReservaRepository { get; }
+
+        IReservaDispositivoRepository ReservaDispositivoRepository { get; }
+
         Task<bool> SaveAsync();
     }
 }

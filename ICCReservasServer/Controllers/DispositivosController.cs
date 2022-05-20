@@ -40,9 +40,8 @@ namespace ICCReservasServer.Controllers
         }
 
         // GET: Dispositivos/Details/5
-        [HttpGet]
+        [HttpGet("Details/{id}")]
         //[Authorize]
-        [Route("Details/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -72,11 +71,8 @@ namespace ICCReservasServer.Controllers
         }
 
         // POST: Dispositivos/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost("Create")]
         //[Authorize]
-        [Route("Create")]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(DispositivosDTO dispositivoDTO)
         {
@@ -103,10 +99,7 @@ namespace ICCReservasServer.Controllers
         }
 
         // PUT: Dispositivos/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPut]
-        [Route("Edit/{id}")]
+        [HttpPut("Edit/{id}")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, DispositivosDTO dispositivoDTO)
@@ -149,9 +142,8 @@ namespace ICCReservasServer.Controllers
         }
 
         // DELETE: Dispositivos/Delete/5
-        [HttpDelete]
+        [HttpDelete("Delete/{id}")]
         //[Authorize]
-        [Route("Delete/{id}")]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

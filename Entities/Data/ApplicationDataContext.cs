@@ -37,5 +37,9 @@ public class ApplicationDataContext : IdentityDbContext<ApplicationUser>
 
     public DbSet<Materias> Materias { get; set; }
 
-    public DbSet<HorarioReserva> Clases { get; set; }
+    public DbSet<Reservas> Reservas { get; set; }
+
+    public DbSet<StatusReserva> StatusReserva { get; set; }
+
+    public DbSet<ReservaDispositivo> ReservaDispositivo { get; set; }
 }

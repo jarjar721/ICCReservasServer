@@ -33,6 +33,12 @@ namespace ICCReservasServer.Data
 
         public IAuthenticationRepository AuthenticationRepository => new AuthenticationRepository(_userManager, _appSettings);
 
+        public IReservasRepository ReservasRepository => new ReservasRepository(_context);
+
+        public IStatusReservaRepository StatusReservaRepository => new StatusReservaRepository(_context);
+
+        public IReservaDispositivoRepository ReservaDispositivoRepository => new ReservaDispositivoRepository(_context);
+
         public async Task<bool> SaveAsync()
         {
             return await _context.SaveChangesAsync() > 0;
