@@ -36,6 +36,7 @@ namespace Entities.Models
 
         public string? LastUpdatedByID { get; set; }
 
+
         public List<ReservaDispositivo>? ReservaDispositivo { get; set; }
 
     }

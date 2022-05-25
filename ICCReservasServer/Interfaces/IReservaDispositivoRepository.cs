@@ -1,4 +1,5 @@
 ﻿using Entities.Models;
+using ICCReservasServer.DTOs;
 
 namespace ICCReservasServer.Interfaces
 {
@@ -15,5 +16,6 @@ namespace ICCReservasServer.Interfaces
         void DeleteConfirmed(int id);
 
         bool ReservaDispositivoExists(int id);
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Entities.Data;
 using Entities.Models;
+using ICCReservasServer.DTOs;
 using ICCReservasServer.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -44,5 +45,6 @@ namespace ICCReservasServer.Repos
         {
             return _context.ReservaDispositivo.Any(e => e.ID == id);
         }
+        
     }
 }

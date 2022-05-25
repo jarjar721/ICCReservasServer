@@ -1,7 +1,9 @@
 ﻿using Entities.Data;
 using Entities.Models;
+using ICCReservasServer.DTOs;
 using ICCReservasServer.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace ICCReservasServer.Repos
 {
@@ -44,5 +46,29 @@ namespace ICCReservasServer.Repos
         {
             return _context.Dispositivos.Any(e => e.ID == id);
         }
+
+        
+        public List<DispositivosTypeAmount> AvailableDispositivosByType(DateTime DatetimeInicialReservacion, DateTime DatetimeFinalReservacion)
+        {
+            var dispositivosReservados = _context.ReservaDispositivo
+                .Where(rd => rd.DatetimeInicialReservacion >= DatetimeInicialReservacion && rd.DatetimeFinalReservacion <= DatetimeFinalReservacion)
+                .Select(rd => rd.DispositivoID)
+                .ToList();
+
+            var allDispositivos = _context.Dispositivos
+                .Where(t => t.Status == 1 && !dispositivosReservados.Contains(t.ID))
+                .GroupBy(t => t.Tipo)
+                .Select(dispGroup => new { Tipo = dispGroup.Key, Count = dispGroup.Count() })
+                .ToList();
+
+            List<DispositivosTypeAmount> availableDispositivos = new List<DispositivosTypeAmount> { };
+            foreach (var dispositivo in allDispositivos)
+            {
+                availableDispositivos.Add(new DispositivosTypeAmount { Tipo = dispositivo.Tipo, Count = dispositivo.Count });
+            }
+
+            return availableDispositivos;
+        }
+
     }
 }

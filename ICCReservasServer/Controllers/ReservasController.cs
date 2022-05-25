@@ -94,7 +94,7 @@ namespace ICCReservasServer.Controllers
         [HttpPost("Create")]
         //[Authorize]
         //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ReservasDTO reservaDTO)
+        public async Task<IActionResult> Create(CreateReservaDTO reservaDTO)
         {
             if (ModelState.IsValid)
             {
@@ -109,11 +109,14 @@ namespace ICCReservasServer.Controllers
                     InstalacionID = reservaDTO.InstalacionID
                 };
 
+                
                 var reservaDispositivos = reservaDTO.ReservaDispositivo.Select(
                         a => new ReservaDispositivo()
                         {
                             Reserva = reserva,
-                            DispositivoID = a.DispositivoID
+                            DispositivoID = a.DispositivoID,
+                            DatetimeInicialReservacion = reservaDTO.DatetimeInicialReservacion,
+                            DatetimeFinalReservacion = reservaDTO.DatetimeFinalReservacion
                         }
                         ).ToList();
 
@@ -125,6 +128,7 @@ namespace ICCReservasServer.Controllers
                             StatusID = a.StatusID
                         }
                         ).ToList();
+                
 
                 _uow.ReservasRepository.Create(reserva);
                 _uow.StatusReservaRepository.Create(statusReserva);

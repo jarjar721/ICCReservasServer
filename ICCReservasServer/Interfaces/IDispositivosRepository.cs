@@ -1,4 +1,5 @@
 ﻿using Entities.Models;
+using ICCReservasServer.DTOs;
 
 namespace ICCReservasServer.Interfaces
 {
@@ -15,6 +16,9 @@ namespace ICCReservasServer.Interfaces
         void DeleteConfirmed(int id);
 
         bool DispositivosExists(int id);
+
+        List<DispositivosTypeAmount> AvailableDispositivosByType(DateTime DatetimeInicialReservacion, DateTime DatetimeFinalReservacion);
+
 
     }
 }

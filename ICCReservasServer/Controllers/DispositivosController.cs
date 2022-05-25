@@ -39,6 +39,16 @@ namespace ICCReservasServer.Controllers
             return Ok(dispositivosDTO);
         }
 
+        // GET: Dispositivos
+        [HttpGet("AvailableDispositivosByType")]
+        //[Authorize]
+        public OkObjectResult AvailableDispositivosByType(DateTime DatetimeInicialReservacion, DateTime DatetimeFinalReservacion)
+        {
+            var dispositivos = _uow.DispositivosRepository.AvailableDispositivosByType(DatetimeInicialReservacion, DatetimeFinalReservacion);
+
+            return Ok(dispositivos);
+        }
+
         // GET: Dispositivos/Details/5
         [HttpGet("Details/{id}")]
         //[Authorize]

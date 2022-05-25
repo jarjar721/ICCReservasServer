@@ -16,7 +16,7 @@ namespace EmailService
         public Message(IEnumerable<string> to, string subject, string content, IFormFileCollection attachments)
         {
             To = new List<MailboxAddress>();
-            To.AddRange(to.Select(x => new MailboxAddress(x)));
+            To.AddRange(to.Select(x => new MailboxAddress("SRRT", x)));
             Subject = subject;
             Content = content;
             Attachments = attachments;
